@@ -1,6 +1,7 @@
 "use client";
 import Button2 from "../Button2";
 import useRandomMovement from "../../../hooks/useRandomMovement";
+import { Reveal } from "../Animations/Reveal";
 
 const Floating = () => {
   const handleClick = () => {
@@ -9,6 +10,8 @@ const Floating = () => {
 
   const maxPixels = 20; // Maximum movement in pixels
   const positions = Array.from({ length: 16 }, () => useRandomMovement(maxPixels));
+
+  
 
   return (
     <div className="bg-brand-green flex h-full w-full py-8 lg:py-32">
@@ -129,12 +132,14 @@ const Floating = () => {
             />
           </div>
           <div className="flex flex-col items-center justify-center">
+            <Reveal>
             <h3 className="text-brand-cream text-[64px] leading-none lg:text-[98px]">
               Create
             </h3>
             <h3 className="text-brand-cream text-[32px] leading-none lg:text-[48px]">
               with <span className="text-brand-logo text-center">sloane.</span>
             </h3>
+            </Reveal>
           </div>
           <div className="mx-32">
             <Button2

@@ -2,6 +2,7 @@
 import Button2 from "../Button2";
 import useRandomMovement from "../../../hooks/useRandomMovement";
 import { useState, useEffect } from "react";
+import { Reveal } from "../Animations/Reveal";
 
 const MobileFloating = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -149,6 +150,7 @@ const MobileFloating = () => {
         <div className="my-2 flex w-full justify-center"></div>
         {/* ----------------------------- main row ----------------------------- */}
         <div className="my-8 flex w-full items-center justify-center">
+            <Reveal>
           <div className="flex flex-col items-center justify-center">
             <h3 className="text-brand-cream text-[64px] leading-none lg:text-[98px]">
               Create
@@ -157,6 +159,7 @@ const MobileFloating = () => {
               with <span className="text-brand-logo text-center">sloane.</span>
             </h3>
           </div>
+            </Reveal>
         </div>
         {/* row 4 */}
         <div className="my-4 flex w-full justify-center">

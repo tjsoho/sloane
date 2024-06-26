@@ -1,3 +1,4 @@
+'use client';
 import { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
@@ -7,11 +8,7 @@ interface Props {
   delay?: number;
 }
 
-export const SlideReveal = ({
-  children,
-  width = "fit-content",
-  delay,
-}: Props) => {
+export const SlideReveal = ({ children, width = "100%", delay }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 

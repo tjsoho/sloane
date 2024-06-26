@@ -1,3 +1,4 @@
+"use cleint";
 import { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
@@ -7,11 +8,7 @@ interface Props {
   delay?: number;
 }
 
-export const SlideReveal2 = ({
-  children,
-  width = "100%",
-  
-}: Props) => {
+export const SlideReveal2 = ({ children, width = "100%" }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 

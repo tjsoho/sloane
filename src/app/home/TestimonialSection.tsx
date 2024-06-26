@@ -1,4 +1,5 @@
 "use client";
+import { Reveal } from "../components/Animations/Reveal";
 import Testimonial from "../components/home/Testimonial";
 // src/components/home/TestimonialSection.tsx
 import React, { useState } from "react";
@@ -45,6 +46,7 @@ const TestimonialSection: React.FC = () => {
     <div className="h-full w-full bg-brand-cream">
       <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center py-16 lg:py-32 2xl:max-w-[1540px]">
         <div className="lg:w-3/4">
+          <Reveal>
           <Testimonial
             // @ts-ignore
             image={testimonials[currentIndex].image}
@@ -57,6 +59,7 @@ const TestimonialSection: React.FC = () => {
             onNext={handleNext}
             onPrev={handlePrev}
           />
+          </Reveal>
         </div>
       </div>
     </div>

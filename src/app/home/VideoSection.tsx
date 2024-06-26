@@ -1,4 +1,6 @@
 "use client";
+import { SlideReveal2 } from "../components/Animations/SlideReveal2";
+import { SlideReveal } from "../components/Animations/SlideReveal";
 import Button from "../components/Button";
 
 const VideoSection = () => {
@@ -7,39 +9,47 @@ const VideoSection = () => {
   };
 
   return (
-    <div className="bg-brand-logo h-full w-full">
-      <div className="mx-auto flex h-full max-w-[1240px] 2xl:max-w-[1540px] flex-col items-center justify-center lg:justify-center lg:flex-row py-32">
+    <div className="h-full w-full bg-brand-logo">
+      <div className="mx-auto flex h-full max-w-[1240px] flex-col items-center justify-center py-32 lg:flex-row lg:justify-center 2xl:max-w-[1540px]">
         {/* left col */}
-        <div className="flex w-full items-center justify-center p-4 lg:w-1/2 order-2 lg:order-1">
-          <div className="video-container">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/_-TDVrrfu_A"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+        <div className="order-2 flex w-full items-center justify-center p-4 lg:order-1 lg:w-1/2">
+          <SlideReveal>
+            <div className="video-container">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/_-TDVrrfu_A"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </SlideReveal>
         </div>
         {/* right col */}
-        <div className="flex w-full flex-col items-center justify-center lg:w-1/2 order-1 mb-8 lg:mb-0">
-          <h3 className="text-brand-green mb-4 text-[62px] font-bold leading-none lg:text-[78px]">
-            What is <br />
-            Sloane?
-          </h3>
+        <div className="order-1 mb-8 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
+          <div>
+            <SlideReveal2>
+              <h3 className="mb-4 text-[62px] font-bold leading-none text-brand-green lg:text-[78px]">
+                What is <br />
+                Sloane?
+              </h3>
+            </SlideReveal2>
+          </div>
           <div className="mt-2">
-            <Button
-              title="Get Sloane"
-              textColor="brand-green"
-              textHoverColor="brand-logo"
-              backgroundColor="brand-cream"
-              borderColor="brand-green"
-              hoverBG="brand-green"
-              onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
-            />
+            <SlideReveal2>
+              <Button
+                title="Get Sloane"
+                textColor="brand-green"
+                textHoverColor="brand-logo"
+                backgroundColor="brand-cream"
+                borderColor="brand-green"
+                hoverBG="brand-green"
+                onClick={handleClick}
+                path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              />
+            </SlideReveal2>
           </div>
         </div>
       </div>
