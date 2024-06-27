@@ -9,19 +9,17 @@ const Floating = () => {
   };
 
   const maxPixels = 20; // Maximum movement in pixels
-  const controlsArray = Array.from({ length: 16 }, () =>
-    useRandomMovement(maxPixels),
-  );
+  const controlsArray = Array.from({ length: 16 }, () => useRandomMovement(maxPixels));
 
   return (
-    <div className="flex h-full w-full bg-brand-green py-8 lg:py-32">
-      <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center 2xl:max-w-[1540px]">
+    <div className="bg-brand-green flex h-full w-full py-8 lg:py-32">
+      <div className="mx-auto flex max-w-[1240px] 2xl:max-w-[1540px] flex-col items-center justify-center">
         {/* row 1 */}
         <div className="my-6 flex w-full justify-center">
           {controlsArray[0] && (
             <div className="mx-4">
               <Button2
-                title="Your go-to for all how-tos"
+                title="Your go-to for all how-to's"
                 textColor="brand-green-dark"
                 textHoverColor="brand-logo"
                 backgroundColor="brand-cream"
@@ -148,12 +146,14 @@ const Floating = () => {
             </div>
           )}
           <div className="flex flex-col items-center justify-center">
-            <h3 className="text-[64px] leading-none text-brand-cream lg:text-[98px]">
-              Create
-            </h3>
-            <h3 className="text-[32px] leading-none text-brand-cream lg:text-[48px]">
-              with <span className="text-center text-brand-logo">sloane.</span>
-            </h3>
+            
+              <h3 className="text-brand-cream text-[64px] leading-none lg:text-[98px]">
+                Create
+              </h3>
+              <h3 className="text-brand-cream text-[32px] leading-none lg:text-[48px]">
+                with <span className="text-brand-logo text-center">sloane.</span>
+              </h3>
+            
           </div>
           {controlsArray[8] && (
             <div className="mx-32">
