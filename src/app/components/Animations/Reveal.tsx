@@ -22,7 +22,7 @@ export const Reveal = ({ children, width = "100%" }: Props) => {
       }
     };
     
-    animate(); // Call the async function and handle the promise
+    void animate(); // Call the async function and handle the promise
   }, [isInView, mainControls]);
 
   return (

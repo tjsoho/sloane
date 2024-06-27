@@ -22,7 +22,7 @@ const SecretCard: React.FC<SecretCardProps> = ({ title, para, cardBG, titleColor
       });
     };
 
-    startAnimation();
+    void startAnimation();
   }, [isHovered, controls]);
 
   const cardStyle = {

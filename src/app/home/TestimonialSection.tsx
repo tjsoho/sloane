@@ -48,13 +48,13 @@ const TestimonialSection: React.FC = () => {
         <div className="lg:w-3/4">
           <Reveal>
           <Testimonial
-            // @ts-expect-error
+            
             image={testimonials[currentIndex].image}
-            // @ts-expect-error
+            
             name={testimonials[currentIndex].name}
-            // @ts-expect-error
+            
             company={testimonials[currentIndex].company}
-            // @ts-expect-error
+            
             description={testimonials[currentIndex].description ?? ""}
             onNext={handleNext}
             onPrev={handlePrev}
