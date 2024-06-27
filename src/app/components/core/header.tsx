@@ -35,7 +35,9 @@ const Header = () => {
           <div className="w-[90%] bg-brand-green shadow-md border-[0.5px] border-brand-logo z-50 rounded-full mt-4">
             <div className="container mx-auto flex items-center justify-between px-8 py-2 ">
               <div className="flex items-center">
+                <Link href="/home" >
                 <img src="/images/logo.png" alt="Logo" className="h-8" />
+                </Link>
               </div>
               <nav className="hidden lg:flex space-x-8">
                 <Link href="/about" legacyBehavior><a className={linkClasses}>About</a></Link>

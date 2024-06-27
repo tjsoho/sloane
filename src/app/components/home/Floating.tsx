@@ -56,7 +56,7 @@ const Floating = () => {
                 textColor="brand-green-dark"
                 textHoverColor="brand-logo"
                 backgroundColor="brand-logo"
-                hoverBG="brand-green"
+                hoverBG="brand-green-dark"
                 onClick={handleClick}
                 path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
                 controls={controlsArray[2]}
@@ -119,7 +119,7 @@ const Floating = () => {
                 textColor="brand-green-dark"
                 textHoverColor="brand-logo"
                 backgroundColor="brand-green-light"
-                hoverBG="brand-green"
+                hoverBG="brand-green-dark"
                 onClick={handleClick}
                 path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
                 controls={controlsArray[6]}
@@ -195,7 +195,7 @@ const Floating = () => {
                 textColor="brand-green-dark"
                 textHoverColor="brand-logo"
                 backgroundColor="brand-green-light"
-                hoverBG="brand-green"
+                hoverBG="brand-green-dark"
                 onClick={handleClick}
                 path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
                 controls={controlsArray[10]}
@@ -213,7 +213,7 @@ const Floating = () => {
                 textColor="brand-green-dark"
                 textHoverColor="brand-logo"
                 backgroundColor="brand-logo"
-                hoverBG="brand-green"
+                hoverBG="brand-green-dark"
                 onClick={handleClick}
                 path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
                 controls={controlsArray[11]}
@@ -276,7 +276,7 @@ const Floating = () => {
                 textColor="brand-green-dark"
                 textHoverColor="brand-logo"
                 backgroundColor="brand-green-light"
-                hoverBG="brand-green"
+                hoverBG="brand-green-dark"
                 onClick={handleClick}
                 path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
                 controls={controlsArray[15]}
