@@ -25,12 +25,12 @@ const Testimonial: React.FC<TestimonialProps> = ({
       <div className="flex flex-col items-center justify-between gap-16 p-6 lg:flex-row">
         {/* image div */}
         <div className="w-2/3 rounded-b-[300px] rounded-tl-[300px] bg-brand-yellow lg:w-1/2">
-          <img src={image} alt="Sloane AI Business Platform - Marketing, Business Coach, Social Media Strategy, Business Growth" className=" w-full rounded-b-[300px]" />
+          <img src={image} alt="Sloane AI Business Platform - Marketing, Business Coach, Social Media Strategy, Business Growth" className="w-full rounded-b-[300px]" />
         </div>
         {/* content div */}
         <div className="w-full lg:w-1/2 flex flex-col items-start relative">
           <div className="relative z-20 text-left lg:mb-4 h-[100px] flex items-center">
-            <p className="text-left">"{description}"</p>
+            <p className="text-left">&quot;{description}&quot;</p>
           </div>
           <FormatQuoteRoundedIcon className="absolute top-0 left-0 text-[188px] text-brand-yellow opacity-50 -mt-28 transform rotate-180 -ml-12" />
           <div className="text-left mt-8">

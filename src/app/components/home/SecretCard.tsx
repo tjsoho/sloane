@@ -1,5 +1,3 @@
-// Secret card is a card that contains a title and a paragraph and should be passed in as props along with card bg colour, title colour and para colour and use utils tailwindColors.
-
 import { getTailwindColor } from "../../../utils/tailwindColors";
 import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -17,10 +15,14 @@ const SecretCard: React.FC<SecretCardProps> = ({ title, para, cardBG, titleColor
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    controls.start({
-      scale: isHovered ? 1.05 : 1,
-      transition: { duration: 0.5 },
-    });
+    const startAnimation = async () => {
+      await controls.start({
+        scale: isHovered ? 1.05 : 1,
+        transition: { duration: 0.5 },
+      });
+    };
+
+    startAnimation();
   }, [isHovered, controls]);
 
   const cardStyle = {
@@ -40,7 +42,7 @@ const SecretCard: React.FC<SecretCardProps> = ({ title, para, cardBG, titleColor
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={cardStyle}
-      className="w-full lg:w-80 h-[500px] px-6 py-6 rounded-[30px] flex flex-col  items-start text-left"
+      className="w-full lg:w-80 h-[500px] px-6 py-6 rounded-[30px] flex flex-col items-start text-left"
       animate={controls}
     >
       <h3 style={titleStyle} className="text-3xl font-bold mb-6 leading-none">
@@ -54,5 +56,3 @@ const SecretCard: React.FC<SecretCardProps> = ({ title, para, cardBG, titleColor
 };
 
 export default SecretCard;
-
-

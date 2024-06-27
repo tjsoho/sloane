@@ -4,7 +4,7 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 interface Props {
   children: JSX.Element;
-  width?: "100%" | "100%";
+  width?: "100%"; // Removed duplicate value
 }
 
 export const Reveal = ({ children, width = "100%" }: Props) => {
@@ -14,12 +14,17 @@ export const Reveal = ({ children, width = "100%" }: Props) => {
   const mainControls = useAnimation();
 
   useEffect(() => {
-    if (isInView) {
-      mainControls.start("visible");
-    } else {
-      mainControls.start("hidden");
-    }
+    const animate = async () => {
+      if (isInView) {
+        await mainControls.start("visible");
+      } else {
+        await mainControls.start("hidden");
+      }
+    };
+    
+    animate(); // Call the async function and handle the promise
   }, [isInView, mainControls]);
+
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div

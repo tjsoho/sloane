@@ -51,7 +51,7 @@ const ContactForm: React.FC = () => {
       >
         <SlideReveal>
           <h2 className="my-4 text-center text-5xl text-brand-logo lg:text-7xl">
-            Let's Chat
+            Let&apos;s Chat
           </h2>
         </SlideReveal>
         <Reveal>
@@ -61,7 +61,7 @@ const ContactForm: React.FC = () => {
             className="px-16 text-brand-cream xl:px-32"
             gutterBottom
           >
-            Feel free to share your thoughts or questions with us and we'll get
+            Feel free to share your thoughts or questions with us and we&apos;ll get
             back to you within 48hrs.
           </Typography>
         </Reveal>
@@ -147,7 +147,7 @@ const ContactForm: React.FC = () => {
         {isSubmitted && (
           <div className="popup">
             <Typography variant="h5">
-              Thanks for getting in touch! We'll be in touch shortly.
+              Thanks for getting in touch! We&apos;ll be in touch shortly.
             </Typography>
           </div>
         )}

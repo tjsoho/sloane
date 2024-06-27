@@ -1,14 +1,9 @@
-'use client';
-
-const aboutPage = () => {
+const About = () => {
   return (
-    <div>
-      <h1>About Page</h1>
-      <button onClick={() => {} }>
-        <p>CLICK ME</p>
-      </button>
-    </div>
+      <div>
+      <h1>About</h1>
+      </div>
   );
-};
+  }
 
-export default aboutPage;
+export default About;

@@ -13,12 +13,17 @@ export const Reveal2 = ({ children, width = "fit-content" }: Props) => {
   const mainControls = useAnimation();
 
   useEffect(() => {
-    if (isInView) {
-      mainControls.start("visible");
-    } else {
-      mainControls.start("hidden");
-    }
+    const animate = async () => {
+      if (isInView) {
+        await mainControls.start("visible");
+      } else {
+        await mainControls.start("hidden");
+      }
+    };
+
+    void animate(); // Mark the promise as intentionally ignored
   }, [isInView, mainControls]);
+
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div

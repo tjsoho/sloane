@@ -7,7 +7,6 @@ import MobileClientCardCarousel from "../components/home/MobileClientCardCarouse
 import Statistic from "../components/home/Statistic";
 import { SlideReveal } from "../components/Animations/SlideReveal";
 
-
 const Section2 = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -27,34 +26,34 @@ const Section2 = () => {
 
   return (
     <div className="bg-brand-cream ">
-      <div className=" mx-auto flex h-full w-full max-w-[1240px] flex-col px-4 py-16 lg:py-32 2xl:max-w-[1540px]">
+      <div className="mx-auto flex h-full w-full max-w-[1240px] flex-col px-4 py-16 lg:py-32 2xl:max-w-[1540px]">
         <div className="h-contain flex w-full flex-col lg:flex-row">
           {/* left col */}
           <div className="text-brand-green flex w-full flex-col items-start justify-center lg:w-1/2">
-          <SlideReveal>
-            <h2 className="text-left text-[32px] leading-tight lg:text-[44px]">
-              Your Business' <br></br>Best Kept Secret
-            </h2>
-              </SlideReveal>
-              <SlideReveal>
-            <p className="my-8 font-medium lg:w-3/4">
-              With Sloane, no task is too big or small. She’s your go-to gal,
-              making business feel like a holiday – effortless and enjoyable.
-              From admin to content creation, Sloane’s got you covered.
-            </p>
+            <SlideReveal>
+              <h2 className="text-left text-[32px] leading-tight lg:text-[44px]">
+                Your Business&apos; <br></br>Best Kept Secret
+              </h2>
             </SlideReveal>
             <SlideReveal>
-            <div className="mt-2">
-              <Button
-                title="Get Sloane"
-                textColor="brand-cream"
-                textHoverColor="brand-logo"
-                backgroundColor="brand-green"
-                hoverBG="brand-green"
-                onClick={handleClick}
-                path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
-              />
-            </div>
+              <p className="my-8 font-medium lg:w-3/4">
+                With Sloane, no task is too big or small. She&apos;s your go-to gal,
+                making business feel like a holiday – effortless and enjoyable.
+                From admin to content creation, Sloane&apos;s got you covered.
+              </p>
+            </SlideReveal>
+            <SlideReveal>
+              <div className="mt-2">
+                <Button
+                  title="Get Sloane"
+                  textColor="brand-cream"
+                  textHoverColor="brand-logo"
+                  backgroundColor="brand-green"
+                  hoverBG="brand-green"
+                  onClick={handleClick}
+                  path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+                />
+              </div>
             </SlideReveal>
           </div>
           {/* Right Col */}
@@ -64,7 +63,6 @@ const Section2 = () => {
         </div>
         {/* Stats */}
         <div className="mt-8 flex h-full w-full flex-col justify-between lg:mt-28 lg:flex-row">
-          
           <div className="my-4 w-full lg:w-full">
             <Statistic
               percentage={100}
@@ -72,7 +70,6 @@ const Section2 = () => {
               imageUrl="/images/thumbs.png"
             />
           </div>
-          
           <div className="my-12 w-full lg:my-4 lg:w-full">
             <Statistic
               percentage={70}
