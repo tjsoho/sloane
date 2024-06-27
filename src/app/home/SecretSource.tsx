@@ -63,8 +63,8 @@ const SecretSource = () => {
             title="Get Sloane"
             textColor="brand-cream"
             textHoverColor="brand-logo"
-            backgroundColor="brand-orange-light"
-            hoverBG="brand-green"
+            backgroundColor="brand-green"
+            hoverBG="brand-green-dark"
             onClick={handleClick}
             path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
           />

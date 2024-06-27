@@ -30,7 +30,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
         {/* content div */}
         <div className="w-full lg:w-1/2 flex flex-col items-start relative">
           <div className="relative z-20 text-left lg:mb-4 h-[100px] flex items-center">
-            <p className="text-left">&quot;{description}&quot;</p>
+            <p className="text-left text-brand-green-dark">&quot;{description}&quot;</p>
           </div>
           <FormatQuoteRoundedIcon className="absolute top-0 left-0 text-[188px] text-brand-yellow opacity-50 -mt-28 transform rotate-180 -ml-12" />
           <div className="text-left mt-8">

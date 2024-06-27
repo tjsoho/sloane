@@ -2,6 +2,7 @@
 import { SlideReveal2 } from "../components/Animations/SlideReveal2";
 import { SlideReveal } from "../components/Animations/SlideReveal";
 import Button from "../components/Button";
+import { Reveal } from "../components/Animations/Reveal";
 
 const VideoSection = () => {
   const handleClick = () => {
@@ -38,18 +39,18 @@ const VideoSection = () => {
             </SlideReveal2>
           </div>
           <div className="mt-2">
-            <SlideReveal2>
+            <Reveal>
               <Button
                 title="Get Sloane"
-                textColor="brand-green"
+                textColor="brand-cream"
                 textHoverColor="brand-logo"
-                backgroundColor="brand-cream"
+                backgroundColor="brand-green"
                 borderColor="brand-green"
-                hoverBG="brand-green"
+                hoverBG="brand-green-dark"
                 onClick={handleClick}
                 path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
               />
-            </SlideReveal2>
+            </Reveal>
           </div>
         </div>
       </div>

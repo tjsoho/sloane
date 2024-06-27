@@ -1,5 +1,6 @@
 "use client";
 import { Reveal } from "../components/Animations/Reveal";
+import { SlideReveal } from "../components/Animations/SlideReveal";
 import Testimonial from "../components/home/Testimonial";
 import React, { useState } from "react";
 
@@ -46,6 +47,13 @@ const TestimonialSection: React.FC = () => {
   return (
     <div className="h-full w-full bg-brand-cream">
       <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center py-16 lg:py-32 2xl:max-w-[1540px]">
+      <SlideReveal>
+          <div className="flex h-full w-full flex-col items-center justify-center text-center mb-4 lg:mb-8">
+            <h3 className="text-8xl text-[44px] leading-none  text-brand-orange lg:text-[78px]">
+              Hear From Our <span className="text-brand-orange-light">Members</span>
+            </h3>
+          </div>
+        </SlideReveal>
         <div className="lg:w-3/4">
           {currentTestimonial && (
             <Reveal>

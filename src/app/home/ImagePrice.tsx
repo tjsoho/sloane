@@ -8,12 +8,12 @@ const ImagePrice = () => {
   };
   return (
     <div className="h-full w-full bg-brand-cream">
-      <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center px-4 py-16 lg:flex-row lg:py-24 2xl:max-w-[1540px]">
+      <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center px-4 pt-16 lg:flex-row lg:py-16 2xl:max-w-[1540px]">
         {/* ---------------------------------------LEFT COL--------------------------------------- */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-2/3">
           <Reveal>
             <img
-              src="/images/price.png"
+              src="/images/monitor2.png"
               alt="Sloane AI Business Platform - Marketing, Business Coach, Social Media Strategy, Business Growth"
               className="h-full w-full object-contain"
             />
@@ -33,7 +33,7 @@ const ImagePrice = () => {
             <Reveal>
             <Button
               title="Get Sloane"
-              textColor="brand-logo"
+              textColor="brand-cream"
               textHoverColor="brand-logo"
               backgroundColor="brand-green"
               hoverBG="brand-green-dark"
