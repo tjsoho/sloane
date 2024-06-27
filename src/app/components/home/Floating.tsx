@@ -21,7 +21,7 @@ const Floating = () => {
           {controlsArray[0] && (
             <div className="mx-4">
               <Button2
-                title="Your go-to for all how-to's"
+                title="Your go-to for all how-tos"
                 textColor="brand-green-dark"
                 textHoverColor="brand-logo"
                 backgroundColor="brand-cream"
