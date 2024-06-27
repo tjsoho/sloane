@@ -1,7 +1,6 @@
 "use client";
 import { Reveal } from "../components/Animations/Reveal";
 import Testimonial from "../components/home/Testimonial";
-// src/components/home/TestimonialSection.tsx
 import React, { useState } from "react";
 
 const testimonials = [
@@ -32,34 +31,34 @@ const TestimonialSection: React.FC = () => {
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1,
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
   };
+
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
     <div className="h-full w-full bg-brand-cream">
       <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center py-16 lg:py-32 2xl:max-w-[1540px]">
         <div className="lg:w-3/4">
-          <Reveal>
-          <Testimonial
-            
-            image={testimonials[currentIndex].image}
-            
-            name={testimonials[currentIndex].name}
-            
-            company={testimonials[currentIndex].company}
-            
-            description={testimonials[currentIndex].description ?? ""}
-            onNext={handleNext}
-            onPrev={handlePrev}
-          />
-          </Reveal>
+          {currentTestimonial && (
+            <Reveal>
+              <Testimonial
+                image={currentTestimonial.image}
+                name={currentTestimonial.name}
+                company={currentTestimonial.company}
+                description={currentTestimonial.description ?? ""}
+                onNext={handleNext}
+                onPrev={handlePrev}
+              />
+            </Reveal>
+          )}
         </div>
       </div>
     </div>
