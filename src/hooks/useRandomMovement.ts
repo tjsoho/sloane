@@ -1,35 +1,30 @@
-// src/hooks/useRandomMovement.ts
 import { useState, useEffect } from "react";
+import { useAnimation } from "framer-motion";
 
 const useRandomMovement = (maxPixels: number) => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [direction, setDirection] = useState({ x: 1, y: 1 });
+  const controls = useAnimation();
+  const [direction, setDirection] = useState<{ x: number; y: number }>({
+    x: Math.random() > 0.5 ? 1 : -1,
+    y: Math.random() > 0.5 ? 1 : -1,
+  });
+
+  const move = async () => {
+    await controls.start({
+      x: [direction.x * (Math.random() * maxPixels), -direction.x * (Math.random() * maxPixels)],
+      y: [direction.y * (Math.random() * maxPixels), -direction.y * (Math.random() * maxPixels)],
+      transition: { duration: 2, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" },
+    });
+    setDirection({
+      x: Math.random() > 0.5 ? 1 : -1,
+      y: Math.random() > 0.5 ? 1 : -1,
+    });
+  };
 
   useEffect(() => {
-    const move = () => {
-      setPosition((prev) => {
-        let newX = prev.x + direction.x * Math.random() * 0.5;
-        let newY = prev.y + direction.y * Math.random() * 0.5;
+    move();
+  }, [controls]);
 
-        if (newX > maxPixels || newX < -maxPixels) {
-          setDirection((prev) => ({ ...prev, x: -prev.x }));
-          newX = Math.max(Math.min(newX, maxPixels), -maxPixels);
-        }
-
-        if (newY > maxPixels || newY < -maxPixels) {
-          setDirection((prev) => ({ ...prev, y: -prev.y }));
-          newY = Math.max(Math.min(newY, maxPixels), -maxPixels);
-        }
-
-        return { x: newX, y: newY };
-      });
-    };
-
-    const interval = setInterval(move, 16); // Update at 60fps
-    return () => clearInterval(interval);
-  }, [direction, maxPixels]);
-
-  return position;
+  return controls;
 };
 
 export default useRandomMovement;

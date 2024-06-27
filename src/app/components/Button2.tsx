@@ -10,7 +10,7 @@ interface Button2Props {
   hoverBG: string;
   onClick: () => void;
   path: string;
-  position: { x: number; y: number };
+  controls: ReturnType<typeof useAnimation>; // Updated to accept controls prop
   animate?: boolean; // New prop to control animation
 }
 
@@ -22,21 +22,10 @@ const Button2: React.FC<Button2Props> = ({
   hoverBG,
   onClick,
   path,
-  position,
-  animate, // New prop to control animation
+  controls,
+  animate,
 }) => {
-  const controls = useAnimation();
   const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (animate) {
-      controls.start({
-        x: [position.x, position.x + (Math.random() - 0.5) * 10],
-        y: [position.y, position.y + (Math.random() - 0.5) * 10],
-        transition: { duration: 2, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" },
-      });
-    }
-  }, [position, controls, animate]);
 
   const buttonStyle = {
     backgroundColor: isHovered ? getTailwindColor(hoverBG) : getTailwindColor(backgroundColor),
