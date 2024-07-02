@@ -20,7 +20,7 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const linkClasses = 'hover:text-brand-orange uppercase font-Archivo text-brand-cream ';
+  const linkClasses = 'hover:text-brand-logo uppercase font-Archivo text-brand-cream ';
 
   return (
     <>

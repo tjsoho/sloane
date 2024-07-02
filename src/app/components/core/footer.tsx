@@ -5,7 +5,7 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, } from "react-icons/bs";
 
 const FooterComponent = () => {
   return (
-    <Footer container className="bg-brand-green">
+    <Footer container className="bg-brand-green rounded-none">
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1   ">
           <div>
