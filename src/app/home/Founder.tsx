@@ -11,34 +11,34 @@ const Founder = () => {
         <div className="my-12 flex h-full w-full flex-col justify-start px-4 text-brand-cream lg:w-1/2">
           <Reveal>
             <div>
-              <img src="/images/logo.png" alt="" className="w-[55%]" />
-            </div>
-          </Reveal>
-          <SlideReveal>
-            <div>
-              <h3 className="mb-8 text-right text-8xl text-[44px] leading-none lg:px-6 lg:text-[78px]">
-                FOUNDER
+              <h3 className="mb-8 text-left text-8xl text-[44px] leading-none text-brand-logo lg:text-[78px]">
+                Our Why?
               </h3>
             </div>
-          </SlideReveal>
+          </Reveal>
+
           <Reveal>
             <p>
-              From strumming guitar strings to stringing together code, I&apos;ve
-              traded live gigs for gigabytes to help your business hit all the
-              right notes online. <br></br>
-              <br></br>With a knack for crafting websites that you can&apos;t help
-              but fall in love with and AI solutions that transform your digital
-              strategy, I&apos;m all about making your business sing.
+              Toby J is the visionary founder of Sloane, driven by a mission to
+              make business easy, fun, and ridiculously efficient.<br></br><br></br>
+              With a deep understanding of the challenges faced by business
+              owners, Toby aimed to create a platform that not only simplifies
+              day-to-day tasks, but also empowers users to unlock the full
+              potential of AI. Transforming the entire experience of building
+              and running a business.<br></br><br></br>
+              Toby recognises that the primary reason many of us start a business is to have the freedom to enjoy life. With Sloane, Toby wants to make it an indispensable tool for every entrepreneur, equipping them with the ability to tackle tasks confidently and efficiently. <br></br><br></br>
+
+His innovative approach and unwavering commitment to user satisfaction have made Sloane a go-to solution for business owners aiming to grow and succeed while reclaiming their time and reducing stress.
             </p>
           </Reveal>
         </div>
 
         {/* right col */}
-        <div className="flex h-full w-full flex-col justify-start lg:w-1/2">
+        <div className="flex h-full w-full flex-col lg:w-1/2 lg:ml-8 justify-center">
           <img
-            src="/images/founder.jpg"
+            src="/images/founder.png"
             alt=""
-            className="h-[350px] object-cover lg:h-[600px]"
+            className="h-[550px] object-cover lg:h-[100%] w-full"
           />
         </div>
       </div>

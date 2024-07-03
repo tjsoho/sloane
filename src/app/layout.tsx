@@ -1,5 +1,6 @@
+// src/app/layout.tsx
 import "~/styles/globals.css";
-import Header from "./components/core/header"; // Adjust the path as necessary
+import Header from "./components/core/header";
 import Footer from "./components/core/footer";
 
 
@@ -9,11 +10,7 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({ 
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
       <head>

@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { StripeElementsOptions } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const CheckoutForm: React.FC<{ nextStep: () => void }> = ({ nextStep }) => {
   const stripe = useStripe();
   const elements = useElements();
-  const [clientSecret, setClientSecret] = useState('');
-
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch('/create-payment-intent', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: 5000 }) // amount in cents
-    })
-    .then(res => res.json())
-    .then(data => setClientSecret(data.clientSecret));
-  }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -27,35 +16,34 @@ const CheckoutForm: React.FC<{ nextStep: () => void }> = ({ nextStep }) => {
       return;
     }
 
-    const { error, paymentIntent } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: 'https://your-site.com/checkout-complete',
-      },
+    const cardElement = elements.getElement(CardElement);
+
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: cardElement!,
     });
 
-    if (error) {
-      console.error(error);
-    } else if (paymentIntent?.status === 'succeeded') {
+    if (!error) {
+      // Handle successful payment here
       nextStep();
+    } else {
+      console.error(error);
     }
   };
 
   return (
-    clientSecret && (
-      <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
-        <div className="my-4">
-          <PaymentElement />
-        </div>
-        <button
-          type="submit"
-          disabled={!stripe}
-          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 w-full"
-        >
-          Pay
-        </button>
-      </form>
-    )
+    <form onSubmit={handleSubmit}>
+      <div className="my-4">
+        <CardElement />
+      </div>
+      <button
+        type="submit"
+        disabled={!stripe}
+        className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300"
+      >
+        Pay
+      </button>
+    </form>
   );
 };
 

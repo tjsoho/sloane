@@ -8,11 +8,12 @@ interface ButtonProps {
   icon?: React.ReactNode;
   textColor: string;
   textHoverColor: string;
-  backgroundColor?: string;
-  hoverBG?: string;
+  backgroundColor: string;
+  hoverBG: string;
   onClick?: () => void;
   path?: string;
   borderColor?: string;
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -25,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   path,
   borderColor,
+  className = '', // default to an empty string
 }) => {
   const defaultTextColor = getTailwindColor(textColor);
   const hoverTextColor = getTailwindColor(textHoverColor);
@@ -34,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const buttonContent = (
     <button
-      className="flex items-center px-12 py-2  rounded-full uppercase font-Archivo hover:font-bold border-[1px]"
+      className={`flex items-center px-12 py-2 rounded-full uppercase font-Archivo hover:font-bold border-[1px] ${className}`}
       style={{ 
         color: defaultTextColor, 
         backgroundColor: bgColor,

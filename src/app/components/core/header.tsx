@@ -36,14 +36,14 @@ const Header = () => {
             <div className="container mx-auto flex items-center justify-between px-8 py-2 ">
               <div className="flex items-center">
                 <Link href="/home" >
-                <img src="/images/logo.png" alt="Logo" className="h-8" />
+                  <img src="/images/logo.png" alt="Logo" className="h-8" />
                 </Link>
               </div>
               <nav className="hidden lg:flex space-x-8">
                 <Link href="/about" legacyBehavior><a className={linkClasses}>About</a></Link>
                 <Link href="/pricing" legacyBehavior><a className={linkClasses}>Pricing</a></Link>
                 <Link href="/login" legacyBehavior><a className={linkClasses}>Login</a></Link>
-                <Link href="/faq" legacyBehavior><a className={linkClasses}>FAQ</a></Link>
+                <Link href="/#FAQ" legacyBehavior><a className={linkClasses}>FAQ</a></Link> {/* Updated this line */}
                 <Link href="/contact" legacyBehavior><a className={linkClasses}>Contact</a></Link>
               </nav>
               <div className="lg:hidden">
@@ -72,7 +72,7 @@ const Header = () => {
                   <Link href="/about" legacyBehavior><a onClick={toggleMenu} className="text-2xl hover:text-brand-orange uppercase font-Archivo text-brand-cream text-center">About</a></Link>
                   <Link href="/pricing" legacyBehavior><a onClick={toggleMenu} className="text-2xl hover:text-brand-orange uppercase font-Archivo text-brand-cream text-center">Pricing</a></Link>
                   <Link href="/login" legacyBehavior><a onClick={toggleMenu} className="text-2xl hover:text-brand-orange uppercase font-Archivo text-brand-cream text-center">Login</a></Link>
-                  <Link href="/faq" legacyBehavior><a onClick={toggleMenu} className="text-2xl hover:text-brand-orange uppercase font-Archivo text-brand-cream text-center">FAQ</a></Link>
+                  <Link href="/#FAQ" legacyBehavior><a onClick={toggleMenu} className="text-2xl hover:text-brand-orange uppercase font-Archivo text-brand-cream text-center">FAQ</a></Link> {/* Updated this line */}
                   <Link href="/contact" legacyBehavior><a onClick={toggleMenu} className="text-2xl hover:text-brand-orange uppercase font-Archivo text-brand-cream text-center">Contact</a></Link>
                 </nav>
               </motion.div>
