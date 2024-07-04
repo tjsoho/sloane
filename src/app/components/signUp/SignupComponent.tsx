@@ -10,7 +10,7 @@ const SignupComponent: React.FC = () => {
   const renderStep = () => {
     switch(step) {
       case 1:
-        return <StepOne nextStep={() => setStep(2)} />;
+        return <StepOne nextStep={() => setStep(1)} />;
       case 2:
         return <StepTwo nextStep={() => setStep(3)} />;
       case 3:
