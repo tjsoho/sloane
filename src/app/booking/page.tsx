@@ -53,7 +53,7 @@ const SignupComponent: React.FC = () => {
             This is where we delve into your business to tailor Sloane precisely to your brand, voice, and goals.
             </p>
             <InlineWidget
-              url="https://calendly.com/ai-guy-bookings/ai-business-model-set-up"
+              url="https://calendly.com/sloane-bookings/sloane-business-interview"
               styles={{
                 maxHeight: '500px',
                 padding: '0 10px',
