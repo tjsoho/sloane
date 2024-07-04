@@ -25,7 +25,7 @@ const SignupComponent: React.FC = () => {
       </div>
 
       {/* rightr col */}
-      <div className="flex h-full min-h-screen w-full flex-col items-center justify-center bg-brand-green pt-32 lg:w-1/2">
+      <div className="flex h-full w-full flex-col items-center justify-center bg-brand-green pt-32 lg:w-1/2">
         <div className="mb-8 flex w-full justify-center gap-12 font-Archivo lg:gap-16">
           <div
             className={`'bg-brand-logo text-brand-green-dark bg-brand-cream opacity-30 flex  h-8 w-8 items-center justify-center rounded-full`}
@@ -55,7 +55,7 @@ const SignupComponent: React.FC = () => {
             <InlineWidget
               url="https://calendly.com/sloane-bookings/sloane-business-interview"
               styles={{
-                maxHeight: '500px',
+                
                 padding: '0 10px',
               }}
             />
