@@ -1,11 +1,13 @@
 "use client";
 
+import { Divider } from "@mui/material";
 import { Footer } from "flowbite-react";
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, } from "react-icons/bs";
 
 const FooterComponent = () => {
   return (
-    <Footer container className="bg-brand-green rounded-none">
+    <Footer container className="bg-brand-green rounded-none border-t-[1px] border-brand-logo">
+      
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1   ">
           <div>
@@ -41,7 +43,7 @@ const FooterComponent = () => {
             </div>
           </div>
         </div>
-        <Footer.Divider />
+        <Divider orientation="horizontal" className="my-2 w-full lg:mt-2 bg-brand-logo" />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright href="#" by=" sloane." year={2024} className="text-brand-logo"/>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">

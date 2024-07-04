@@ -1,36 +1,52 @@
-"use client";
-import React, { useState } from "react";
-import { Grid, Typography, TextField } from "@mui/material";
-import { useRouter } from "next/navigation"; // Corrected import
-import { Reveal } from "../components/Animations/Reveal";
-import { SlideReveal } from "../components/Animations/SlideReveal";
+'use client';
+import React, { useState } from 'react';
+import { Grid, Typography, Modal, Box } from '@mui/material';
+import { useRouter } from 'next/navigation'; // Corrected import
+import { Reveal } from '../components/Animations/Reveal';
+import { SlideReveal } from '../components/Animations/SlideReveal';
+import Button from '../components/Button';
 
 const ContactForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
+
+    // Adjust URL if necessary
+    let url = formData.get('url') as string;
+    if (url && !/^https?:\/\//i.test(url)) {
+      url = 'https://' + url;
+      formData.set('url', url);
+    }
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
       body: formData,
     });
 
     if (response.ok) {
       // Handle successful form submission here
-      console.log("Form submitted successfully!");
+      console.log('Form submitted successfully!');
       setIsSubmitted(true);
       form.reset();
 
-      // Redirect to the home page after a successful submission (assuming "/home" is your home page route)
-      router.push("/home");
+      // Open the modal
+      setModalOpen(true);
     } else {
       // Handle form submission errors here
-      console.error("Form submission failed.");
+      console.error('Form submission failed.');
     }
   };
+
+  const inputClass =
+    'my-4 block w-full py-2 px-4 border border-brand-logo rounded-full bg-transparent text-brand-green-dark placeholder-green-700 focus:border-brand-green-dark outline-none';
+
+  const inputClass2 =
+    'my-4 block w-full px-4 py-3 border border-brand-logo rounded-[40px] bg-transparent text-brand-green-dark placeholder-green-700 overflow-hidden focus:border-brand-green-dark outline-none';
 
   return (
     <Grid container spacing={0}>
@@ -39,10 +55,10 @@ const ContactForm: React.FC = () => {
         xs={12}
         md={6}
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
           padding: 4,
           paddingTop: 16,
           paddingBottom: 16,
@@ -57,12 +73,12 @@ const ContactForm: React.FC = () => {
         <Reveal>
           <Typography
             variant="h5"
-            style={{ textAlign: "center", fontSize: "20px" }}
+            style={{ textAlign: 'center', fontSize: '20px' }}
             className="px-16 text-brand-cream xl:px-32"
             gutterBottom
           >
-            Feel free to share your thoughts or questions with us and we&apos;ll get
-            back to you within 48hrs.
+            Feel free to share your thoughts or questions with us and we&apos;ll
+            get back to you within 48hrs.
           </Typography>
         </Reveal>
       </Grid>
@@ -71,16 +87,16 @@ const ContactForm: React.FC = () => {
         xs={12}
         md={6}
         sx={{
-          padding: { xs: "50px", sm: "0 32px", lg: "0 64px", xl: "0 132px" },
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: { xs: "flex-start", sm: "center" },
-          alignItems: "center",
+          padding: { xs: '20px', sm: '0 20px', lg: '0 40px', xl: '0 60px' },
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: { xs: 'flex-start', sm: 'center' },
+          alignItems: 'center',
         }}
         className="bg-brand-green"
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="w-full max-w-[700px]">
           <input
             type="hidden"
             name="access_key"
@@ -89,68 +105,99 @@ const ContactForm: React.FC = () => {
           <h3 className="text-center font-Archivo text-3xl text-brand-logo lg:text-5xl">
             Contact Form
           </h3>
-          <TextField
-            fullWidth
-            label="Full Name"
+          <input
+            type="text"
             name="name"
-            variant="outlined"
-            margin="normal"
+            placeholder="Full Name*"
             required
+            className={inputClass}
           />
-          <TextField
-            fullWidth
-            label="Business Name"
-            name="name"
-            variant="outlined"
-            margin="normal"
+          <input
+            type="text"
+            name="business"
+            placeholder="Business Name*"
             required
+            className={inputClass}
           />
-          <TextField
-            fullWidth
-            label="Email Address"
-            name="email"
+          <input
             type="email"
-            variant="outlined"
-            margin="normal"
+            name="email"
+            placeholder="Email Address*"
             required
+            className={inputClass}
           />
-          <TextField
-            fullWidth
-            label="Phone Number"
+          <input
+            type="tel"
             name="phone"
-            variant="outlined"
-            margin="normal"
+            placeholder="Phone Number*"
             required
+            className={inputClass}
           />
-          <TextField
-            fullWidth
-            label="Your Message"
+          <input
+            type="text"
+            name="url"
+            placeholder="Business URL*"
+            required
+            className={inputClass}
+          />
+          <textarea
             name="message"
-            multiline
+            placeholder="Your Message*"
             rows={5}
-            variant="outlined"
-            margin="normal"
             required
+            className={inputClass2}
           />
-          <div style={{ display: "none" }}>
+          <div style={{ display: 'none' }}>
             <input type="checkbox" name="botcheck" />
           </div>
-          <button
-            type="submit"
-            className="mt-4 rounded-full border-[1px] border-brand-green-dark  px-4 py-2 font-Archivo text-brand-cream hover:bg-brand-green-dark hover:text-brand-logo"
-          >
-            Send Message
-          </button>
+          <Button
+            title="Send Message"
+            textColor="brand-green-dark"
+            textHoverColor="brand-logo"
+            backgroundColor="brand-green-light"
+            hoverBG="brand-green-dark"
+          />
         </form>
-        <p id="result" style={{ textAlign: "center" }}></p>
-        {/* Display a pop-up message if the form is successfully submitted */}
-        {isSubmitted && (
-          <div className="popup">
-            <Typography variant="h5">
-              Thanks for getting in touch! We&apos;ll be in touch shortly.
-            </Typography>
-          </div>
-        )}
+
+        <Modal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+          aria-labelledby="modal-title"
+          aria-describedby="modal-description"
+        >
+          <Box className="fixed inset-0 flex items-center justify-center bg-brand-cream bg-opacity-50">
+            <div className="mx-auto max-w-sm rounded-lg bg-brand-cream p-12">
+              <h2 className="mb-4 text-center font-Archivo text-2xl text-brand-green">
+                SUCCESS
+              </h2>
+              <Typography
+                id="modal-title"
+                variant="h6"
+                component="h2"
+                className="text-left text-brand-green-dark"
+              >
+                Thanks for your message!
+              </Typography>
+              <Typography
+                id="modal-title"
+                variant="h6"
+                sx={{ mt: 1 }}
+                className="text-left text-brand-green-dark"
+              >
+                We&apos;ll be in touch shortly.
+              </Typography>
+              <button
+                onClick={() => {
+                  setModalOpen(false);
+                  router.push('/home');
+                }}
+                className="mt-4 rounded-full bg-brand-green px-8 py-2 text-brand-cream hover:bg-brand-green-dark hover:text-brand-logo"
+              >
+                Close
+              </button>
+            </div>
+          </Box>
+        </Modal>
       </Grid>
     </Grid>
   );

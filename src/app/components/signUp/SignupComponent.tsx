@@ -5,7 +5,7 @@ import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 
 const SignupComponent: React.FC = () => {
-  const [step, setStep] = useState<number>(1);
+  const [step, setStep] = useState<number>(3);
 
   const renderStep = () => {
     switch(step) {

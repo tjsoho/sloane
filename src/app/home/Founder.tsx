@@ -38,7 +38,7 @@ His innovative approach and unwavering commitment to user satisfaction have made
           <img
             src="/images/founder.png"
             alt=""
-            className="h-[550px] object-cover lg:h-[100%] w-full"
+            className="h-[550px] object-cover lg:h-screen w-full"
           />
         </div>
       </div>

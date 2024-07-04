@@ -43,7 +43,7 @@ const Header = () => {
                 <Link href="/about" legacyBehavior><a className={linkClasses}>About</a></Link>
                 <Link href="/pricing" legacyBehavior><a className={linkClasses}>Pricing</a></Link>
                 <Link href="/login" legacyBehavior><a className={linkClasses}>Login</a></Link>
-                <Link href="/#FAQ" legacyBehavior><a className={linkClasses}>FAQ</a></Link> {/* Updated this line */}
+                <Link href="/FAQS" legacyBehavior><a className={linkClasses}>FAQS</a></Link> {/* Updated this line */}
                 <Link href="/contact" legacyBehavior><a className={linkClasses}>Contact</a></Link>
               </nav>
               <div className="lg:hidden">
