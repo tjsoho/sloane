@@ -42,7 +42,8 @@ const Header = () => {
               <nav className="hidden lg:flex space-x-8">
                 <Link href="/about" legacyBehavior><a className={linkClasses}>About</a></Link>
                 <Link href="/pricing" legacyBehavior><a className={linkClasses}>Pricing</a></Link>
-                <Link href="/login" legacyBehavior><a className={linkClasses}>Login</a></Link>
+                <Link href="https://app.sloane.biz/userform" legacyBehavior><a className={linkClasses}>Sign Up</a></Link>
+                <Link href="https://app.sloane.biz" legacyBehavior><a className={linkClasses}>Login</a></Link>
                 <Link href="/FAQS" legacyBehavior><a className={linkClasses}>FAQS</a></Link> {/* Updated this line */}
                 <Link href="/contact" legacyBehavior><a className={linkClasses}>Contact</a></Link>
               </nav>

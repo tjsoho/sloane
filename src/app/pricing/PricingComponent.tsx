@@ -1,14 +1,18 @@
-"use client";
-import Button from "../components/Button";
+'use client';
+import Button from '../components/Button';
 
 const Pricing = () => {
+  function handleClick(): void {
+    console.log('Button clicked!');
+  }
+
   return (
     <div className="w-full ">
       <div className="mx-auto flex  flex-col  lg:flex-row ">
         {/* --------------------------------Left Col-------------------------------- */}
         <div className="flex w-full flex-col lg:w-3/5">
           {/* ----------top row---------- */}
-          <div className="h-[30%] w-full bg-brand-green px-4 py-20 flex flex-col justify-center items-center">
+          <div className="flex h-[30%] w-full flex-col items-center justify-center bg-brand-green px-4 py-20">
             <h1 className="text-left text-[38px] leading-tight text-brand-logo lg:text-[78px]">
               Feel The Freedom
             </h1>
@@ -17,9 +21,9 @@ const Pricing = () => {
             </p>
           </div>
           {/* ----------bottom row---------- */}
-          <div className="h-[70%] w-full bg-brand-cream p-8 lg:px-40 2xl:px-64 2xl:py-24 flex justify-center items-center">
+          <div className="flex h-[70%] w-full items-center justify-center bg-brand-cream p-8 lg:px-40 2xl:px-64 2xl:py-24">
             {/* ---------Pricing card ------------ */}
-            <div className="flex p-2  flex-col items-center justify-center rounded-[50px] border-2 border-brand-green py-8 lg:p-14 text-brand-green">
+            <div className="flex flex-col  items-center justify-center rounded-[50px] border-2 border-brand-green p-2 py-8 text-brand-green lg:p-14">
               <h3 className="text-4xl lg:text-5xl">
                 $79
                 <span className="font-Quicksand text-lg">
@@ -33,6 +37,8 @@ const Pricing = () => {
                 backgroundColor="brand-green"
                 hoverBG="brand-green-dark"
                 className="my-4"
+                onClick={handleClick}
+                path="https://app.sloane.biz/userform"
               />
               <ul className="ml-6 list-disc">
                 <li>Free Cancellation Anytime</li>
@@ -43,6 +49,7 @@ const Pricing = () => {
                 <li>Built-in Smart Prompts</li>
                 <li>Unlimited Support</li>
                 <li>Unlimited Updates to Business voice, brand & Goals</li>
+                <li>Data secured on an internal database</li>
               </ul>
             </div>
           </div>
@@ -53,7 +60,7 @@ const Pricing = () => {
             <img
               src="/images/4.jpg"
               alt=""
-              className="w-full h-[100%] object-cover"
+              className="h-[100%] w-full object-cover"
             />
           </div>
         </div>
