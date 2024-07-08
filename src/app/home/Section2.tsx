@@ -32,14 +32,13 @@ const Section2 = () => {
           <div className="text-brand-green flex w-full flex-col items-start justify-center lg:w-1/2">
             <SlideReveal>
               <h2 className="text-left text-[32px] leading-tight lg:text-[44px]">
-                Your Business&apos; <br></br>Best Kept Secret
+              A Better Version of You. <br></br>Inside Your Business
               </h2>
+              {/* &apos; */}
             </SlideReveal>
             <SlideReveal>
               <p className="my-8 font-medium lg:w-3/4">
-                With Sloane, no task is too big or small. She&apos;s your go-to gal,
-                making business feel like a holiday – effortless and enjoyable.
-                From admin to content creation, Sloane&apos;s got you covered.
+              Sloane is your ultimate go-to-gal. A platform meticulously designed to reflect your unique voice, brand, and goals. Simplifying and enhancing all of your daily tasks in business.  <br></br><br></br>Whether it's email marketing, client communication, or planning new initiatives, Sloane handles it all with ease and precision, allowing you to be more productive and creative.
               </p>
             </SlideReveal>
             <SlideReveal>
@@ -51,7 +50,7 @@ const Section2 = () => {
                   backgroundColor="brand-green"
                   hoverBG="brand-green-dark"
                   onClick={handleClick}
-                  path="https://app.sloane.biz/userform"
+                  path="/pricing"
                 />
               </div>
             </SlideReveal>

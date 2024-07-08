@@ -8,7 +8,7 @@ interface Button2Props {
   backgroundColor: string;
   hoverBG: string;
   onClick: () => void;
-  path: string;
+  path?: string;
 }
 
 const Button2: React.FC<Button2Props> = ({

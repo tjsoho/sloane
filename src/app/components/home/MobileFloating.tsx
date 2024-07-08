@@ -63,7 +63,7 @@ const MobileFloating = () => {
               backgroundColor="brand-logo"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
           <motion.div
@@ -79,7 +79,7 @@ const MobileFloating = () => {
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
         </div>
@@ -98,7 +98,7 @@ const MobileFloating = () => {
               backgroundColor="brand-cream"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
           <motion.div
@@ -114,7 +114,7 @@ const MobileFloating = () => {
               backgroundColor="brand-logo"
               hoverBG="brand-green"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
         </div>
@@ -133,7 +133,7 @@ const MobileFloating = () => {
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
           <motion.div
@@ -149,7 +149,7 @@ const MobileFloating = () => {
               backgroundColor="brand-cream"
               hoverBG="brand-green"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
         </div>
@@ -183,7 +183,7 @@ const MobileFloating = () => {
               backgroundColor="brand-cream"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
         </div>
@@ -202,7 +202,7 @@ const MobileFloating = () => {
               backgroundColor="brand-logo"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
           <motion.div
@@ -218,7 +218,7 @@ const MobileFloating = () => {
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
         </div>
@@ -237,7 +237,7 @@ const MobileFloating = () => {
               backgroundColor="brand-cream"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
           <motion.div
@@ -253,7 +253,7 @@ const MobileFloating = () => {
               backgroundColor="brand-logo"
               hoverBG="brand-green"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
         </div>
@@ -272,7 +272,7 @@ const MobileFloating = () => {
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
           <motion.div
@@ -288,7 +288,7 @@ const MobileFloating = () => {
               backgroundColor="brand-cream"
               hoverBG="brand-green"
               onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              
             />
           </motion.div>
         </div>

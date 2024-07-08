@@ -12,8 +12,8 @@ const Pricing = () => {
         {/* --------------------------------Left Col-------------------------------- */}
         <div className="flex w-full flex-col lg:w-3/5">
           {/* ----------top row---------- */}
-          <div className="flex h-[30%] w-full flex-col items-center justify-center bg-brand-green px-4 py-20">
-            <h1 className="text-left text-[38px] leading-tight text-brand-logo lg:text-[78px]">
+          <div className="flex h-[30%] w-full flex-col items-center justify-center bg-brand-green px-4 py-32">
+            <h1 className="text-left text-[38px] leading-tight text-brand-logo lg:text-[78px] mt-4">
               Feel The Freedom
             </h1>
             <p className="text-brand-cream ">

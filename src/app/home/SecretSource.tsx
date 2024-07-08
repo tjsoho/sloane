@@ -66,7 +66,7 @@ const SecretSource = () => {
             backgroundColor="brand-green"
             hoverBG="brand-green-dark"
             onClick={handleClick}
-            path="https://app.sloane.biz/userform"
+            path="/pricing"
           />
         </div>
       </div>
