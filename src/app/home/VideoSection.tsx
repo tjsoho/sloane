@@ -1,12 +1,12 @@
-"use client";
-import { SlideReveal2 } from "../components/Animations/SlideReveal2";
-import { SlideReveal } from "../components/Animations/SlideReveal";
-import Button from "../components/Button";
-import { Reveal } from "../components/Animations/Reveal";
+'use client';
+import { SlideReveal2 } from '../components/Animations/SlideReveal2';
+import { SlideReveal } from '../components/Animations/SlideReveal';
+import Button from '../components/Button';
+import { Reveal } from '../components/Animations/Reveal';
 
 const VideoSection = () => {
   const handleClick = () => {
-    console.log("Button clicked!");
+    console.log('Button clicked!');
   };
 
   return (
@@ -19,7 +19,7 @@ const VideoSection = () => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/_-TDVrrfu_A"
+                src="https://www.youtube.com/embed/2xxJynNuRRw"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -48,7 +48,7 @@ const VideoSection = () => {
                 borderColor="brand-green"
                 hoverBG="brand-green-dark"
                 onClick={handleClick}
-                path="https://app.sloane.biz/userform"
+                path="/pricing"
               />
             </Reveal>
           </div>

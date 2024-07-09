@@ -8,7 +8,6 @@ interface Button2Props {
   backgroundColor: string;
   hoverBG: string;
   onClick: () => void;
-  path?: string;
 }
 
 const Button2: React.FC<Button2Props> = ({
@@ -18,7 +17,6 @@ const Button2: React.FC<Button2Props> = ({
   backgroundColor,
   hoverBG,
   onClick,
-  path,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -29,7 +27,7 @@ const Button2: React.FC<Button2Props> = ({
 
   return (
     <div
-      onClick={() => window.open(path, "_blank")}
+      onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={buttonStyle}

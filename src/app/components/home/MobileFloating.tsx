@@ -1,11 +1,15 @@
 "use client";
-import Button2 from "../Button2";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "../Animations/Reveal";
+import Button2 from "../Button2";
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
 const MobileFloating = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({ title: '', content: '' });
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,8 +24,13 @@ const MobileFloating = () => {
     };
   }, []);
 
-  const handleClick = () => {
-    console.log("Button clicked!");
+  const handleOpenModal = (title: string, content: string) => {
+    setModalContent({ title, content });
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
   };
 
   const randomScale = () => 0.8 + Math.random() * 0.1; // Random scale between 1 and 1.3
@@ -43,8 +52,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-cream"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              path="https://buy.stripe.com/bIY8yr3Lx5qw5CU001"
+              onClick={() => handleOpenModal("Your go-to for all how-to's", "Content for all how-to's")}
             />
           </motion.div>
         </div>
@@ -62,8 +70,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-logo"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Product Ideation", "Content for Product Ideation")}
             />
           </motion.div>
           <motion.div
@@ -78,8 +85,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Blog Ideas", "Content for Blog Ideas")}
             />
           </motion.div>
         </div>
@@ -97,8 +103,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-cream"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("SEO", "Content for SEO")}
             />
           </motion.div>
           <motion.div
@@ -113,8 +118,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-logo"
               hoverBG="brand-green"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Business Planning", "Content for Business Planning")}
             />
           </motion.div>
         </div>
@@ -132,8 +136,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Content Ideation", "Content for Content Ideation")}
             />
           </motion.div>
           <motion.div
@@ -148,8 +151,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-cream"
               hoverBG="brand-green"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Sales Funnels", "Content for Sales Funnels")}
             />
           </motion.div>
         </div>
@@ -182,8 +184,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-cream"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Client Communication", "Content for Client Communication")}
             />
           </motion.div>
         </div>
@@ -201,8 +202,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-logo"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Training & Onboarding", "Content for Training & Onboarding")}
             />
           </motion.div>
           <motion.div
@@ -217,8 +217,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Website Copy", "Content for Website Copy")}
             />
           </motion.div>
         </div>
@@ -236,8 +235,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-cream"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Sales Funnels", "Content for Sales Funnels")}
             />
           </motion.div>
           <motion.div
@@ -252,8 +250,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-logo"
               hoverBG="brand-green"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Socials Strategy", "Content for Socials Strategy")}
             />
           </motion.div>
         </div>
@@ -271,8 +268,7 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("New Offerings", "Content for New Offerings")}
             />
           </motion.div>
           <motion.div
@@ -287,12 +283,23 @@ const MobileFloating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-cream"
               hoverBG="brand-green"
-              onClick={handleClick}
-              
+              onClick={() => handleOpenModal("Course Creation", "Content for Course Creation")}
             />
           </motion.div>
         </div>
       </div>
+      <Modal open={modalOpen} onClose={handleCloseModal}>
+        <Box className="bg-white p-4 rounded-lg shadow-lg max-w-md mx-auto mt-32">
+          <h2 className="text-2xl font-bold mb-4">{modalContent.title}</h2>
+          <p>{modalContent.content}</p>
+          <button
+            onClick={handleCloseModal}
+            className="mt-4 bg-brand-green text-brand-cream py-2 px-4 rounded-full hover:bg-brand-green-dark transition duration-300"
+          >
+            Close
+          </button>
+        </Box>
+      </Modal>
     </div>
   );
 };

@@ -1,6 +1,14 @@
-import { PersonAddAlt1 } from "@mui/icons-material";
-import Link from "next/link";
-import Home from "./home/page";
+import { PersonAddAlt1 } from '@mui/icons-material';
+import Link from 'next/link';
+import Home from './home/page';
+
+export const metadata = {
+  title: 'Sloane Home Page',
+  description: 'Home page of the website',
+  openGraph: {
+    images: [],
+  },
+};
 
 export default function HomePage() {
   return (

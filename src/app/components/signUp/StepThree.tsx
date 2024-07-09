@@ -1,9 +1,6 @@
-'use client'
+'use client';
 import React from 'react';
 import { InlineWidget } from 'react-calendly';
-
-
-
 
 const SignupComponent: React.FC = () => {
   return (

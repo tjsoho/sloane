@@ -1,8 +1,7 @@
 // src/app/layout.tsx
-import "~/styles/globals.css";
-import Header from "./components/core/header";
-import Footer from "./components/core/footer";
-
+import '~/styles/globals.css';
+import Header from './components/core/header';
+import Footer from './components/core/footer';
 
 export const metadata = {
   title: "Sloane",
@@ -10,7 +9,11 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="h-full">
       <head>
@@ -29,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="flex flex-col min-h-screen font-sans">
+      <body className="flex min-h-screen flex-col font-sans">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

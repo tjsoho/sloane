@@ -22,23 +22,24 @@ const Floating = () => {
   const randomScale = () => 0.8 + Math.random() * 0.3; // Random scale between 0.8 and 1.3
 
   const buttonsData = [
-    { title: "Your go-to for all how-to's", content: 'Content for all how-to\'s' },
-    { title: 'Product Ideation', content: 'Content for Product Ideation' },
-    { title: 'Business Planning', content: 'Content for Business Planning' },
-    { title: 'Client Communications', content: 'Content for Client Communications' },
-    { title: 'Marketing Strategies', content: 'Content for Marketing Strategies' },
-    { title: 'Blog Ideas', content: 'Content for Blog Ideas' },
-    { title: 'SEO', content: 'Content for SEO' },
-    { title: 'Social Media Captions', content: 'Content for Social Media Captions' },
-    { title: 'Email Marketing', content: 'Content for Email Marketing' },
-    { title: 'Training & Onboarding', content: 'Content for Training & Onboarding' },
-    { title: 'Website Copy', content: 'Content for Website Copy' },
-    { title: 'Sales Funnels', content: 'Content for Sales Funnels' },
-    { title: 'Efficient Workflows', content: 'Content for Efficient Workflows' },
-    { title: 'Social Media Strategy', content: 'Content for Social Media Strategy' },
-    { title: 'New Offerings', content: 'Content for New Offerings' },
-    { title: 'Course Creation', content: 'Content for Course Creation' },
+    { title: "Your go-to for all how-to's", content: 'Sloane provides step-by-step guidance for every aspect of your business. From tackling tough client situations to implementing new strategies, you’ll have expert advice at your fingertips. Say goodbye to second-guessing.' },
+    { title: 'Product Ideation', content: 'Generate innovative product ideas tailored to your brand and market needs. Sloane helps you brainstorm, refine, and develop new offerings effortlessly. Stay ahead of the competition with fresh, creative concepts tailored specifically for you.' },
+    { title: 'Business Planning', content: 'Develop comprehensive business plans with ease. Sloane helps you outline goals, strategies, and action items, ensuring a clear path to success. Spend less time planning and more time growing.' },
+    { title: 'Client Communications', content: 'Handle all client interactions with professionalism and ease. Sloane crafts emails, messages, and responses tailored to your brand’s tone. Ensure clear, effective, and personable communication every time and resolve any sticky situations with ease.' },
+    { title: 'Marketing Strategies', content: 'Sloane crafts tailored marketing strategies that align perfectly with your brand and goals. From campaign planning to execution, you’ll get actionable insights to boost your reach and engagement. Elevate your marketing efforts effortlessly and see tangible results.' },
+    { title: 'Blog Ideas', content: 'Sloane crafts compelling blog content that resonates with your audience and boosts engagement. No more brainstorming or writing—just publish and watch your readership grow. Let Sloane handle the creation, so you can focus on what\'s important to you.' },
+    { title: 'SEO', content: 'Enhance your online presence with targeted SEO strategies. Sloane optimises your content, ensuring better search engine rankings and increased visibility. Drive more organic traffic to your site seamlessly.' },
+    { title: 'Social Media Reels', content: 'Tap into Sloane’s expertise to create viral social media reels with proven strategies. Benefit from hooks, scripts, and templates that leverage the latest algorithm insights for maximum engagement. Let Sloane guide you step-by-step to ensure every reel captures attention and drives your brand’s growth.' },
+    { title: 'Email Marketing', content: 'Enhance your email campaigns with personalised, high-converting copy. Sloane crafts engaging content tailored to your audience, ensuring each message resonates deeply. Achieve higher open rates and conversions effortlessly.' },
+    { title: 'Training & Onboarding', content: 'Simplify the onboarding process with structured training materials and plans. Sloane creates comprehensive guides and schedules so new team members ramp up quickly. Promote a smooth and efficient integration into your business.' },
+    { title: 'Website Copy', content: 'Create compelling website content that captures your brand’s essence. Sloane crafts engaging, clear, and persuasive copy that truly speaks to your audience. Plus, benefit from Sloane\'s guidance with proven templates to convert visitors into loyal customers effortlessly.' },
+    { title: 'Sales Funnels', content: 'Optimize your sales process from start to finish. Sloane designs tailored sales funnels that convert leads into loyal customers. Streamline your sales strategy and boost revenue effortlessly.' },
+    { title: 'Efficient Workflows', content: 'Streamline your business tasks with guidance from the Sloane chatbot, acting as your personal mentor. Receive step-by-step assistance to achieve your desired outcomes efficiently. Let Sloane transform workflow, making business operations smoother and more enjoyable.' },
+    { title: 'Social Media Strategy', content: 'Enhance your social media game with a clear, effective strategy. Sloane provides tailored content plans, engagement tactics, and posting schedules. Grow your online presence and community with ease.' },
+    { title: 'New Offerings', content: 'Develop and launch new services or products seamlessly. Sloane assists with everything from ideation to implementation, ensuring alignment with your brand and audience demands. Innovate without the stress.' },
+    { title: 'Course Creation', content: 'Bring educational products to life quickly and effectively. Sloane helps you design, structure, and market your courses, tailored to your audience\'s needs. Deliver valuable content and grow your expertise with ease.' },
   ];
+  
 
   return (
     <div className="bg-brand-green flex h-full w-full py-8 lg:py-32">
@@ -94,12 +95,12 @@ const Floating = () => {
             className="mx-32"
           >
             <Button2
-              title="Social Media Captions"
+              title="Social Media Reels"
               textColor="brand-green-dark"
               textHoverColor="brand-logo"
               backgroundColor="brand-logo"
               hoverBG="brand-green-dark"
-              onClick={() => handleOpenModal("Social Media Captions", "Content for Social Media Captions")}
+              onClick={() => handleOpenModal("Social Media Reels", "Tap into Sloane’s expertise to create viral social media reels with proven strategies. Benefit from hooks, scripts, and templates that leverage the latest algorithm insights for maximum engagement. Let Sloane guide you step-by-step to ensure every reel captures attention and drives your brand’s growth.")}
             />
           </motion.div>
           <div className="flex flex-col items-center justify-center">
@@ -126,7 +127,7 @@ const Floating = () => {
               textHoverColor="brand-logo"
               backgroundColor="brand-logo"
               hoverBG="brand-green-dark"
-              onClick={() => handleOpenModal("Email Marketing", "Content for Email Marketing")}
+              onClick={() => handleOpenModal("Email Marketing", "Enhance your email campaigns with personalised, high-converting copy. Sloane crafts engaging content tailored to your audience, ensuring each message resonates deeply. Achieve higher open rates and conversions effortlessly.")}
             />
           </motion.div>
         </div>
@@ -195,13 +196,13 @@ const Floating = () => {
         </div>
       </div>
       <Modal open={modalOpen} onClose={handleCloseModal}>
-        <Box className="bg-white p-4 rounded-lg shadow-lg max-w-md mx-auto mt-32">
-          <h2 className="text-2xl font-bold mb-4">{modalContent.title}</h2>
+        <div className="bg-brand-cream p-8 rounded-2xl shadow-lg max-w-md mx-auto mt-32">
+          <h2 className="text-2xl font-bold mb-4 text-brand-green">{modalContent.title}</h2>
           <p>{modalContent.content}</p>
-          <button onClick={handleCloseModal} className="mt-4 bg-brand-green text-brand-cream py-2 px-4 rounded-full hover:bg-brand-green-dark transition duration-300">
+          <button onClick={handleCloseModal} className="mt-4 hover:bg-brand-green text-brand-green border-2 border-brand-green py-2 px-4 rounded-full transition duration-300 hover:text-brand-cream font-Archivo">
             Close
           </button>
-        </Box>
+        </div>
       </Modal>
     </div>
   );
