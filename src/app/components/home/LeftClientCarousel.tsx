@@ -14,7 +14,7 @@ const leftCards = [
     innerBgColor: "brand-cream",
   },
   {
-    imageSrc: "/images/Bec.png",
+    imageSrc: "/images/client9.png",
     jobTitle: "Finance Coach",
     jobTitleColor: "brand-green",
     name: "Rebecca",
@@ -23,7 +23,7 @@ const leftCards = [
     innerBgColor: "brand-green-light",
   },
   {
-    imageSrc: "/images/Danny.png",
+    imageSrc: "/images/client2.png",
     jobTitle: "Music Producer",
     jobTitleColor: "brand-orange",
     name: "Danny",
@@ -41,7 +41,7 @@ const leftCards = [
     innerBgColor: "brand-cream",
   },
   {
-    imageSrc: "/images/Shani.png",
+    imageSrc: "/images/client3.png",
     jobTitle: "Business Coach",
     jobTitleColor: "brand-yellow",
     name: "Shani",

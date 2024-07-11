@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const testimonials = [
   {
-    image: '/images/rach.png',
+    image: '/images/client1.png',
     name: 'Rachel',
     company: 'Chevell Photography',
     description:
@@ -20,21 +20,21 @@ const testimonials = [
       'This is actually insane! Where have you been all my life? I love Sloane.',
   },
   {
-    image: '/images/dante.png',
+    image: '/images/client5.png',
     name: 'Dante',
     company: 'Dante Amato',
     description:
       "Sloane has given me something I've always wanted in my business. Another me!",
   },
   {
-    image: '/images/danny.png',
+    image: '/images/client2.png',
     name: 'Danny',
     company: 'Danny Nico Productions',
     description:
       "I no longer procrastinate and feel like I don't know what Im doing to market my business. I have a plan and I'm sticking to it. I actually look forward to doing email marketing now.",
   },
   {
-    image: '/images/tian.png',
+    image: '/images/client8.png',
     name: 'Tian',
     company: ' Sage Events',
     description:

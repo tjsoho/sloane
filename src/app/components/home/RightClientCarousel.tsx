@@ -6,7 +6,7 @@ import ClientCard from "./ClientCard";
 const rightCards = [
  
   {
-    imageSrc: "/images/Rosie.png",
+    imageSrc: "/images/client4.png",
     jobTitle: "Photographers",
     jobTitleColor: "brand-orange",
     name: "Rosie",
@@ -15,7 +15,7 @@ const rightCards = [
     innerBgColor: "brand-cream",
   },
   {
-    imageSrc: "/images/Dante.png",
+    imageSrc: "/images/client5.png",
     jobTitle: "Expansion Mentor",
     jobTitleColor: "brand-green-light",
     name: "Dante",
@@ -24,7 +24,7 @@ const rightCards = [
     innerBgColor: "brand-logo",
   },
   {
-    imageSrc: "/images/Kelly.png",
+    imageSrc: "/images/client6.png",
     jobTitle: "Chiropractor",
     jobTitleColor: "brand-orange",
     name: "Kelly Bean",
@@ -33,7 +33,7 @@ const rightCards = [
     innerBgColor: "brand-orange-light",
   },
   {
-    imageSrc: "/images/Scotty.png",
+    imageSrc: "/images/client7.png",
     jobTitle: "Content Producer",
     jobTitleColor: "brand-green",
     name: "Scott Hendo",
@@ -42,7 +42,7 @@ const rightCards = [
     innerBgColor: "brand-cream",
   },
   {
-    imageSrc: "/images/Tian.png",
+    imageSrc: "/images/client8.png",
     jobTitle: "Catering",
     jobTitleColor: "brand-yellow",
     name: "Tian Evans",
