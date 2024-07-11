@@ -141,8 +141,8 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[0]?.title) || '',
+                  (buttonsData && buttonsData[0]?.content) || ''
                 )
               }
             />
@@ -168,8 +168,8 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[1]?.title) || '',
+                  (buttonsData && buttonsData[1]?.content) || ''
                 )
               }
             />
@@ -192,8 +192,8 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[5]?.title) || '',
+                  (buttonsData && buttonsData[5]?.content) || ''
                 )
               }
             />
@@ -219,8 +219,8 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[6]?.title) || '',
+                  (buttonsData && buttonsData[6]?.content) || ''
                 )
               }
             />
@@ -243,8 +243,8 @@ const MobileFloating = () => {
               hoverBG="brand-green"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[2]?.title) || '',
+                  (buttonsData && buttonsData[2]?.content) || ''
                 )
               }
             />
@@ -263,15 +263,15 @@ const MobileFloating = () => {
             className="mx-2"
           >
             <Button2
-              title="Content Ideation"
+              title="Social Media Reels"
               textColor="brand-green-dark"
               textHoverColor="brand-logo"
               backgroundColor="brand-green-light"
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[7]?.title) || '',
+                  (buttonsData && buttonsData[7]?.content) || ''
                 )
               }
             />
@@ -294,8 +294,8 @@ const MobileFloating = () => {
               hoverBG="brand-green"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[11]?.title) || '',
+                  (buttonsData && buttonsData[11]?.content) || ''
                 )
               }
             />
@@ -337,8 +337,8 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[3]?.title) || '',
+                  (buttonsData && buttonsData[3]?.content) || ''
                 )
               }
             />
@@ -364,8 +364,8 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[9]?.title) || '',
+                  (buttonsData && buttonsData[9]?.content) || ''
                 )
               }
             />
@@ -388,8 +388,8 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[10]?.title) || '',
+                  (buttonsData && buttonsData[10]?.content) || ''
                 )
               }
             />
@@ -415,8 +415,8 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[11]?.title) || '',
+                  (buttonsData && buttonsData[11]?.content) || ''
                 )
               }
             />
@@ -439,8 +439,8 @@ const MobileFloating = () => {
               hoverBG="brand-green"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[13]?.title) || '',
+                  (buttonsData && buttonsData[13]?.content) || ''
                 )
               }
             />
@@ -466,7 +466,7 @@ const MobileFloating = () => {
               hoverBG="brand-green-dark"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
+                  (buttonsData && buttonsData[14]?.title) || '',
                   (buttonsData && buttonsData[14]?.content) || ''
                 )
               }
@@ -490,15 +490,15 @@ const MobileFloating = () => {
               hoverBG="brand-green"
               onClick={() =>
                 handleOpenModal(
-                  'Course Creation',
-                  (buttonsData && buttonsData[14]?.content) || ''
+                  (buttonsData && buttonsData[15]?.title) || '',
+                  (buttonsData && buttonsData[15]?.content) || ''
                 )
               }
             />
           </motion.div>
         </div>
       </div>
-      <Modal open={modalOpen} onClose={handleCloseModal} className="p-4">
+      <Modal open={modalOpen} onClose={handleCloseModal} className="p-4 border-brand-green border-2">
         <div className="mx-auto mt-16 max-w-md rounded-2xl bg-brand-cream p-8 shadow-lg">
           <h2 className="mb-4 text-2xl font-bold text-brand-green">
             {modalContent.title}
