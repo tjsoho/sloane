@@ -5,7 +5,7 @@ import ClientCard from "./ClientCard";
 
 const leftCards = [
   {
-    imageSrc: "/images/Rach.png",
+    imageSrc: "/images/client1.png",
     jobTitle: "Photographer",
     jobTitleColor: "brand-green",
     name: "Rachel Chevell",
