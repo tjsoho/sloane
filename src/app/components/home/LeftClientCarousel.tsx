@@ -5,16 +5,16 @@ import ClientCard from "./ClientCard";
 
 const leftCards = [
   {
-    imageSrc: "/images/rach.png",
+    imageSrc: "/images/Rach.png",
     jobTitle: "Photographer",
     jobTitleColor: "brand-green",
-    name: "Dana Tsibil",
+    name: "Rachel Chevell",
     businessName: "Chevell Photography",
     bgColor: "brand-green-light",
     innerBgColor: "brand-cream",
   },
   {
-    imageSrc: "/images/bec.png",
+    imageSrc: "/images/Bec.png",
     jobTitle: "Finance Coach",
     jobTitleColor: "brand-green",
     name: "Rebecca",
@@ -23,7 +23,7 @@ const leftCards = [
     innerBgColor: "brand-green-light",
   },
   {
-    imageSrc: "/images/danny.png",
+    imageSrc: "/images/Danny.png",
     jobTitle: "Music Producer",
     jobTitleColor: "brand-orange",
     name: "Danny",
@@ -32,7 +32,7 @@ const leftCards = [
     innerBgColor: "brand-orange-light",
   },
   {
-    imageSrc: "/images/tahls.png",
+    imageSrc: "/images/tahls2.png",
     jobTitle: "Personal Coach",
     jobTitleColor: "brand-green",
     name: "Tahlia",
@@ -41,7 +41,7 @@ const leftCards = [
     innerBgColor: "brand-cream",
   },
   {
-    imageSrc: "/images/shani.png",
+    imageSrc: "/images/Shani.png",
     jobTitle: "Business Coach",
     jobTitleColor: "brand-yellow",
     name: "Shani",
