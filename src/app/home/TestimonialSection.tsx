@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const testimonials = [
   {
-    image: '/images/client1.png',
+    image: '/images/client11.png',
     name: 'Rachel',
     company: 'Chevell Photography',
     description:

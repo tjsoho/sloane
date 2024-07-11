@@ -24,7 +24,7 @@ const rightCards = [
     innerBgColor: "brand-logo",
   },
   {
-    imageSrc: "/images/client6.png",
+    imageSrc: "/images/client66.png",
     jobTitle: "Chiropractor",
     jobTitleColor: "brand-orange",
     name: "Kelly Bean",

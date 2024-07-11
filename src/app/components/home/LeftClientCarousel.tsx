@@ -5,7 +5,7 @@ import ClientCard from "./ClientCard";
 
 const leftCards = [
   {
-    imageSrc: "/images/client1.png",
+    imageSrc: "/images/client11.png",
     jobTitle: "Photographer",
     jobTitleColor: "brand-green",
     name: "Rachel Chevell",
@@ -14,7 +14,16 @@ const leftCards = [
     innerBgColor: "brand-cream",
   },
   {
-    imageSrc: "/images/client9.png",
+    imageSrc: "/images/client99.png",
+    jobTitle: "Consultant",
+    jobTitleColor: "brand-yellow",
+    name: "Sean",
+    businessName: "Kinektion",
+    bgColor: "brand-orange",
+    innerBgColor: "brand-orange-light",
+  },
+  {
+    imageSrc: "/images/bec.png",
     jobTitle: "Finance Coach",
     jobTitleColor: "brand-green",
     name: "Rebecca",

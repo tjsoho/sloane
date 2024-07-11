@@ -5,7 +5,7 @@ import ClientCard from './ClientCard';
 
 const cards = [
   {
-    imageSrc: '/images/client1.png',
+    imageSrc: '/images/client11.png',
     jobTitle: 'Photographer',
     jobTitleColor: 'brand-green',
     name: 'Dana Tsibil',
@@ -23,7 +23,7 @@ const cards = [
     innerBgColor: 'brand-cream',
   },
   {
-    imageSrc: '/images/client9.png',
+    imageSrc: '/images/bec.png',
     jobTitle: 'Finance Coach',
     jobTitleColor: 'brand-green',
     name: 'Rebecca',
@@ -33,7 +33,7 @@ const cards = [
   },
 
   {
-    imageSrc: '/images/client6.png',
+    imageSrc: '/images/client66.png',
     jobTitle: 'Chiropractor',
     jobTitleColor: 'brand-orange',
     name: 'Kelly Bean',
