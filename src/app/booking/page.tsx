@@ -42,6 +42,11 @@ const SignupComponent: React.FC = () => {
           >
             3
           </div>
+          <div
+            className={`'bg-brand-logo text-brand-green-dark bg-brand-cream opacity-30 flex  h-8 w-8 items-center justify-center rounded-full`}
+          >
+            4
+          </div>
         </div>
 
         <div className="h-full w-full  lg:py-8 ">
