@@ -43,7 +43,7 @@ const Pricing = () => {
               <ul className="ml-6 list-disc">
                 <li>Free Cancellation Anytime</li>
                 <li>Tailored Set Up with a Zoom Call</li>
-                <li>1 Business</li>
+                <li>1 Business/1 User</li>
                 <li>10 Business Hubs with Built-in Prompts</li>
                 <li>Built-in Workflows</li>
                 <li>Built-in Smart Prompts</li>
