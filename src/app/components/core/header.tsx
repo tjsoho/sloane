@@ -15,7 +15,7 @@ const Header = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 3000); // 3 seconds
+    }, 2000); // 3 seconds
 
     return () => clearTimeout(timer);
   }, []);

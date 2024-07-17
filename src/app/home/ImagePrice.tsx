@@ -25,11 +25,13 @@ const ImagePrice = () => {
           <div>
             <Reveal>
               <div className='flex flex-col justify-center items-center text-center gap-6'>
+                <h3 className="text-center text-[32px] leading-tight lg:text-[44px] ">
+                  What Makes Sloane Unique?
+                </h3>
                 <p className='text-[22px] md:text-[23px]'>
-                  Experience seamless integrations, <br></br>built-in prompts, and
-                  complete tasks 70% faster.
+                Unlike other platforms, Sloane is a deeply personalised tool curated after a deep dive with one of our specialist. <br></br><br></br>With over 10 hubs offering expert guidance 24/7, and other features such as built-in Smart Prompts, you'll never have to learn or purchase prompts online again. <br></br><br></br>It's like having a team of professionals at your fingertips—all for just $79 AUD per month.
                 </p>
-                <h3 className="text-4xl lg:text-5xl">
+                <h3 className="text-4xl lg:text-5xl mt-8">
                   $79<span className="font-Quicksand text-lg">/mo</span>
                 </h3>
               </div>

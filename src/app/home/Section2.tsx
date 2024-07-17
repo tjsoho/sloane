@@ -32,13 +32,13 @@ const Section2 = () => {
           <div className="text-brand-green flex w-full flex-col items-start justify-center lg:w-1/2">
             <SlideReveal>
               <h2 className="text-left text-[32px] leading-tight lg:text-[44px]">
-              A Better Version of You. <br></br>Inside Your Business
+              The Business Tool <br></br>You’ll Reach for Every Day. <br></br>Uniquely Tailored to You.
               </h2>
               {/* &apos; */}
             </SlideReveal>
             <SlideReveal>
               <p className="my-8 font-medium lg:w-3/4">
-              Sloane is your ultimate go-to-gal. A meticulously designed Ai platform that reflects your unique voice, brand, and goals. Simplifying and enhancing all of your daily tasks in business.  <br></br><br></br>Whether it's email marketing, client communication, or planning new initiatives, Sloane handles it all with ease and precision, allowing you to be more productive and creative.
+              Sloane is a meticulously designed Ai platform tailored to your unique brand. Helping creatives, solo and small business owners enhance marketing, streamline operations, and save time. Simplify every business task so you can focus on growing your business and doing more of what you love most. 
               </p>
             </SlideReveal>
             <SlideReveal>

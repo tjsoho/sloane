@@ -1,13 +1,14 @@
-'use client'
+'use client';
 import React from 'react';
 import { InlineWidget } from 'react-calendly';
-
-
-
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import Person2Icon from '@mui/icons-material/Person2';
+import PaidIcon from '@mui/icons-material/Paid';
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 const SignupComponent: React.FC = () => {
   return (
-    <div className="flex h-full lg:h-screen w-full flex-col bg-brand-green lg:flex-row ">
+    <div className="flex h-full w-full flex-col bg-brand-green lg:h-screen lg:flex-row ">
       {/* left col half width with image  */}
       <div className="hidden h-screen w-1/2 bg-brand-green lg:flex">
         <div className="h-full w-3/5">
@@ -28,22 +29,25 @@ const SignupComponent: React.FC = () => {
       <div className="flex h-full w-full flex-col items-center justify-center bg-brand-green pt-32 lg:w-1/2">
         <div className="mb-8 flex w-full justify-center gap-12 font-Archivo lg:gap-16">
           <div
-            className={`'bg-brand-logo text-brand-green-dark bg-brand-cream opacity-30 flex  h-8 w-8 items-center justify-center rounded-full`}
+            className={`'bg-brand-logo flex h-8 w-8 items-center  justify-center rounded-full bg-brand-cream text-brand-green-dark opacity-30`}
           >
             1
           </div>
+
           <div
-            className={`'bg-brand-logo text-brand-green-dark bg-brand-cream opacity-30 flex  h-8 w-8 items-center justify-center rounded-full`}
+            className={`'bg-brand-logo flex h-8 w-8 items-center  justify-center rounded-full bg-brand-cream text-brand-green-dark opacity-30`}
           >
             2
           </div>
+
           <div
-            className={`'bg-brand-logo text-brand-green-dark bg-brand-logo flex  h-8 w-8 items-center justify-center rounded-full`}
+            className={`'bg-brand-logo flex h-8 w-8  items-center justify-center rounded-full bg-brand-logo text-brand-green-dark`}
           >
             3
           </div>
+
           <div
-            className={`'bg-brand-logo text-brand-green-dark bg-brand-cream opacity-30 flex  h-8 w-8 items-center justify-center rounded-full`}
+            className={`'bg-brand-logo flex h-8 w-8 items-center  justify-center rounded-full bg-brand-cream text-brand-green-dark opacity-30`}
           >
             4
           </div>
@@ -51,19 +55,19 @@ const SignupComponent: React.FC = () => {
 
         <div className="h-full w-full  lg:py-8 ">
           <div className="">
-            <h2 className="mb-4 text-center text-3xl lg:text-4xl font-bold text-brand-logo">
+            <h2 className="mb-4 text-center text-3xl font-bold text-brand-logo lg:text-4xl">
               Book Your Business Deep-Dive
             </h2>
-            <p className="mb-4 text-center px-4 text-brand-cream">
-            This is where we delve into your business to tailor Sloane precisely to your brand, voice, and goals.
+            <p className="mb-4 px-4 text-center text-brand-cream">
+              This is where we delve into your business to tailor Sloane
+              precisely to your brand, voice, and goals.
             </p>
-            <InlineWidget
-              url="https://calendly.com/sloane-bookings/sloane-business-interview"
-              styles={{
-                
-                padding: '0 10px',
-              }}
-            />
+            <div className="calendly-widget">
+              <InlineWidget
+                url="https://calendly.com/sloane-bookings/sloane-business-interview"
+                styles={{ padding: '0 10px' }}
+              />
+            </div>
           </div>
         </div>
       </div>

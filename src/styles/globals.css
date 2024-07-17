@@ -187,24 +187,13 @@ button.next:hover {
   
 }
 
-.calendly-container iframe {
-  border: 0;
-  overflow: hidden;
+
+
+.calendly-inline-widget::-webkit-scrollbar {
+  width: 2px; /* Thinner scrollbar */
 }
 
-.calendly-container .calendly-header {
-  display: none; /* Hide the header */
-}
-
-/* Remove scrollbar */
-.calendly-container ::-webkit-scrollbar {
-  display: none;
-}
-.calendly-container iframe {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.calendly .simplebar-mask{
-  display: none;
+.calendly-inline-widget::-webkit-scrollbar-thumb {
+  background-color: lightblue; /* Handle colour */
+  border-radius: 8px; /* Rounded corners for the handle */
 }
