@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Home from './home/page';
 
 export const metadata = {
-  title: 'Sloane Home Page',
-  description: 'Home page of the website',
+  title: 'Sloane Tailored Ai Platform',
+  description: 'Makes Business Easy',
   openGraph: {
     images: [],
   },
