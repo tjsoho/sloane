@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getTailwindColor } from '../../../utils/tailwindColors';
 
@@ -9,6 +9,25 @@ const AnimatedCircle: React.FC<{ number: number; step: React.ReactNode }> = ({
 }) => {
   const brandGreen = getTailwindColor('brand-green');
   const brandCream = getTailwindColor('brand-cream');
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const containerStyle: React.CSSProperties = {
     position: 'relative',
@@ -41,8 +60,6 @@ const AnimatedCircle: React.FC<{ number: number; step: React.ReactNode }> = ({
     position: 'absolute',
     zIndex: 1,
   };
-
-  const isMobile = window.innerWidth < 768;
 
   const innerCircleSize = isMobile ? 120 : 150;
   const outerCircleSize = isMobile ? 150 : 170;
