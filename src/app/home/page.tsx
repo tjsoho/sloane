@@ -7,6 +7,7 @@ import ImagePrice from "./ImagePrice";
 import SecretSource from "./SecretSource";
 import Founder from "./Founder";
 import TestimonialSection from "./TestimonialSection";
+import GetStarted from "./GetStarted";
 
 
 const Home = () => {
@@ -26,6 +27,9 @@ const Home = () => {
       </div>
       <div className="h-contain w-screen-1">
         <Quote />
+      </div>
+      <div className="h-contain w-screen-1">
+        <GetStarted />
       </div>
       <div className="h-contain w-screen-1">
         <ImagePrice />

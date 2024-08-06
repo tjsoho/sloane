@@ -10,7 +10,7 @@ interface AccordionItem {
     },
     {
       title: "How many users can access the platform?",
-      content: "Sloane is designed to support collaboration. The subscription allows multiple team members within the same business to utilise the platform, ensuring everyone can benefit from its features. You can have up to 3 employees under the 1 business subscription."
+      content: "Sloane is designed to support collaboration. The subscription allows multiple team members within the same business to utilise the platform, ensuring everyone can benefit from its features. One user is $79 and every additional user is $49 per month."
     },
     {
       title: "Can I use this for multiple businesses?",
