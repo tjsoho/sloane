@@ -1,6 +1,6 @@
 // src/components/GetStarted.tsx
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import AnimatedCircle from '../components/home/AnimatedCircle';
@@ -37,7 +37,7 @@ function GetStarted() {
     threshold: 0.1, // Trigger when 10% of the component is in view
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       controls.start('visible');
       buttonControls.start('visible');
