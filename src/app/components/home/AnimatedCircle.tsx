@@ -62,10 +62,10 @@ const AnimatedCircle: React.FC<{ number: number; step: React.ReactNode }> = ({
   };
 
   const innerCircleSize = isMobile ? 120 : 150;
-  const outerCircleSize = isMobile ? 150 : 170;
+  const outerCircleSize = isMobile ? 160 : 180; // Increase the size to create more gap
   const fontSize = isMobile ? '3rem' : '4rem';
-  const circleRadius = isMobile ? 75 : 85;
-  const circleCenter = isMobile ? 75 : 85;
+  const circleRadius = (outerCircleSize - 6) / 2; // Adjust radius to match size
+  const circleCenter = outerCircleSize / 2; // Center of the circle
 
   return (
     <div className="flex flex-col items-center">

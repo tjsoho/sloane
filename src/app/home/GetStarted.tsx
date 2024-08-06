@@ -55,8 +55,8 @@ function GetStarted() {
     <div className="flex h-full w-screen flex-col items-center justify-center bg-brand-cream">
       <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center px-4 pt-16 lg:pt-16 2xl:max-w-[1540px]">
         
-        <div>
-          <h2 className="text-left text-[32px] leading-tight text-brand-green lg:text-[48px]">
+        <div className='w-full'>
+          <h2 className="text-center text-[32px] leading-tight text-brand-green lg:text-[48px]">
             How to Get Started?
           </h2>
           <p className='text-brand-green text-center'>In 4 Easy Steps</p>
