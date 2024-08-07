@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   const [isAnimated, setIsAnimated] = useState(true);
 
   const scrollToNextSection = () => {
-    const nextSection = document.getElementById("");
+    const nextSection = document.getElementById("next-section");
     if (nextSection) {
       window.scrollTo({
         top: nextSection.offsetTop,
@@ -60,25 +60,25 @@ const Hero: React.FC = () => {
           </div>
         </div>
         <motion.div
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 1.5,
-          delay: 2.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
-        <div
-          className="flex flex-col items-end justify-center pb-20 hover:cursor-pointer md:pb-8 "
-          onClick={scrollToNextSection}
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1.5,
+            delay: 2.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
         >
-          <div id="scroll-down-animation" className="w-full">
-            <span className="mouse">
-              <span className="move"></span>
-            </span>
-            <h2 className="scroll-text">Scroll down</h2>
+          <div
+            className="flex flex-col items-end justify-center pb-20 hover:cursor-pointer md:pb-8"
+            onClick={scrollToNextSection}
+          >
+            <div id="scroll-down-animation" className="w-full">
+              <span className="mouse">
+                <span className="move"></span>
+              </span>
+              <h1 className="scroll-text" aria-label="Sloane AI Platform">Scroll down</h1>
+            </div>
           </div>
-        </div>
         </motion.div>
       </div>
     </div>
