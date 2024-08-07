@@ -1,14 +1,6 @@
-import { PersonAddAlt1 } from '@mui/icons-material';
-import Link from 'next/link';
+// src/app/home/page.tsx
+import { metadata } from './metadata';
 import Home from './home/page';
-
-export const metadata = {
-  title: 'Sloane Tailored Ai Platform',
-  description: 'Makes Business Easy',
-  openGraph: {
-    images: [],
-  },
-};
 
 export default function HomePage() {
   return (
