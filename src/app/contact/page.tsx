@@ -156,6 +156,7 @@ const ContactForm: React.FC = () => {
             textHoverColor="brand-logo"
             backgroundColor="brand-green-light"
             hoverBG="brand-green-dark"
+            ariaLabel='Send Message'
           />
         </form>
 

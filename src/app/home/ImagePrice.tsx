@@ -47,6 +47,7 @@ const ImagePrice = () => {
                 hoverBG="brand-green-dark"
                 onClick={handleClick}
                 path="/pricing"
+                ariaLabel='Sloane Pricing'
               />
             </Reveal>
           </div>

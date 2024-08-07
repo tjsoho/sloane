@@ -14,6 +14,7 @@ interface ButtonProps {
   path?: string;
   borderColor?: string;
   className?: string;
+  ariaLabel: string; // Add ariaLabel to ButtonProps
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -27,6 +28,7 @@ const Button: React.FC<ButtonProps> = ({
   path,
   borderColor,
   className = '', // default to an empty string
+  ariaLabel, // Destructure ariaLabel
 }) => {
   const defaultTextColor = getTailwindColor(textColor);
   const hoverTextColor = getTailwindColor(textHoverColor);
@@ -51,6 +53,7 @@ const Button: React.FC<ButtonProps> = ({
         e.currentTarget.style.color = defaultTextColor;
         e.currentTarget.style.backgroundColor = bgColor;
       }}
+      aria-label={ariaLabel || title} // Add aria-label here
     >
       {icon && <span className="mr-2">{icon}</span>}
       {title}

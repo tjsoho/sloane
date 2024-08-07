@@ -124,7 +124,7 @@ const buttonsData = [
                 repeat: Infinity,
                 repeatType: 'reverse',
               }}
-              className="mx-4"
+              className="mx-4 font-Quicksand"
             >
               <Button2
                 title={button.title}
@@ -149,7 +149,7 @@ const buttonsData = [
                 repeat: Infinity,
                 repeatType: 'reverse',
               }}
-              className="mx-6"
+              className="mx-6 font-Quicksand"
             >
               <Button2
                 title={button.title}
@@ -172,7 +172,7 @@ const buttonsData = [
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-32"
+            className="mx-32 font-Quicksand"
           >
             <Button2
               title="Social Media Reels"
@@ -191,12 +191,12 @@ const buttonsData = [
           <div className="flex flex-col items-center justify-center">
             <Reveal>
               <div>
-                <h3 className="text-[64px] leading-none text-brand-cream lg:text-[98px]">
-                  Create
+                <h3 className="text-[64px] leading-none text-brand-logo lg:text-[98px]">
+                  sloane
                 </h3>
-                <h3 className="text-[32px] leading-none text-brand-cream lg:text-[48px]">
-                  with{' '}
-                  <span className="text-center text-brand-logo">sloane.</span>
+                <h3 className="text-[32px] leading-none text-brand-cream lg:text-[48px] text-center">
+                  helps you with{' '}
+                  
                 </h3>
               </div>
             </Reveal>
@@ -209,7 +209,7 @@ const buttonsData = [
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-32"
+            className="mx-32 font-Quicksand"
           >
             <Button2
               title="Email Marketing"
@@ -238,7 +238,7 @@ const buttonsData = [
                 repeat: Infinity,
                 repeatType: 'reverse',
               }}
-              className="mx-24"
+              className="mx-24 font-Quicksand"
             >
               <Button2
                 title={button.title}
@@ -263,7 +263,7 @@ const buttonsData = [
                 repeat: Infinity,
                 repeatType: 'reverse',
               }}
-              className="mx-6"
+              className="mx-6 font-Quicksand"
             >
               <Button2
                 title={button.title}
@@ -288,7 +288,7 @@ const buttonsData = [
                 repeat: Infinity,
                 repeatType: 'reverse',
               }}
-              className="mx-24"
+              className="mx-24 font-Quicksand"
             >
               <Button2
                 title={button.title}

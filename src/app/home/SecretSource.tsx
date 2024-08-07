@@ -67,6 +67,7 @@ const SecretSource = () => {
             hoverBG="brand-green-dark"
             onClick={handleClick}
             path="/pricing"
+            ariaLabel="Go to Sloane Pricing"
           />
         </div>
       </div>

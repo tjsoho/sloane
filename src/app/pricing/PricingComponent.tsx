@@ -39,6 +39,7 @@ const Pricing = () => {
                 className="my-4"
                 onClick={handleClick}
                 path="https://app.sloane.biz/userform"
+                ariaLabel='Sign Up To Sloane'
               />
               <ul className="ml-6 list-disc">
                 <li>Free Cancellation Anytime</li>

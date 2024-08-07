@@ -51,6 +51,7 @@ const Section2 = () => {
                   hoverBG="brand-green-dark"
                   onClick={handleClick}
                   path="/pricing"
+                  ariaLabel="Find Sloane Pricing"
                 />
               </div>
             </SlideReveal>

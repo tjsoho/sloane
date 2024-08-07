@@ -92,7 +92,7 @@ function GetStarted() {
             initial="hidden"
             animate={buttonControls}
           >
-            <Button title="GET STARTED" textColor="brand-cream" textHoverColor="brand-logo" backgroundColor="brand-green" hoverBG="brand-green-dark" onClick={handleClick} path="/pricing" />
+            <Button title="GET STARTED" textColor="brand-cream" textHoverColor="brand-logo" backgroundColor="brand-green" hoverBG="brand-green-dark" onClick={handleClick} path="/pricing" ariaLabel='Get Started With Sloane'/>
           </motion.div>
         </div>
         

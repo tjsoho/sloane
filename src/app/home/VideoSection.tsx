@@ -49,6 +49,7 @@ const VideoSection = () => {
                 hoverBG="brand-green-dark"
                 onClick={handleClick}
                 path="/pricing"
+                ariaLabel="Go to Sloane Pricing"
               />
             </Reveal>
           </div>

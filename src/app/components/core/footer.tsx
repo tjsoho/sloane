@@ -34,13 +34,6 @@ const FooterComponent = () => {
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
-            {/* <div>
-              <Footer.Title title="Follow us" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#"></Footer.Link>
-                <Footer.Link href="#"></Footer.Link>
-              </Footer.LinkGroup>
-            </div> */}
             <div>
               <Footer.Title title="Legal" className="text-brand-logo" />
               <Footer.LinkGroup col>
@@ -70,11 +63,13 @@ const FooterComponent = () => {
               href="#"
               icon={BsFacebook}
               className="text-brand-logo"
+              aria-label="Sloane on Facebook"
             />
             <Footer.Icon
               href="https://www.instagram.com/sloane.biz/"
               icon={BsInstagram}
               className="text-brand-logo"
+              aria-label="Sloane on Instagram"
             />
           </div>
         </div>
