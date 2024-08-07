@@ -162,6 +162,7 @@ const components = () => {
           hoverBG="brand-green"
           onClick={handleClick}
           path="/home" // Internal path
+          ariaLabel="Find Sloane Pricing"
         />
       </div>
       <div className="flex h-full">
