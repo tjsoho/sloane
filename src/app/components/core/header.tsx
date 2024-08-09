@@ -37,7 +37,7 @@ const Header = () => {
               <Link href="/pricing" legacyBehavior>
                 <a className={linkClasses}>Pricing</a>
               </Link>
-              <Link href="https://app.sloane.biz/login" legacyBehavior>
+              <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
                 <a className={linkClasses}>Login</a>
               </Link>
               <Link href="/FAQS" legacyBehavior>
