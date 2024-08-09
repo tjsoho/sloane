@@ -131,7 +131,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-2"
+            className="mx-2 font-Quicksand"
           >
             <Button2
               title="Your go-to for all how-to's"
@@ -158,7 +158,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-6"
+            className="mx-6 font-Quicksand"
           >
             <Button2
               title="Product Ideation"
@@ -182,7 +182,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-6"
+            className="mx-6 font-Quicksand"
           >
             <Button2
               title="Blog Ideas"
@@ -209,7 +209,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-2"
+            className="mx-2 font-Quicksand"
           >
             <Button2
               title="SEO"
@@ -233,7 +233,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-6"
+            className="mx-6 font-Quicksand"
           >
             <Button2
               title="Business Planning"
@@ -260,7 +260,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-2"
+            className="mx-2 font-Quicksand"
           >
             <Button2
               title="Social Media Reels"
@@ -284,7 +284,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-6"
+            className="mx-6 font-Quicksand"
           >
             <Button2
               title="Sales Funnels"
@@ -307,12 +307,11 @@ const MobileFloating = () => {
         <div className="my-8 flex w-full items-center justify-center">
           <Reveal>
             <div className="flex flex-col items-center justify-center">
-              <h3 className="text-[64px] leading-none text-brand-cream lg:text-[98px]">
-                Create
+              <h3 className="text-[64px] leading-none text-brand-logo lg:text-[98px]">
+                sloane
               </h3>
               <h3 className="text-[32px] leading-none text-brand-cream lg:text-[48px]">
-                with{' '}
-                <span className="text-center text-brand-logo">sloane.</span>
+            helps you with
               </h3>
             </div>
           </Reveal>
@@ -327,7 +326,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-6"
+            className="mx-6 font-Quicksand"
           >
             <Button2
               title="Client Communication"
@@ -354,7 +353,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-4"
+            className="mx-4 font-Quicksand"
           >
             <Button2
               title="Training & Onboarding"
@@ -378,7 +377,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-4"
+            className="mx-4 font-Quicksand"
           >
             <Button2
               title="Website Copy"
@@ -405,7 +404,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-2"
+            className="mx-2 font-Quicksand"
           >
             <Button2
               title="Sales Funnels"
@@ -429,7 +428,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-6"
+            className="mx-6 font-Quicksand"
           >
             <Button2
               title="Socials Strategy"
@@ -456,7 +455,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-6 mt-4"
+            className="mx-6 mt-4 font-Quicksand"
           >
             <Button2
               title="New Offerings"
@@ -480,7 +479,7 @@ const MobileFloating = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="mx-8 mt-2"
+            className="mx-8 mt-2 font-Quicksand"
           >
             <Button2
               title="Course Creation"
