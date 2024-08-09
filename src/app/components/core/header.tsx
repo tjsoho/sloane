@@ -37,7 +37,7 @@ const Header = () => {
               <Link href="/pricing" legacyBehavior>
                 <a className={linkClasses}>Pricing</a>
               </Link>
-              <Link href="https://app.sloane.biz" legacyBehavior>
+              <Link href="https://app.sloane.biz/login" legacyBehavior>
                 <a className={linkClasses}>Login</a>
               </Link>
               <Link href="/FAQS" legacyBehavior>
@@ -94,7 +94,7 @@ const Header = () => {
                     Pricing
                   </a>
                 </Link>
-                <Link href="/login" legacyBehavior>
+                <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
                   <a
                     onClick={toggleMenu}
                     className="text-center font-Archivo text-2xl uppercase text-brand-cream hover:text-brand-orange"
