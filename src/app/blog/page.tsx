@@ -1,7 +1,5 @@
-import React from 'react';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+'use client';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 interface Post {
@@ -9,36 +7,31 @@ interface Post {
   title: string;
   date: string;
   image?: string;
-  description: string;  // Include description
+  description: string;
 }
 
-export default async function BlogIndex() {
-  const postsDir = path.join(process.cwd(), 'src', 'content');
-  const filenames = fs.readdirSync(postsDir);
+export default function BlogIndex() {
+  const [posts, setPosts] = useState<Post[]>([]);
 
-  const posts: Post[] = filenames.map((filename) => {
-    const filePath = path.join(postsDir, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf-8');
-    const { data } = matter(fileContents);
-
-    return {
-      slug: filename.replace('.md', ''),
-      title: data.title,
-      date: data.date,
-      image: data.image,
-      description: data.description,  // Add description to the post data
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('/api/get-posts');
+        const data = await response.json();
+        setPosts(data);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
     };
-  });
 
-  const sortedPosts = posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+    fetchPosts();
+  }, []);
 
   return (
     <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 mt-16">Blog Posts</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {sortedPosts.map((post) => (
+        {posts.map((post) => (
           <div key={post.slug} className="bg-white shadow-md rounded-md overflow-hidden">
             {post.image && (
               <img
@@ -52,7 +45,7 @@ export default async function BlogIndex() {
                 {post.title}
               </Link>
               <p className="text-gray-700 mt-2">
-                {post.description}  {/* Display description */}
+                {post.description}
               </p>
               <p className="text-gray-500 mt-2">
                 {new Date(post.date).toLocaleDateString()}
