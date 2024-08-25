@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import EditorPage from './page'; // Add missing import statement
+import EditorPage from './page'; // Import the EditorPage
 
 export default function EditorWrapper() {
     return (

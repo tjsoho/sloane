@@ -15,9 +15,9 @@ const EditorPage: React.FC = () => {
   const [image, setImage] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [existingImage, setExistingImage] = useState<string | null>(null);
-  const [modalIsOpen, setModalIsOpen] = useState(false); // State to manage modal
+  const [modalIsOpen, setModalIsOpen] = useState(false); 
   const router = useRouter();
-  const searchParams = useSearchParams(); // Will work only on the client-side
+  const searchParams = useSearchParams(); 
   const slug = searchParams.get('slug');
 
   useEffect(() => {
