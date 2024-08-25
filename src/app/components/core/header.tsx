@@ -12,7 +12,9 @@ const Header = () => {
   };
 
   const linkClasses =
-    'hover:text-brand-logo uppercase font-Archivo text-brand-cream ';
+    'hover:text-brand-logo uppercase font-Archivo text-brand-cream flex justify-center items-center hover:underline';
+  const linkClasses2 =
+    'hover:text-brand-logo uppercase font-Archivo text-brand-green border border-brand-logo px-4 py-1 rounded-full flex justify-center items-center bg-brand-cream hover:bg-brand-green';
 
   return (
     <>
@@ -37,14 +39,14 @@ const Header = () => {
               <Link href="/pricing" legacyBehavior>
                 <a className={linkClasses}>Pricing</a>
               </Link>
-              <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
-                <a className={linkClasses}>Login</a>
-              </Link>
               <Link href="/FAQS" legacyBehavior>
                 <a className={linkClasses}>FAQS</a>
               </Link>
               <Link href="/contact" legacyBehavior>
                 <a className={linkClasses}>Contact</a>
+              </Link>
+              <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
+                <a className={linkClasses2}>Login</a>
               </Link>
             </nav>
             <div className="lg:hidden">
