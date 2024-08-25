@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import { useRouter, useSearchParams } from 'next/navigation';
-import PostManagerModal from '../components/PostManagerModal'; // Import the PostManagerModal component
+import PostManagerModal from '../components/PostManagerModal';
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
@@ -17,7 +17,7 @@ const EditorPage: React.FC = () => {
   const [existingImage, setExistingImage] = useState<string | null>(null);
   const [modalIsOpen, setModalIsOpen] = useState(false); // State to manage modal
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams(); // Will work only on the client-side
   const slug = searchParams.get('slug');
 
   useEffect(() => {
@@ -46,39 +46,39 @@ const EditorPage: React.FC = () => {
 
   const handlePost = async () => {
     if (!title || !content || !description || (!image && !existingImage)) {
-        alert('Title, description, content, and image are required.');
-        return;
+      alert('Title, description, content, and image are required.');
+      return;
     }
 
     setLoading(true);
 
     try {
-        const formData = new FormData();
-        formData.append('title', title);
-        formData.append('description', description);
-        formData.append('content', content);
-        if (image) {
-            formData.append('image', image);
-        } else if (existingImage) {
-            formData.append('existingImage', existingImage);
-        }
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('description', description);
+      formData.append('content', content);
+      if (image) {
+        formData.append('image', image);
+      } else if (existingImage) {
+        formData.append('existingImage', existingImage);
+      }
 
-        const response = await fetch(`/api/${slug ? `update-post?slug=${slug}` : 'save-post'}`, {
-            method: 'POST',
-            body: formData,
-        });
+      const response = await fetch(`/api/${slug ? `update-post?slug=${slug}` : 'save-post'}`, {
+        method: 'POST',
+        body: formData,
+      });
 
-        if (response.ok) {
-            alert('Blog post published successfully!');
-            router.push('/blog');
-        } else {
-            alert('Failed to publish the post.');
-        }
+      if (response.ok) {
+        alert('Blog post published successfully!');
+        router.push('/blog');
+      } else {
+        alert('Failed to publish the post.');
+      }
     } catch (error) {
-        console.error('Error posting the blog:', error);
-        alert('An error occurred while publishing the post.');
+      console.error('Error posting the blog:', error);
+      alert('An error occurred while publishing the post.');
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
   };
 
@@ -91,7 +91,6 @@ const EditorPage: React.FC = () => {
   };
 
   const handleEdit = (slug: string) => {
-    // Redirect to the editor with the post's slug
     router.push(`/editor?slug=${slug}`);
     closeModal();
   };
@@ -105,7 +104,6 @@ const EditorPage: React.FC = () => {
 
         if (response.ok) {
           alert('Blog post deleted successfully!');
-          // Optionally, reload the modal content to reflect the deletion
           closeModal();
         } else {
           alert('Failed to delete the post.');
