@@ -1,5 +1,6 @@
 'use client';
-import React, { useState, useEffect, Suspense } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -79,8 +80,7 @@ const EditorPage: React.FC = () => {
     } finally {
         setLoading(false);
     }
-};
-
+  };
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -118,54 +118,52 @@ const EditorPage: React.FC = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className="max-w-3xl mx-auto p-4 mt-32">
-        <h1 className="text-2xl font-bold mb-4">{slug ? 'Edit' : 'Create'} Blog Post</h1>
-        <input
-          className="w-full p-2 mb-4 border rounded"
-          type="text"
-          placeholder="Blog Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <textarea
-          className="w-full p-2 mb-4 border rounded"
-          placeholder="Short Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          className="w-full p-2 mb-4 border rounded"
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-        />
-        {existingImage && !image && (
-          <img src={existingImage} alt="Current blog post image" className="mb-4" />
-        )}
-        <ReactQuill value={content} onChange={setContent} />
-        <button
-          className={`mt-4 px-4 py-2 bg-blue-500 text-white rounded ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
-          onClick={handlePost}
-          disabled={loading}
-        >
-          {loading ? 'Publishing...' : 'Post'}
-        </button>
-        <button
-          className="mt-4 ml-4 px-4 py-2 bg-gray-500 text-white rounded"
-          onClick={openModal}
-        >
-          Edit/Delete a Post
-        </button>
+    <div className="max-w-3xl mx-auto p-4 mt-32">
+      <h1 className="text-2xl font-bold mb-4">{slug ? 'Edit' : 'Create'} Blog Post</h1>
+      <input
+        className="w-full p-2 mb-4 border rounded"
+        type="text"
+        placeholder="Blog Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <textarea
+        className="w-full p-2 mb-4 border rounded"
+        placeholder="Short Description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <input
+        className="w-full p-2 mb-4 border rounded"
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+      />
+      {existingImage && !image && (
+        <img src={existingImage} alt="Current blog post image" className="mb-4" />
+      )}
+      <ReactQuill value={content} onChange={setContent} />
+      <button
+        className={`mt-4 px-4 py-2 bg-blue-500 text-white rounded ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+        onClick={handlePost}
+        disabled={loading}
+      >
+        {loading ? 'Publishing...' : 'Post'}
+      </button>
+      <button
+        className="mt-4 ml-4 px-4 py-2 bg-gray-500 text-white rounded"
+        onClick={openModal}
+      >
+        Edit/Delete a Post
+      </button>
 
-        <PostManagerModal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          onEdit={handleEdit}
-          onDelete={handleDelete}
-        />
-      </div>
-    </Suspense>
+      <PostManagerModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+      />
+    </div>
   );
 };
 
