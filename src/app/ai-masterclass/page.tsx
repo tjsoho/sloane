@@ -13,7 +13,7 @@ const validationSchema = Yup.object({
 });
 
 const SimpleForm: React.FC = () => {
-  const webhookUrl = 'YOUR_WEBHOOK_URL'; // Replace with the URL from Make.com
+  const webhookUrl = 'https://hook.us1.make.com/pbiheg53uchfgi7cdxtlucz3yms9z0ni'; // Replace with the URL from Make.com
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
