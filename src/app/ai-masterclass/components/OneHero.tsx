@@ -7,14 +7,24 @@ import SimpleForm from '../../ai-masterclass/join-masterclass/page';
 import { useModal } from '../../../hooks/useModal';
 
 const Hero: React.FC = () => {
-  const { isModalOpen, isPaymentPage, openModal, closeModal, handleFormSubmit } = useModal();
+  const {
+    isModalOpen,
+    isPaymentPage,
+    openModal,
+    closeModal,
+    handleFormSubmit,
+  } = useModal();
 
   const renderModalContent = () => {
     if (isPaymentPage) {
       return (
         <div className="p-8">
-          <h2 className="text-center text-2xl font-bold text-brand-cream">Thank You</h2>
-          <p className="text-center text-brand-cream">Taking you to payment...</p>
+          <h2 className="text-center text-2xl font-bold text-brand-cream">
+            Thank You
+          </h2>
+          <p className="text-center text-brand-cream">
+            Taking you to payment...
+          </p>
         </div>
       );
     }
@@ -31,7 +41,9 @@ const Hero: React.FC = () => {
             <h1 className="-mt-3 text-5xl leading-none text-brand-logo lg:text-6xl">
               Masterclass
             </h1>
-            <p className="text-brand-cream lg:text-2xl">11am Tuesday 10th September</p>
+            <p className="text-brand-cream lg:text-2xl">
+              11am Tuesday 10th September
+            </p>
           </div>
           <p className="my-8 text-2xl text-brand-cream lg:my-12 lg:w-3/4 lg:text-4xl">
             For Business Owners who are curious about the Ai landscape.
