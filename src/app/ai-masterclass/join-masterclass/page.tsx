@@ -13,22 +13,29 @@ interface SimpleFormProps {
 const validationSchema = Yup.object({
   firstName: Yup.string().required('First name is required'),
   lastName: Yup.string().required('Last name is required'),
-  Email: Yup.string().email('Invalid email address').required('Email is required'),
-  Questions: Yup.string().required('At least one question or comment is required'),
+  Email: Yup.string()
+    .email('Invalid email address')
+    .required('Email is required'),
+  Questions: Yup.string().required(
+    'At least one question or comment is required'
+  ),
 });
 
-const inputClass = 'my-4 block w-full py-2 px-4 border border-brand-logo rounded-full bg-transparent text-brand-green-dark placeholder-green-700 focus:border-brand-green-dark outline-none';
+const inputClass =
+  'my-4 block w-full py-2 px-4 border border-brand-logo rounded-full bg-transparent text-brand-green-dark placeholder-green-700 focus:border-brand-green-dark outline-none';
 const labelClass = 'block text-lg font-Quicksand text-brand-cream';
-const inputClass2 = 'my-4 block w-full px-4 py-3 border border-brand-logo rounded-[25px] bg-transparent text-brand-green-dark placeholder-green-700 overflow-hidden focus:border-brand-green-dark outline-none';
+const inputClass2 =
+  'my-4 block w-full px-4 py-3 border border-brand-logo rounded-[25px] bg-transparent text-brand-green-dark placeholder-green-700 overflow-hidden focus:border-brand-green-dark outline-none';
 
 const SimpleForm: React.FC<SimpleFormProps> = ({ onFormSubmit }) => {
-  const webhookUrl = 'https://hook.us1.make.com/pbiheg53uchfgi7cdxtlucz3yms9z0ni'; // Make.com webhook URL
+  const webhookUrl =
+    'https://hook.us1.make.com/pbiheg53uchfgi7cdxtlucz3yms9z0ni'; // Make.com webhook URL
 
   // Stripe payment link
   const stripePaymentLink = 'https://buy.stripe.com/fZe5mfgyj5qw7L24gm'; // Replace with your actual Stripe payment link
 
   return (
-    <div className="mx-auto mt-10 max-w-md rounded-xl bg-brand-green p-6 flex flex-col justify-center">
+    <div className="mx-auto mt-10 flex max-w-md flex-col justify-center rounded-xl bg-brand-green p-6">
       <h2 className="mb-6 text-center text-4xl font-bold text-brand-cream">
         Ai Masterclass
       </h2>
@@ -78,7 +85,11 @@ const SimpleForm: React.FC<SimpleFormProps> = ({ onFormSubmit }) => {
                 placeholder="Your First Name"
                 className={inputClass}
               />
-              <ErrorMessage name="firstName" component="div" className="mt-1 text-sm text-red-500" />
+              <ErrorMessage
+                name="firstName"
+                component="div"
+                className="mt-1 text-sm text-red-500"
+              />
             </div>
 
             <div className="mb-4">
@@ -92,7 +103,11 @@ const SimpleForm: React.FC<SimpleFormProps> = ({ onFormSubmit }) => {
                 placeholder="Your Last Name"
                 className={inputClass}
               />
-              <ErrorMessage name="lastName" component="div" className="mt-1 text-sm text-red-500" />
+              <ErrorMessage
+                name="lastName"
+                component="div"
+                className="mt-1 text-sm text-red-500"
+              />
             </div>
 
             <div className="mb-6">
@@ -106,7 +121,11 @@ const SimpleForm: React.FC<SimpleFormProps> = ({ onFormSubmit }) => {
                 placeholder="Your Email"
                 className={inputClass}
               />
-              <ErrorMessage name="Email" component="div" className="mt-1 text-sm text-red-500" />
+              <ErrorMessage
+                name="Email"
+                component="div"
+                className="mt-1 text-sm text-red-500"
+              />
             </div>
 
             <div className="mb-6">
@@ -120,7 +139,11 @@ const SimpleForm: React.FC<SimpleFormProps> = ({ onFormSubmit }) => {
                 placeholder="Add your questions here"
                 className={inputClass2}
               />
-              <ErrorMessage name="Questions" component="div" className="mt-1 text-sm text-red-500" />
+              <ErrorMessage
+                name="Questions"
+                component="div"
+                className="mt-1 text-sm text-red-500"
+              />
             </div>
 
             <button
