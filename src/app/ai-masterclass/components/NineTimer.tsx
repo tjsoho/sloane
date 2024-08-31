@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import SimpleForm from '../join-masterclass/page';
+import SimpleForm from './SimpleForm';
 import Button from '~/app/components/Button';
 import Modal from '~/app/components/Modal';
 import { useModal } from '../../../hooks/useModal';
@@ -23,7 +23,13 @@ const padWithZero = (num: number): string => {
 };
 
 const CountdownTimer: React.FC = () => {
-  const { isModalOpen, isPaymentPage, openModal, closeModal, handleFormSubmit } = useModal();
+  const {
+    isModalOpen,
+    isPaymentPage,
+    openModal,
+    closeModal,
+    handleFormSubmit,
+  } = useModal();
 
   const calculateTimeLeft = (): TimeLeft => {
     const targetDate = new Date('September 10, 2024 11:00:00').getTime();
@@ -65,8 +71,12 @@ const CountdownTimer: React.FC = () => {
     if (isPaymentPage) {
       return (
         <div className="p-8">
-          <h2 className="text-center text-2xl font-bold text-brand-cream">Thank You</h2>
-          <p className="text-center text-brand-cream">Taking you to payment...</p>
+          <h2 className="text-center text-2xl font-bold text-brand-cream">
+            Thank You
+          </h2>
+          <p className="text-center text-brand-cream">
+            Taking you to payment...
+          </p>
         </div>
       );
     }
@@ -79,7 +89,9 @@ const CountdownTimer: React.FC = () => {
       <div className="flex h-full w-full flex-col items-center justify-center bg-brand-green">
         <div className="flex flex-col items-center justify-center">
           <div className="flex w-full justify-center p-4">
-            <h2 className="text-4xl font-semibold text-brand-logo">Upcoming Event</h2>
+            <h2 className="text-4xl font-semibold text-brand-logo">
+              Upcoming Event
+            </h2>
           </div>
           <div className="flex w-full justify-center">
             <div className="flex space-x-4">
@@ -113,7 +125,9 @@ const CountdownTimer: React.FC = () => {
     <div className="flex h-full w-full flex-col items-center justify-center bg-brand-green">
       <div className="flex flex-col items-center justify-center px-4 py-16">
         <div className="mb-8 flex w-full justify-center p-4">
-          <h2 className="text-4xl text-brand-cream lg:text-5xl">Ai Masterclass</h2>
+          <h2 className="text-4xl text-brand-cream lg:text-5xl">
+            Ai Masterclass
+          </h2>
         </div>
 
         <div className="flex w-full justify-center">
@@ -122,19 +136,29 @@ const CountdownTimer: React.FC = () => {
               <span className={numberStyle}>{padWithZero(timeLeft.days)}</span>
               <span className={labelStyle}>Days</span>
             </div>
-            <div className="-mt-2 text-6xl font-bold text-brand-logo lg:mt-0">:</div>
+            <div className="-mt-2 text-6xl font-bold text-brand-logo lg:mt-0">
+              :
+            </div>
             <div className="flex flex-col items-center">
               <span className={numberStyle}>{padWithZero(timeLeft.hours)}</span>
               <span className={labelStyle}>Hours</span>
             </div>
-            <div className="-mt-2 text-6xl font-bold text-brand-logo lg:mt-0">:</div>
+            <div className="-mt-2 text-6xl font-bold text-brand-logo lg:mt-0">
+              :
+            </div>
             <div className="flex flex-col items-center">
-              <span className={numberStyle}>{padWithZero(timeLeft.minutes)}</span>
+              <span className={numberStyle}>
+                {padWithZero(timeLeft.minutes)}
+              </span>
               <span className={labelStyle}>Minutes</span>
             </div>
-            <div className="-mt-2 text-6xl font-bold text-brand-logo lg:mt-0">:</div>
+            <div className="-mt-2 text-6xl font-bold text-brand-logo lg:mt-0">
+              :
+            </div>
             <div className="flex flex-col items-center">
-              <span className={numberStyle}>{padWithZero(timeLeft.seconds)}</span>
+              <span className={numberStyle}>
+                {padWithZero(timeLeft.seconds)}
+              </span>
               <span className={labelStyle}>Seconds</span>
             </div>
           </div>
@@ -142,8 +166,9 @@ const CountdownTimer: React.FC = () => {
 
         <div className="my-8 flex w-full justify-center p-4">
           <p className="text-center text-[21px] text-brand-cream">
-            Join us on Tuesday, 10th September at 11:00 AM <br></br> <br></br> 
-            For those unable to attend, email any questions you have, and we'll send you the recording!
+            Join us on Tuesday, 10th September at 11:00 AM <br></br> <br></br>
+            For those unable to attend, email any questions you have, and we'll
+            send you the recording!
           </p>
         </div>
         <div className="flex w-full justify-center">

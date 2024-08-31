@@ -3,7 +3,7 @@
 import React from 'react';
 import Button from '~/app/components/Button';
 import Modal from '~/app/components/Modal';
-import SimpleForm from '../../ai-masterclass/join-masterclass/page';
+import SimpleForm from './SimpleForm';
 import { useModal } from '../../../hooks/useModal';
 
 const Hero: React.FC = () => {

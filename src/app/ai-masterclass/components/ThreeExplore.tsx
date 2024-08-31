@@ -3,26 +3,35 @@
 import VerifiedIcon from '@mui/icons-material/Verified';
 import React from 'react';
 import Button from '~/app/components/Button';
-import SimpleForm from '../../ai-masterclass/join-masterclass/page';
+import SimpleForm from './SimpleForm';
 import Modal from '~/app/components/Modal';
 import { useModal } from '../../../hooks/useModal';
 
 function ThreeExplore() {
-  const { isModalOpen, isPaymentPage, openModal, closeModal, handleFormSubmit } = useModal();
+  const {
+    isModalOpen,
+    isPaymentPage,
+    openModal,
+    closeModal,
+    handleFormSubmit,
+  } = useModal();
 
   const renderModalContent = () => {
     if (isPaymentPage) {
       return (
         <div className="p-8">
-          <h2 className="text-center text-2xl font-bold text-brand-cream">Thank You</h2>
-          <p className="text-center text-brand-cream">Taking you to payment...</p>
+          <h2 className="text-center text-2xl font-bold text-brand-cream">
+            Thank You
+          </h2>
+          <p className="text-center text-brand-cream">
+            Taking you to payment...
+          </p>
         </div>
       );
     }
 
     return <SimpleForm onFormSubmit={handleFormSubmit} />;
   };
-
 
   return (
     <div>
@@ -48,25 +57,29 @@ function ThreeExplore() {
 
             {/* Text with bolded opening phrase */}
             <p className="text-[21px] text-brand-green">
-              <span className="font-bold">Ai Assistants:</span> Discover how Ai can become your personal helper, handling tasks effortlessly.
+              <span className="font-bold">Ai Assistants:</span> Discover how Ai
+              can become your personal helper, handling tasks effortlessly.
             </p>
           </div>
           <div className="flex flex-col items-center text-center lg:w-2/3">
             <VerifiedIcon className="mb-4 text-4xl text-brand-green" />
             <p className="text-[21px] text-brand-green">
-              <span className="font-bold">Chatbots:</span> Learn how chatbots can interact with your clients, saving you time and effort.
+              <span className="font-bold">Chatbots:</span> Learn how chatbots
+              can interact with your clients, saving you time and effort.
             </p>
           </div>
           <div className="my-12 flex flex-col items-center text-center lg:w-1/2">
             <VerifiedIcon className="mb-4 text-4xl text-brand-green" />
             <p className="text-[21px] text-brand-green">
-              <span className="font-bold">Automation</span> Find out how to streamline your operations, giving you more free time.
+              <span className="font-bold">Automation</span> Find out how to
+              streamline your operations, giving you more free time.
             </p>
           </div>
           <div className="flex flex-col items-center text-center lg:w-2/3">
             <VerifiedIcon className="mb-4 text-4xl text-brand-green" />
             <p className="text-[21px] text-brand-green">
-              <span className="font-bold">Ai Image Generation:</span> See how you can create visuals with zero technical skills.
+              <span className="font-bold">Ai Image Generation:</span> See how
+              you can create visuals with zero technical skills.
             </p>
           </div>
           <div className="my-12 flex w-full justify-center">
