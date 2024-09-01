@@ -31,14 +31,14 @@ const Section2 = () => {
           {/* left col */}
           <div className="text-brand-green flex w-full flex-col items-start justify-center lg:w-1/2">
             <SlideReveal>
-              <h2 className="text-left text-[32px] leading-tight lg:text-[44px]">
-              The Business Tool <br></br>You’ll Reach for Every Day. <br></br>Uniquely Tailored to You.
+              <h2 className="text-left text-[32px] leading-none lg:text-[44px]">
+              Who is <br></br>Slaone Ai For?
               </h2>
               {/* &apos; */}
             </SlideReveal>
             <SlideReveal>
-              <p className="my-8 font-medium lg:w-3/4">
-              Sloane is a meticulously designed Ai platform tailored to your unique brand. Helping creatives, solo and small business owners enhance marketing, streamline operations, and save time. Simplify every business task so you can focus on growing your business and doing more of what you love most. 
+              <p className="my-8 font-light lg:w-3/4 text-[21px]">
+              Sloane Ai is designed for solo entrepreneurs, small business owners, and creatives who are juggling multiple roles and need a reliable partner to make business tasks easier. <br></br><br></br>Whether you're a start-up founder, a life coach, an online course creator, or a freelancer, Sloane Ai offers tools and personalised solutions to fit your unique needs.
               </p>
             </SlideReveal>
             <SlideReveal>
@@ -61,30 +61,7 @@ const Section2 = () => {
             {isMobile ? <MobileClientCardCarousel /> : <ClientCardCarousel />}
           </div>
         </div>
-        {/* Stats */}
-        <div className="mt-8 flex h-full w-full flex-col justify-between lg:mt-28 lg:flex-row">
-          <div className="my-4 w-full lg:w-full">
-            <Statistic
-              percentage={100}
-              subheading="User Happiness"
-              imageUrl="/images/thumbs.png"
-            />
-          </div>
-          <div className="my-12 w-full lg:my-4 lg:w-full">
-            <Statistic
-              percentage={70}
-              subheading="Faster Task Completion"
-              imageUrl="/images/graph.png"
-            />
-          </div>
-          <div className="my-4 w-full lg:w-full">
-            <Statistic
-              percentage={100}
-              subheading="No Brainer"
-              imageUrl="/images/light.png"
-            />
-          </div>
-        </div>
+       
       </div>
     </div>
   );

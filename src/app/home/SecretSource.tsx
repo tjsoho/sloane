@@ -1,17 +1,17 @@
-"use client";
-import { Reveal } from "../components/Animations/Reveal";
-import { SlideReveal } from "../components/Animations/SlideReveal";
-import { SlideReveal2 } from "../components/Animations/SlideReveal2";
-import Button from "../components/Button";
-import SecretCard from "../components/home/SecretCard";
+'use client';
+import { Reveal } from '../components/Animations/Reveal';
+import { SlideReveal } from '../components/Animations/SlideReveal';
+import { SlideReveal2 } from '../components/Animations/SlideReveal2';
+import Button from '../components/Button';
+import SecretCard from '../components/home/SecretCard';
 
 const SecretSource = () => {
   const handleClick = () => {
-    console.log("Button clicked!");
+    console.log('Button clicked!');
   };
 
   return (
-    <div className="h-full w-full bg-brand-cream">
+    <div className="w-screen-1 h-full bg-brand-cream">
       <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center px-4 py-16 lg:py-24 2xl:max-w-[1540px]">
         <SlideReveal>
           <div className="flex h-full w-full flex-col items-center justify-center text-center lg:items-start">

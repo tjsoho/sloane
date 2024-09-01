@@ -14,7 +14,7 @@ const Header = () => {
   const linkClasses =
     'hover:text-brand-logo uppercase font-Archivo text-brand-cream flex justify-center items-center hover:underline';
   const linkClasses2 =
-    'hover:text-brand-logo uppercase font-Archivo text-brand-green border border-brand-logo px-4 py-1 rounded-full flex justify-center items-center bg-brand-cream hover:bg-brand-green';
+    'hover:text-brand-logo uppercase font-Archivo text-brand-green border px-4 py-2 rounded-full flex justify-center items-center bg-brand-cream hover:bg-brand-green leading-none hover:border-brand-logo';
 
   return (
     <>

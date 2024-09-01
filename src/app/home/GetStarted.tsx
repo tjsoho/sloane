@@ -52,50 +52,105 @@ function GetStarted() {
   }
 
   return (
-    <div className="flex h-full w-screen flex-col items-center justify-center bg-brand-cream">
+    <div className="flex h-full w-full flex-col items-center justify-center bg-brand-cream">
       <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-center px-4 pt-16 lg:pt-16 2xl:max-w-[1540px]">
-        
-        <div className='w-full'>
+        <div className="w-full">
           <h2 className="text-center text-[32px] leading-tight text-brand-green lg:text-[48px]">
-            How to Get Started?
+            Get Started
           </h2>
-          <p className='text-brand-green text-center'>In 4 Easy Steps</p>
+          <p className="text-center text-brand-green text-[21px]">In 4 Easy Steps</p>
         </div>
-        
+
         <motion.div
           ref={ref}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full"
+          className="grid w-full grid-cols-2 gap-4 md:grid-cols-4"
           variants={containerVariants}
           initial="hidden"
           animate={controls}
         >
-          <motion.div className="flex flex-col items-center" variants={itemVariants}>
-            <AnimatedCircle number={1} step={<><span>Create Your</span><br /><span>Biz profile</span></>} />
+          <motion.div
+            className="flex flex-col items-center"
+            variants={itemVariants}
+          >
+            <AnimatedCircle
+              number={1}
+              step={
+                <>
+                  <span>Create Your</span>
+                  <br />
+                  <span>Biz profile</span>
+                </>
+              }
+            />
             <div className="dashed-line hidden md:block" />
           </motion.div>
-          <motion.div className="flex flex-col items-center" variants={itemVariants}>
-            <AnimatedCircle number={2} step={<><span>Fill in Your</span><br /><span>Stripe Details</span></>} />
+          <motion.div
+            className="flex flex-col items-center"
+            variants={itemVariants}
+          >
+            <AnimatedCircle
+              number={2}
+              step={
+                <>
+                  <span>Fill in Your</span>
+                  <br />
+                  <span>Stripe Details</span>
+                </>
+              }
+            />
             <div className="dashed-line hidden md:block" />
           </motion.div>
-          <motion.div className="flex flex-col items-center" variants={itemVariants}>
-            <AnimatedCircle number={3} step={<><span>Book Your Biz</span><br /><span>Deep Dive Session</span></>} />
+          <motion.div
+            className="flex flex-col items-center"
+            variants={itemVariants}
+          >
+            <AnimatedCircle
+              number={3}
+              step={
+                <>
+                  <span>Book Your Biz</span>
+                  <br />
+                  <span>Deep Dive Session</span>
+                </>
+              }
+            />
             <div className="dashed-line hidden md:block" />
           </motion.div>
-          <motion.div className="flex flex-col items-center" variants={itemVariants}>
-            <AnimatedCircle number={4} step={<><span>Up & Running</span><br /><span>24hrs Later</span></>} />
+          <motion.div
+            className="flex flex-col items-center"
+            variants={itemVariants}
+          >
+            <AnimatedCircle
+              number={4}
+              step={
+                <>
+                  <span>Up & Running</span>
+                  <br />
+                  <span>24hrs Later</span>
+                </>
+              }
+            />
           </motion.div>
         </motion.div>
-        
-        <div className='flex my-16 w-full items-center justify-center'>
+
+        <div className="my-16 flex w-full items-center justify-center">
           <motion.div
             variants={buttonVariants}
             initial="hidden"
             animate={buttonControls}
           >
-            <Button title="GET STARTED" textColor="brand-cream" textHoverColor="brand-logo" backgroundColor="brand-green" hoverBG="brand-green-dark" onClick={handleClick} path="/pricing" ariaLabel='Get Started With Sloane'/>
+            <Button
+              title="GET STARTED"
+              textColor="brand-cream"
+              textHoverColor="brand-logo"
+              backgroundColor="brand-green"
+              hoverBG="brand-green-dark"
+              onClick={handleClick}
+              path="/pricing"
+              ariaLabel="Get Started With Sloane"
+            />
           </motion.div>
         </div>
-        
       </div>
     </div>
   );
