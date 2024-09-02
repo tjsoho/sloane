@@ -11,11 +11,12 @@ const Confirmation: React.FC = () => {
           <h1 className="mb-4 text-4xl font-bold text-brand-cream md:text-4xl lg:text-6xl">
             Thank you for your payment!
           </h1>
+          <p className='font-bold text-brand-logo'>BEFORE YOU GO...</p>
           <p className="mt-8 w-4/5 text-[21px] text-brand-cream">
-            Please check your inbox and junk box for your calendar invite from{' '}
-            <span className="font-bold">hello@sloane.biz</span>.<br></br>
+            Please check your email and junk folder for <span className='font-bold text-brand-logo'>TWO</span> emails: One from Calendly with the zoom link and one from <span className="font-bold text-brand-logo">hello@sloane.biz</span> for the Ai Masterclass Info. 
+            <br></br>
             <br></br> If you're unable to attend please email your questions to
-            the above email address
+            the above email address.
           </p>
         </div>
 
