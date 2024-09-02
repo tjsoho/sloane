@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
               Masterclass
             </h1>
             <p className="text-brand-cream lg:text-2xl">
-              11am Tuesday 10th September
+              11am Friday 13th September
             </p>
           </div>
           <p className="my-8 text-2xl text-brand-cream lg:my-12 lg:w-3/4 lg:text-4xl">
@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
           <div className="w-full lg:p-16 ">
             <div className="w-full">
               <img
-                src="/images/ai-masterclass.png"
+                src="/images/masterclass.png"
                 alt="Sloane.Ai Masterclass"
                 className="h-full w-full rounded-lg object-cover lg:rounded-[20px]"
               />

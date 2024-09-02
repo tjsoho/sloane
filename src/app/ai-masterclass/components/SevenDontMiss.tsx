@@ -37,8 +37,8 @@ function SevenDontMiss() {
     <div className="flex flex-col md:flex-row">
       <div className="relative w-full bg-brand-green p-4 md:w-1/2">
         <div className="flex h-full w-full items-center justify-center p-4">
-          <h2 className="z-50 text-center text-4xl text-brand-logo md:w-2/3 lg:text-6xl">
-            A Webinar You Don't Want to Miss
+          <h2 className="z-50 text-center text-4xl text-brand-logo md:w-2/3 xl:text-6xl">
+            A Masterclass You Don't Want to Miss
           </h2>
         </div>
 
@@ -46,7 +46,7 @@ function SevenDontMiss() {
         <img
           src="/images/palms.svg" // Replace with the correct path to your SVG file
           alt="Decorative SVG"
-          className="absolute bottom-0 left-0 z-10 h-32 w-32 lg:h-72 lg:w-72"
+          className="lg:h-[400px] lg:w-[400px] absolute bottom-0 left-0 z-10 h-32 w-32"
         />
       </div>
       <div className="flex w-full flex-col items-center justify-between bg-brand-cream p-4 md:w-1/2 lg:py-16">

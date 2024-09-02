@@ -17,10 +17,10 @@ function intro() {
             <p className='lg:px-16 text-brand-orange text-[21px]'>
               Feeling overwhelmed by all the talk about Ai in business? Does the
               thought of diving into new tech make your head spin? <br></br><br></br>You're not
-              alone! This webinar is here to break it all down for you—think of
+              alone! This masterclass is here to break it all down for you—think of
               it as enjoying a gelato on a balmy summer holiday, easy and
               delightful. <br></br><br></br>Join us for a friendly, informative session with Toby
-              J, founder of Sloane.Ai
+              J, founder of Sloane.
             </p>
           </div>
         </div>

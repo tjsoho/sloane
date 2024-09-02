@@ -41,7 +41,7 @@ function FiveCost() {
               Everything you need to know about Ai
             </p>
             <p className="text-4xl text-brand-cream">
-              11am Tuesday 10th September
+              11am Friday 13th September
             </p>
             <p className="my-8 text-brand-cream lg:text-xl">
               Can't attend? <br />

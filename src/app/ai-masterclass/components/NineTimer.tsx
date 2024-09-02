@@ -32,7 +32,7 @@ const CountdownTimer: React.FC = () => {
   } = useModal();
 
   const calculateTimeLeft = (): TimeLeft => {
-    const targetDate = new Date('September 10, 2024 11:00:00').getTime();
+    const targetDate = new Date('September 13, 2024 11:00:00').getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -166,7 +166,7 @@ const CountdownTimer: React.FC = () => {
 
         <div className="my-8 flex w-full justify-center p-4">
           <p className="text-center text-[21px] text-brand-cream">
-            Join us on Tuesday, 10th September at 11:00 AM <br></br> <br></br>
+            Join us on Friday, 13th September at 11:00 AM <br></br> <br></br>
             For those unable to attend, email any questions you have, and we'll
             send you the recording!
           </p>

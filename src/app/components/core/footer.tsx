@@ -32,6 +32,9 @@ const FooterComponent = () => {
                 <Footer.Link href="/FAQS" className="text-brand-green-dark">
                   FAQs
                 </Footer.Link>
+                {/* <Footer.Link href="/blog" className="text-brand-green-dark">
+                  Blog
+                </Footer.Link> */}
               </Footer.LinkGroup>
             </div>
             <div>
@@ -40,9 +43,16 @@ const FooterComponent = () => {
                 <Footer.Link href="/privacy" className="text-brand-green-dark">
                   Privacy Policy
                 </Footer.Link>
-                <Footer.Link href="/terms&conditions" className="text-brand-green-dark">
+                <Footer.Link
+                  href="/terms&conditions"
+                  className="text-brand-green-dark"
+                >
                   Terms &amp; Conditions
                 </Footer.Link>
+               
+                {/* <Footer.Link href="/editor" className="text-brand-green-dark">
+                  Admin
+                </Footer.Link> */}
               </Footer.LinkGroup>
             </div>
           </div>
