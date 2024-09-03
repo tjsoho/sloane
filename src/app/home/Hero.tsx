@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
         {/* main content */}
         <div className="flex h-full w-full flex-col items-start justify-center ">
           <div className="z-50 mb-4 flex flex-col px-8 pt-12 lg:pt-40">
-            <h1 className="text-left text-[37px] leading-[36px] md:text-5xl lg:text-7xl ">
+            <h1 className="text-left text-[37px] leading-[36px] md:text-5xl lg:text-7xl text-brand-cream">
               {headingText}
             </h1>
           </div>

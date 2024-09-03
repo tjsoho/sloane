@@ -32,9 +32,9 @@ const FooterComponent = () => {
                 <Footer.Link href="/FAQS" className="text-brand-green-dark">
                   FAQs
                 </Footer.Link>
-                {/* <Footer.Link href="/blog" className="text-brand-green-dark">
+                <Footer.Link href="/blog" className="text-brand-green-dark">
                   Blog
-                </Footer.Link> */}
+                </Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
@@ -50,9 +50,9 @@ const FooterComponent = () => {
                   Terms &amp; Conditions
                 </Footer.Link>
                
-                {/* <Footer.Link href="/editor" className="text-brand-green-dark">
+                <Footer.Link href="/editor" className="text-brand-green-dark">
                   Admin
-                </Footer.Link> */}
+                </Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>

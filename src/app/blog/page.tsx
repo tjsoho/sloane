@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface Post {
   slug: string;
@@ -12,6 +13,7 @@ interface Post {
 
 export default function BlogIndex() {
   const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true); // State to manage loading
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -21,6 +23,8 @@ export default function BlogIndex() {
         setPosts(data);
       } catch (error) {
         console.error('Error fetching posts:', error);
+      } finally {
+        setLoading(false); // Set loading to false once data is fetched
       }
     };
 
@@ -28,32 +32,103 @@ export default function BlogIndex() {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6 mt-16">Blog Posts</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {posts.map((post) => (
-          <div key={post.slug} className="bg-white shadow-md rounded-md overflow-hidden">
-            {post.image && (
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-            )}
-            <div className="p-4">
-              <Link href={`/blog/${post.slug}`} className="text-xl font-semibold text-blue-600 hover:underline">
-                {post.title}
-              </Link>
-              <p className="text-gray-700 mt-2">
-                {post.description}
-              </p>
-              <p className="text-gray-500 mt-2">
-                {new Date(post.date).toLocaleDateString()}
-              </p>
-            </div>
+    <div className="h-full w-full bg-brand-cream">
+      <div>
+        <div className="bg-brand-green lg:h-[300px]">
+          <div className="mx-auto flex h-full w-full max-w-[1240px] flex-col px-4 pb-8 pt-24 lg:py-32 2xl:max-w-[1540px]">
+            <h1 className="text-5xl font-bold text-brand-cream lg:text-6xl">
+              Blog Posts
+            </h1>
+            <p className="mt-2 text-brand-cream lg:w-3/4">
+              Explore insightful strategies, tips, and stories that empower
+              business owners to grow and thrive. From Sloane's unique features
+              to general business advice, tips & tricks, we've got you covered.
+            </p>
           </div>
-        ))}
+        </div>
       </div>
+
+      {loading ? (
+        // Animated loading dots
+        <div className="flex items-center justify-center py-16">
+          <h2 className="mr-4 text-4xl">Loading</h2>
+          <motion.div
+            className="flex space-x-2"
+            initial={{ opacity: 0.3 }}
+            animate={{ opacity: 1 }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+          >
+            <motion.div
+              className="h-4 w-4 rounded-full bg-brand-green"
+              animate={{ y: [0, -8, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 0.5,
+                ease: 'easeInOut',
+                delay: 0,
+              }}
+            />
+            <motion.div
+              className="h-4 w-4 rounded-full bg-brand-green"
+              animate={{ y: [0, -8, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 0.5,
+                ease: 'easeInOut',
+                delay: 0.2,
+              }}
+            />
+            <motion.div
+              className="h-4 w-4 rounded-full bg-brand-green"
+              animate={{ y: [0, -8, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 0.5,
+                ease: 'easeInOut',
+                delay: 0.4,
+              }}
+            />
+          </motion.div>
+        </div>
+      ) : (
+        <div className="mx-auto max-w-6xl bg-brand-cream px-6 py-16 lg:py-24">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
+            {posts.map((post) => (
+              <div
+                key={post.slug}
+                className="overflow-hidden rounded-md bg-[#fff5e6] shadow-md"
+              >
+                {post.image && (
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="h-48 w-full object-cover"
+                  />
+                )}
+                <div className="p-4">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="text-2xl font-semibold text-brand-green hover:underline"
+                  >
+                    {post.title}
+                  </Link>
+                  <p className="mt-2 text-[18px] text-brand-green-dark">
+                    {post.description}
+                  </p>
+                  <p className="mt-2 border-brand-green-dark text-sm opacity-40">
+                    {new Date(post.date).toLocaleDateString()}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className='mt-16 lg:p-12 hover:cursor-pointer'>
+            <Link href="/pricing">
+              <img src="/images/number1.png" alt="Sloane Ai The Number 1 Ai tool for business owners" className='w-full h-full object-cover'/>
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

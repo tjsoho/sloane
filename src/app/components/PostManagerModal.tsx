@@ -47,7 +47,7 @@ const PostManagerModal: React.FC<PostManagerModalProps> = ({
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-12 p-4">
         {posts.length === 0 ? (
           <p>No posts available.</p>
         ) : (
@@ -61,7 +61,7 @@ const PostManagerModal: React.FC<PostManagerModalProps> = ({
                 />
               )}
               <div className="p-2">
-                <h2 className="text-sm font-semibold text-blue-600">{post.title}</h2>
+                <h2 className="text-sm font-semibold text-brand-green">{post.title}</h2>
               </div>
               <button
                 className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded"

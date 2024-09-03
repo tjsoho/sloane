@@ -5,6 +5,8 @@ import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import { useRouter, useSearchParams } from 'next/navigation';
 import PostManagerModal from '../components/PostManagerModal';
+import { Radio, RadioGroup, FormControlLabel, FormLabel } from '@mui/material';
+import ProtectedEditor from '../components/ProtectedEditor';
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
@@ -15,6 +17,7 @@ const EditorContent: React.FC = () => {
   const [image, setImage] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [existingImage, setExistingImage] = useState<string | null>(null);
+  const [signature, setSignature] = useState<'toby' | 'rachel' | null>(null); // State for signature selection
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -30,6 +33,7 @@ const EditorContent: React.FC = () => {
           setDescription(post.description);
           setContent(post.content);
           setExistingImage(post.image);
+          setSignature(post.signature || null); // Load signature if exists
         } catch (error) {
           console.error('Error fetching the post:', error);
         }
@@ -57,6 +61,7 @@ const EditorContent: React.FC = () => {
       formData.append('title', title);
       formData.append('description', description);
       formData.append('content', content);
+      formData.append('signature', signature || ''); // Include the signature in the form data
       if (image) {
         formData.append('image', image);
       } else if (existingImage) {
@@ -150,15 +155,41 @@ const EditorContent: React.FC = () => {
         />
       )}
       <ReactQuill value={content} onChange={setContent} />
+
+      {/* Signature Selection */}
+      <div className="mt-6">
+        <FormLabel component="legend" className="mb-2 font-semibold">
+          Choose Signature:
+        </FormLabel>
+        <RadioGroup
+          row
+          value={signature}
+          onChange={(e) => setSignature(e.target.value as 'toby' | 'rachel')}
+        >
+          <FormControlLabel
+            value="toby"
+            control={<Radio sx={{ color: 'brand-green' }} />}
+            label="Toby Signature"
+          />
+          <FormControlLabel
+            value="rachel"
+            control={<Radio sx={{ color: 'brand-green' }} />}
+            label="Rachel Signature"
+          />
+        </RadioGroup>
+      </div>
+
       <button
-        className={`mt-4 rounded bg-blue-500 px-4 py-2 text-white ${loading ? 'cursor-not-allowed opacity-50' : ''}`}
+        className={`mt-4 rounded-full bg-brand-green px-4 py-2 text-white ${
+          loading ? 'cursor-not-allowed opacity-50' : ''
+        }`}
         onClick={handlePost}
         disabled={loading}
       >
         {loading ? 'Publishing...' : 'Post'}
       </button>
       <button
-        className="ml-4 mt-4 rounded bg-gray-500 px-4 py-2 text-white"
+        className="ml-4 mt-4 rounded-full border-2 border-brand-green px-4 py-2 text-brand-green"
         onClick={openModal}
       >
         Edit/Delete a Post
@@ -177,7 +208,9 @@ const EditorContent: React.FC = () => {
 const EditorPage: React.FC = () => {
   return (
     <Suspense fallback={<div>Loading editor...</div>}>
-      <EditorContent />
+      <ProtectedEditor>
+        <EditorContent />
+      </ProtectedEditor>
     </Suspense>
   );
 };
