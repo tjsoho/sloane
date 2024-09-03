@@ -8,7 +8,7 @@ import Modal from '~/app/components/Modal';
 import { useModal } from '../../../hooks/useModal';
 
 // Constants for styling numbers and labels
-const numberStyle = 'text-5xl lg:text-6xl font-bold text-brand-logo';
+const numberStyle = 'text-4xl lg:text-6xl font-bold text-brand-logo';
 const labelStyle = 'text-sm font-medium text-brand-cream mt-2';
 
 interface TimeLeft {
@@ -122,7 +122,7 @@ const CountdownTimer: React.FC = () => {
   }
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center bg-brand-green">
+    <div className="flex h-full w-screen-1 flex-col items-center justify-center bg-brand-green">
       <div className="flex flex-col items-center justify-center px-4 py-16">
         <div className="mb-8 flex w-full justify-center p-4">
           <h2 className="text-4xl text-brand-cream lg:text-5xl">

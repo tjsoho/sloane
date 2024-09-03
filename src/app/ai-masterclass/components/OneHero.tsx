@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
   return (
     <div className="h-full w-full bg-brand-green ">
-      <div className="mx-auto flex max-w-[1240px] px-4 py-16 md:flex-row 2xl:max-w-[1540px]">
+      <div className="mx-auto flex flex-col max-w-[1240px] px-4 py-16 md:flex-row 2xl:max-w-[1540px]">
         <div className="flex w-full flex-col justify-center p-4 md:w-1/2">
           <div>
             <h1 className="text-9xl leading-none text-brand-logo">Ai</h1>
