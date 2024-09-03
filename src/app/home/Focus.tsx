@@ -26,9 +26,9 @@ const Focus = () => {
         <div className="h-contain flex w-full flex-col lg:flex-row">
           {/* left col */}
           <div className="order-1 flex w-full flex-col items-center justify-center text-brand-orange lg:order-2 lg:w-1/2">
-            <div className='w-full lg:w-3/4'>
+            <div className='w-full lg:w-[90%]'>
               <SlideReveal>
-                <h2 className="text-left text-[32px] leading-none lg:text-[44px] ">
+                <h2 className="text-left text-[32px] leading-none lg:text-5xl 2xl:text-7xl ">
                   Focus on<br></br>What You Love
                 </h2>
                 {/* &apos; */}

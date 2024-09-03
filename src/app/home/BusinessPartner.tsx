@@ -29,8 +29,8 @@ const BusinessPartner = () => {
           {/* left col */}
           <div className="flex w-full flex-col items-start justify-center text-brand-green lg:w-1/2">
             <SlideReveal>
-              <h2 className="text-left text-[32px] leading-none lg:text-[44px] ">
-                Sloane Ai<br></br>is your new <br></br>business partner
+              <h2 className="text-left text-[32px] leading-none lg:text-5xl 2xl:text-7xl ">
+                Sloane Ai<br></br>is Your New <br></br>Business Partner
               </h2>
               {/* &apos; */}
             </SlideReveal>

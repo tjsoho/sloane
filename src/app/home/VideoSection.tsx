@@ -32,8 +32,8 @@ const VideoSection = () => {
         <div className="order-1 mb-8 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
           <div>
             <SlideReveal2>
-              <h3 className="mb-4 text-[62px] font-bold leading-none text-brand-logo lg:text-[78px]">
-                What is <br />
+              <h3 className="mb-4 text-[62px] font-bold leading-none text-brand-logo lg:text-[78px] text-center">
+                <span className='text-brand-cream'>What is</span> <br />
                 Sloane Ai?
               </h3>
             </SlideReveal2>

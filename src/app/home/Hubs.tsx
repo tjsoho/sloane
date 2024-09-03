@@ -34,7 +34,7 @@ const Hubs = () => {
             </SlideReveal>
             <p className="font-semibold">“The Sloane Ai Game-Changer”</p>
             <SlideReveal>
-              <p className="my-8 w-full text-[21px] font-light">
+              <p className="my-8 w-full text-[21px] font-light md:w-[95%]">
                 Your dedicated specialists in every field. Whether it’s
                 marketing, business planning, brainstorming new offers or social media, each Hub in
                 Sloane Ai offers customised, expert-level support, just a click

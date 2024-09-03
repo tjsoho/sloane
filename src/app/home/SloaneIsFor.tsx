@@ -31,13 +31,13 @@ const Section2 = () => {
           {/* left col */}
           <div className="text-brand-green flex w-full flex-col items-start justify-center lg:w-1/2">
             <SlideReveal>
-              <h2 className="text-left text-[32px] leading-none lg:text-[44px]">
+              <h2 className="text-left text-[32px] leading-none lg:text-5xl 2xl:text-7xl">
               Who is <br></br>Slaone Ai For?
               </h2>
               {/* &apos; */}
             </SlideReveal>
             <SlideReveal>
-              <p className="my-8 font-light lg:w-3/4 text-[21px]">
+              <p className="my-8 font-light lg:w-[90%] text-[21px]">
               Sloane Ai is designed for solo entrepreneurs, small business owners, and creatives who are juggling multiple roles and need a reliable partner to make business tasks easier. <br></br><br></br>Whether you're a start-up founder, a life coach, an online course creator, or a freelancer, Sloane Ai offers tools and personalised solutions to fit your unique needs.
               </p>
             </SlideReveal>
