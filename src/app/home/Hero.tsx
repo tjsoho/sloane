@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
 
   return (
     <div className="w-screen-1 h-screen bg-brand-green ">
-      <div className="absolute bottom-0 right-0 w-[300px] h-full opacity-10 md:h-auto md:opacity-60 lg:w-1/2">
+      <div className="absolute bottom-0 right-0 h-full w-[300px] opacity-10 md:h-auto md:opacity-60 lg:w-1/2">
         <img
           src="/images/palms1.png"
           alt="hero background"
@@ -65,20 +65,24 @@ const Hero: React.FC = () => {
       <div className="mx-auto flex h-full w-full max-w-[1440px] flex-col items-center justify-center ">
         {/* main content */}
         <div className="flex h-full w-full flex-col items-start justify-center ">
-          <div className="z-50 mb-4 flex flex-col px-8 pt-12 lg:pt-40">
-            <h1 className="text-left text-[37px] leading-[36px] md:text-5xl lg:text-7xl text-brand-cream">
+          <div className="z-10 mb-4 flex flex-col px-8 pt-12 lg:pt-40">
+            <h1 className="text-left text-[37px] leading-[36px] text-brand-cream md:text-5xl lg:text-7xl">
               {headingText}
             </h1>
+            <p className="mt-4 text-left text-[21px] text-brand-cream lg:text-2xl">
+              The #1 Ai Tool for Business Owners - Tailored to Your Unique
+              Needs.
+            </p>
           </div>
-
-          <div className="z-50 flex w-[full] items-start justify-start md:w-[500px] lg:w-[700px]">
-            <img
-              src="/images/macBook1a.png"
-              alt="Make business easy with Sloane.Ai. The no.1 Ai platform for business owners "
-            />
+          <div className='w-full flex justify-center md:justify-start'>
+            <div className="z-50 flex w-[80%] items-start justify-center md:w-[500px] md:justify-start lg:w-[600px] 3xl:w-[700px]">
+              <img
+                src="/images/macBook1a.png"
+                alt="Make business easy with Sloane.Ai. The no.1 Ai platform for business owners "
+              />
+            </div>
           </div>
         </div>
-
         <motion.div
           initial={{ opacity: 0, scale: 1 }}
           animate={{ opacity: 1, scale: 1 }}

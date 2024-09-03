@@ -36,7 +36,7 @@ const ImagePrice = () => {
                   other features such as built-in Smart Prompts, you'll never
                   have to learn or purchase prompts online again. <br></br>
                   <br></br>It's like having a team of professionals at your
-                  fingertips—all for just $79 AUD per month.
+                  fingertips—all for just $79 AUD per month & no lock in contracts.
                 </p>
                 <h3 className="mt-8 text-4xl lg:text-5xl">
                   $79<span className="font-Quicksand text-lg">/mo</span>

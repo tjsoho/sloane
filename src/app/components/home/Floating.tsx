@@ -238,7 +238,7 @@ const buttonsData = [
                 repeat: Infinity,
                 repeatType: 'reverse',
               }}
-              className="mx-24 font-Quicksand"
+              className="mx-24 font-"
             >
               <Button2
                 title={button.title}

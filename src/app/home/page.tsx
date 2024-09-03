@@ -16,6 +16,8 @@ import Quote2 from './Quote2';
 import Focus from './Focus';
 import React, { useState, useEffect } from 'react';
 import Popup from '../components/Popup';
+import Personalisation from './Personalisation';
+import Hubs from './Hubs';
 
 const Home: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -38,19 +40,25 @@ const Home: React.FC = () => {
         <Hero />
       </div>
       <div className="h-contain w-screen-1">
-        <Gelato />
-      </div>
-      <div className="h-contain w-screen-1">
         <BusinessPartner />
       </div>
       <div className="h-contain w-screen-1">
-        <SloaneIsFor />
+        <Personalisation />
       </div>
       <div className="h-contain w-screen-1">
         <Quote2
           text="I’ve been in Sloane everyday and safe to say WOW, I am blown away!"
           author="Chani - Personal Coach"
+          bgColorClass="bg-brand-orange"
+          textColorClass='text-brand-cream'
+          quoteIconColorClass='text-brand-cream'
         />
+      </div>
+      <div className="h-contain w-screen-1">
+        <Hubs />
+      </div>
+      <div className="h-contain w-screen-1">
+        <SloaneIsFor />
       </div>
       <div className="h-contain w-screen-1">
         <Focus />
@@ -58,20 +66,28 @@ const Home: React.FC = () => {
       <div className="h-contain w-screen-1">
         <VideoSection />
       </div>
+      <div className="h-contain w-screen-1">
+        <Quote2
+          text="Sloane Ai has been a game-changer in my business. From creating social media content to drafting client emails, it’s like having a personal assistant who understands my brand inside out.”
+          "
+          author="Sarah - Life Coach"
+          bgColorClass="bg-brand-cream"
+          textColorClass='text-brand-green'
+          quoteIconColorClass='text-brand-green'
+        />
+      </div>
+      <div className="h-contain w-screen-1">
+        <Gelato />
+      </div>
       <div className="h-contain w-screen-1 lg:h-screen">
         <ResponsiveFloating />
       </div>
-      <div className="h-contain w-screen-1">
-        <Quote />
-      </div>
+     
       <div className="h-contain w-screen-1">
         <GetStarted />
       </div>
       <div className="h-contain w-screen-1">
         <ImagePrice />
-      </div>
-      <div className="h-contain w-screen-1">
-        <SecretSource />
       </div>
       <div className="h-contain w-screen-1">
         <Founder />

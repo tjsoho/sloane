@@ -12,9 +12,11 @@ const Header = () => {
   };
 
   const linkClasses =
-    'hover:text-brand-logo uppercase font-Archivo text-brand-cream flex justify-center items-center hover:underline';
+    'hover:text-brand-logo uppercase font-Archivo text-brand-cream flex justify-center items-center hover:underline ';
   const linkClasses2 =
-    'hover:text-brand-logo uppercase font-Archivo text-brand-green border px-4 py-2 rounded-full flex justify-center items-center bg-brand-cream hover:bg-brand-green leading-none hover:border-brand-logo';
+    'hover:text-brand-logo uppercase font-Archivo text-brand-cream border border-brand-cream px-4 py-2 rounded-full flex justify-center items-center bg-brand-green hover:bg-brand-green leading-none hover:border-brand-logo hover:shadow-lg';
+  const linkClasses3 =
+    'hover:text-brand-logo uppercase font-Archivo text-brand-green  px-4 py-2 rounded-full flex justify-center items-center bg-brand-cream hover:bg-brand-green-dark leading-none hover:border-brand-logo hover:shadow-lg';
 
   return (
     <>
@@ -47,6 +49,9 @@ const Header = () => {
               </Link>
               <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
                 <a className={linkClasses2}>Login</a>
+              </Link>
+              <Link href="https://app.sloane.biz/userform" legacyBehavior>
+                <a className={linkClasses3}>Get Started</a>
               </Link>
             </nav>
             <div className="lg:hidden">

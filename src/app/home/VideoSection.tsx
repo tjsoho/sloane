@@ -10,7 +10,7 @@ const VideoSection = () => {
   };
 
   return (
-    <div className="h-full w-full bg-brand-logo">
+    <div className="h-full w-full bg-brand-green">
       <div className="mx-auto flex h-full max-w-[1240px] flex-col items-center justify-center py-32 lg:flex-row lg:justify-center 2xl:max-w-[1540px]">
         {/* left col */}
         <div className="order-2 flex w-full items-center justify-center p-4 lg:order-1 lg:w-1/2">
@@ -32,9 +32,9 @@ const VideoSection = () => {
         <div className="order-1 mb-8 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
           <div>
             <SlideReveal2>
-              <h3 className="mb-4 text-[62px] font-bold leading-none text-brand-green lg:text-[78px]">
+              <h3 className="mb-4 text-[62px] font-bold leading-none text-brand-logo lg:text-[78px]">
                 What is <br />
-                Sloane?
+                Sloane Ai?
               </h3>
             </SlideReveal2>
           </div>
@@ -42,9 +42,9 @@ const VideoSection = () => {
             <Reveal>
               <Button
                 title="Get Sloane"
-                textColor="brand-cream"
+                textColor="brand-green"
                 textHoverColor="brand-logo"
-                backgroundColor="brand-green"
+                backgroundColor="brand-cream"
                 borderColor="brand-green"
                 hoverBG="brand-green-dark"
                 onClick={handleClick}

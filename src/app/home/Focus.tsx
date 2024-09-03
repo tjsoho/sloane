@@ -1,9 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import Button from '../components/Button';
-import ClientCardCarousel from '../components/home/ClientCardCarousel';
-import MobileClientCardCarousel from '../components/home/MobileClientCardCarousel';
-import Statistic from '../components/home/Statistic';
 import { SlideReveal } from '../components/Animations/SlideReveal';
 import { SlideReveal2 } from '../components/Animations/SlideReveal2';
 
@@ -29,7 +25,7 @@ const Focus = () => {
       <div className="mx-auto flex h-full w-full max-w-[1240px] flex-col px-4 py-16 lg:py-32 2xl:max-w-[1540px]">
         <div className="h-contain flex w-full flex-col lg:flex-row">
           {/* left col */}
-          <div className="order-1 flex w-full flex-col items-center justify-center text-brand-green lg:order-2 lg:w-1/2">
+          <div className="order-1 flex w-full flex-col items-center justify-center text-brand-orange lg:order-2 lg:w-1/2">
             <div className='w-full lg:w-3/4'>
               <SlideReveal>
                 <h2 className="text-left text-[32px] leading-none lg:text-[44px] ">
@@ -38,7 +34,7 @@ const Focus = () => {
                 {/* &apos; */}
               </SlideReveal>
               <SlideReveal>
-                <p className="my-8 font-light lg:w-3/4 text-[21px]">
+                <p className="my-8 font-light lg:w-[90%] text-[21px] text-brand-orange">
                   Imagine focusing on the parts of your business you truly
                   enjoy, while Sloane Ai handles the rest. <br></br>
                   <br></br>From planning to client communication, our platform
@@ -46,20 +42,7 @@ const Focus = () => {
                   business with ease and confidence.
                 </p>
               </SlideReveal>
-              <SlideReveal>
-                <div className="mt-2">
-                  <Button
-                    title="Get Sloane"
-                    textColor="brand-cream"
-                    textHoverColor="brand-logo"
-                    backgroundColor="brand-green"
-                    hoverBG="brand-green-dark"
-                    onClick={handleClick}
-                    path="/pricing"
-                    ariaLabel="Find Sloane Pricing"
-                  />
-                </div>
-              </SlideReveal>
+             
             </div>
           </div>
           {/* Right Col */}
