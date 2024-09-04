@@ -47,7 +47,7 @@ const Personalisation = () => {
             <div className="mt-8 w-full lg:mt-0 lg:w-1/2 ">
               <SlideReveal2>
                 <img
-                  src="/images/photographerStock.png"
+                  src="/images/photographerStock.jpeg"
                   alt="Scale and grow your business with Sloane Ai"
                   className="h-full w-full rounded-2xl"
                 />
