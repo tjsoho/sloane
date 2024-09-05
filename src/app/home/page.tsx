@@ -101,7 +101,7 @@ const Home: React.FC = () => {
           image="/images/masterclassA.png"
           subheading="Get to Know Ai!"
           paragraph="A friendly introduction for non-techy business owners. 11am Friday 13th September."
-          buttonText="Reserve your spot"
+          buttonText="DISCOVER MORE"
           onClose={handleClosePopup}
         />
       )}

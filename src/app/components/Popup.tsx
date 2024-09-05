@@ -1,7 +1,7 @@
-// src/app/components/Popup.tsx
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation
 import Button from '~/app/components/Button';
 
 interface PopupProps {
@@ -21,6 +21,12 @@ const Popup: React.FC<PopupProps> = ({
   buttonText,
   onClose,
 }) => {
+  const router = useRouter(); // Initialize the useRouter hook
+
+  const handleButtonClick = () => {
+    router.push('/ai-masterclass'); // Navigate to /ai-masterclass when the button is clicked
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="mx-auto max-w-lg rounded-2xl bg-brand-cream p-8">
@@ -44,11 +50,11 @@ const Popup: React.FC<PopupProps> = ({
             backgroundColor="brand-green"
             hoverBG="brand-green-dark"
             ariaLabel={buttonText}
-            onClick={onClose}
+            onClick={handleButtonClick} // Change the click handler to navigate to /ai-masterclass
           />
           <button
             onClick={onClose}
-            className="mt-2  text-brand-green hover:text-brand-green-dark underline"
+            className="mt-2 text-brand-green hover:text-brand-green-dark underline"
           >
             Close
           </button>
