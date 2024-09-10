@@ -32,7 +32,7 @@ const Section2 = () => {
           <div className="text-brand-green flex w-full flex-col items-start justify-center lg:w-1/2">
             <SlideReveal>
               <h2 className="text-left text-[32px] leading-none lg:text-5xl 2xl:text-7xl">
-              Who is <br></br>Slaone Ai For?
+              Who is <br></br>Sloane Ai For?
               </h2>
               {/* &apos; */}
             </SlideReveal>

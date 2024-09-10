@@ -30,7 +30,7 @@ const ImagePrice = () => {
                 </h3>
                 <p className="text-left text-[22px] font-light md:text-[23px]">
                   Unlike other platforms, Sloane is a highly personalised tool
-                  curated after a deep dive with one of our specialist.{' '}
+                  curated after a deep dive with one of our specialists.{' '}
                   <br></br>
                   <br></br>With over 10 hubs offering expert guidance 24/7, and
                   other features such as built-in Smart Prompts, you'll never
