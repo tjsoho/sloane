@@ -48,7 +48,7 @@ export default function BlogPost({ params }: BlogPostProps) {
               />
             )}
           </div>
-          <div className="mx-auto flex h-full w-full max-w-[1240px] flex-col px-4 py-16 2xl:max-w-[1540px]">
+          <div className="mx-auto flex h-full w-full max-w-[1100px] flex-col px-4 py-16 ">
             <p className="mb-6 border-brand-green-dark  opacity-20">
               {new Date(data.date).toLocaleDateString()}
             </p>
@@ -57,7 +57,7 @@ export default function BlogPost({ params }: BlogPostProps) {
             {/* Render the selected signature */}
             <div className="relative mt-8">
               <div className="">{renderSignature()}</div>
-              <div className="w-3/4 border-t border-brand-green-dark  opacity-20 lg:w-1/2 ml-14"></div>
+              <div className="ml-14 w-3/4 border-t  border-brand-green-dark opacity-20 lg:w-1/2"></div>
             </div>
 
             {/* Link back to blog with a back arrow */}

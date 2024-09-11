@@ -44,6 +44,9 @@ const Header = () => {
               <Link href="/FAQS" legacyBehavior>
                 <a className={linkClasses}>FAQS</a>
               </Link>
+              <Link href="/blog" legacyBehavior>
+                <a className={linkClasses}>blog</a>
+              </Link>
               <Link href="/contact" legacyBehavior>
                 <a className={linkClasses}>Contact</a>
               </Link>
@@ -101,20 +104,21 @@ const Header = () => {
                     Pricing
                   </a>
                 </Link>
-                <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
+               
+                <Link href="/FAQS" legacyBehavior>
                   <a
                     onClick={toggleMenu}
                     className="text-center font-Archivo text-2xl uppercase text-brand-cream hover:text-brand-orange"
                   >
-                    Login
+                    FAQS
                   </a>
                 </Link>
-                <Link href="/#FAQ" legacyBehavior>
+                <Link href="/blog" legacyBehavior>
                   <a
                     onClick={toggleMenu}
                     className="text-center font-Archivo text-2xl uppercase text-brand-cream hover:text-brand-orange"
                   >
-                    FAQ
+                    Blog
                   </a>
                 </Link>
                 <Link href="/contact" legacyBehavior>
@@ -123,6 +127,22 @@ const Header = () => {
                     className="text-center font-Archivo text-2xl uppercase text-brand-cream hover:text-brand-orange"
                   >
                     Contact
+                  </a>
+                </Link>
+                <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
+                  <a
+                    onClick={toggleMenu}
+                    className="text-center font-Archivo text-2xl uppercase text-brand-cream hover:text-brand-orange"
+                  >
+                    Login
+                  </a>
+                </Link>
+                <Link href="https://app.sloane.biz/userform" legacyBehavior>
+                  <a
+                    onClick={toggleMenu}
+                    className="text-center font-Archivo text-2xl uppercase text-brand-green bg-brand-cream px-4 py-2 rounded-full hover:bg-brand-green-dark"
+                  >
+                    Get Started
                   </a>
                 </Link>
               </nav>
