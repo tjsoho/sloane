@@ -80,7 +80,6 @@ export default function RootLayout({
         />
         {/* End Facebook Pixel Code */}
 
-        <script async defer src="https://app.primechat.ai/js/widget/laxvljenwhsjcjyn/float.js"></script>
       </head>
       <body className="flex min-h-screen flex-col font-sans">
         <Header />
@@ -98,6 +97,7 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Facebook Pixel Noscript */}
+        <script async defer src="https://app.primechat.ai/js/widget/laxvljenwhsjcjyn/float.js"></script>
       </body>
     </html>
   );
