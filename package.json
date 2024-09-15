@@ -19,6 +19,7 @@
     "@stripe/stripe-js": "^4.0.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "axios": "^1.7.5",
+    "firebase": "^10.13.1",
     "flowbite-react": "^0.10.1",
     "formik": "^2.4.6",
     "framer-motion": "^11.2.11",

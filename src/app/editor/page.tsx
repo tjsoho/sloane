@@ -7,33 +7,51 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import PostManagerModal from '../components/PostManagerModal';
 import { Radio, RadioGroup, FormControlLabel, FormLabel } from '@mui/material';
 import ProtectedEditor from '../components/ProtectedEditor';
+import { db, storage } from '../../utils/firebase';
+import { collection, addDoc, updateDoc, doc, getDoc, deleteDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import storage utilities
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
+// Utility function to generate a slug from the title
+const generateSlug = (title: string) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with hyphens
+    .replace(/(^-|-$)/g, ''); // Remove leading/trailing hyphens
+};
 
 const EditorContent: React.FC = () => {
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState<File | null>(null);
+  const [imageURL, setImageURL] = useState<string | null>(null); // For storing the uploaded image URL
   const [loading, setLoading] = useState(false);
   const [existingImage, setExistingImage] = useState<string | null>(null);
-  const [signature, setSignature] = useState<'toby' | 'rachel' | null>(null); // State for signature selection
+  const [signature, setSignature] = useState<'toby' | 'rachel' | null>(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
   const slug = searchParams.get('slug');
 
+  // Fetch post if in edit mode
   useEffect(() => {
     if (slug) {
       const fetchPost = async () => {
         try {
-          const response = await fetch(`/api/get-posts?slug=${slug}`);
-          const post = await response.json();
-          setTitle(post.title);
-          setDescription(post.description);
-          setContent(post.content);
-          setExistingImage(post.image);
-          setSignature(post.signature || null); // Load signature if exists
+          const postDoc = doc(db, 'posts', slug);
+          const postSnapshot = await getDoc(postDoc);
+          if (postSnapshot.exists()) {
+            const post = postSnapshot.data();
+            setTitle(post.title);
+            setDescription(post.description);
+            setContent(post.content);
+            setExistingImage(post.image);
+            setSignature(post.signature || null);
+          } else {
+            console.error('No such document!');
+          }
         } catch (error) {
           console.error('Error fetching the post:', error);
         }
@@ -43,13 +61,24 @@ const EditorContent: React.FC = () => {
     }
   }, [slug]);
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Handle image upload and return the uploaded URL
+  const uploadImage = async (file: File) => {
+    const imageRef = ref(storage, `images/${file.name}`);
+    const snapshot = await uploadBytes(imageRef, file);
+    return await getDownloadURL(snapshot.ref); // Return the image URL after upload
+  };
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] ?? null;
     setImage(file);
+    if (file) {
+      const url = await uploadImage(file); // Upload and get URL
+      setImageURL(url);
+    }
   };
 
   const handlePost = async () => {
-    if (!title || !content || !description || (!image && !existingImage)) {
+    if (!title || !content || !description || (!imageURL && !existingImage)) {
       alert('Title, description, content, and image are required.');
       return;
     }
@@ -57,31 +86,29 @@ const EditorContent: React.FC = () => {
     setLoading(true);
 
     try {
-      const formData = new FormData();
-      formData.append('title', title);
-      formData.append('description', description);
-      formData.append('content', content);
-      formData.append('signature', signature || ''); // Include the signature in the form data
-      if (image) {
-        formData.append('image', image);
-      } else if (existingImage) {
-        formData.append('existingImage', existingImage);
-      }
+      const postSlug = generateSlug(title); // Generate a slug from the title
+      const postData = {
+        title,
+        description,
+        content,
+        signature: signature || '',
+        date: new Date().toISOString(), // Ensure date is stored as ISO string
+        image: imageURL || existingImage, // Store the uploaded image URL or existing image
+        slug: postSlug, // Store the generated slug
+      };
 
-      const response = await fetch(
-        `/api/${slug ? `update-post?slug=${slug}` : 'save-post'}`,
-        {
-          method: 'POST',
-          body: formData,
-        }
-      );
-
-      if (response.ok) {
-        alert('Blog post published successfully!');
-        router.push('/blog');
+      if (slug) {
+        // Update existing post
+        const postDoc = doc(db, 'posts', slug);
+        await updateDoc(postDoc, postData);
       } else {
-        alert('Failed to publish the post.');
+        // Create new post
+        const postsRef = collection(db, 'posts');
+        await addDoc(postsRef, postData);
       }
+
+      alert('Blog post published successfully!');
+      router.push('/blog');
     } catch (error) {
       console.error('Error posting the blog:', error);
       alert('An error occurred while publishing the post.');
@@ -106,16 +133,10 @@ const EditorContent: React.FC = () => {
   const handleDelete = async (slug: string) => {
     if (confirm('Are you sure you want to delete this post?')) {
       try {
-        const response = await fetch(`/api/delete-post?slug=${slug}`, {
-          method: 'DELETE',
-        });
-
-        if (response.ok) {
-          alert('Blog post deleted successfully!');
-          closeModal();
-        } else {
-          alert('Failed to delete the post.');
-        }
+        const postDoc = doc(db, 'posts', slug);
+        await deleteDoc(postDoc);
+        alert('Blog post deleted successfully!');
+        closeModal();
       } catch (error) {
         console.error('Error deleting the blog:', error);
         alert('An error occurred while deleting the post.');
@@ -156,7 +177,6 @@ const EditorContent: React.FC = () => {
       )}
       <ReactQuill value={content} onChange={setContent} />
 
-      {/* Signature Selection */}
       <div className="mt-6">
         <FormLabel component="legend" className="mb-2 font-semibold">
           Choose Signature:

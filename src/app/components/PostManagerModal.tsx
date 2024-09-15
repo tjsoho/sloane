@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { useRouter } from 'next/navigation';
+import { db } from '../../utils/firebase';
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 
 interface Post {
   slug: string;
@@ -27,9 +29,13 @@ const PostManagerModal: React.FC<PostManagerModalProps> = ({
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('/api/get-posts');
-        const data = await response.json();
-        setPosts(data);
+        const querySnapshot = await getDocs(collection(db, 'posts')); // Fetch posts from Firestore
+        const postList: Post[] = querySnapshot.docs.map((doc) => ({
+          slug: doc.id, // Use the document ID as the slug
+          title: doc.data().title,
+          image: doc.data().image || '', // Fallback to an empty string if no image
+        }));
+        setPosts(postList);
       } catch (error) {
         console.error('Error fetching posts:', error);
       }
@@ -43,6 +49,19 @@ const PostManagerModal: React.FC<PostManagerModalProps> = ({
   const handleEdit = (slug: string) => {
     router.push(`/editor?slug=${slug}`); // Redirect to the editor with the slug as a query parameter
     onRequestClose(); // Close the modal
+  };
+
+  const handleDelete = async (slug: string) => {
+    if (confirm('Are you sure you want to delete this post?')) {
+      try {
+        await deleteDoc(doc(db, 'posts', slug)); // Delete the post from Firestore
+        setPosts((prevPosts) => prevPosts.filter((post) => post.slug !== slug)); // Update the UI
+        alert('Post deleted successfully.');
+      } catch (error) {
+        console.error('Error deleting the post:', error);
+        alert('An error occurred while deleting the post.');
+      }
+    }
   };
 
   return (
@@ -65,13 +84,13 @@ const PostManagerModal: React.FC<PostManagerModalProps> = ({
               </div>
               <button
                 className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded"
-                onClick={() => onDelete(post.slug)}
+                onClick={() => handleDelete(post.slug)} // Use handleDelete
               >
                 Delete
               </button>
               <button
                 className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 text-xs rounded"
-                onClick={() => handleEdit(post.slug)} // Use the new handleEdit function
+                onClick={() => handleEdit(post.slug)} // Use handleEdit
               >
                 Edit
               </button>

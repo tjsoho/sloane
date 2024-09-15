@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { db } from '../../utils/firebase'; // Ensure the Firebase setup is correct
+import { collection, getDocs } from 'firebase/firestore';
 
 interface Post {
   slug: string;
@@ -13,18 +15,24 @@ interface Post {
 
 export default function BlogIndex() {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true); // State to manage loading
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('/api/get-posts');
-        const data = await response.json();
-        setPosts(data);
+        const postsCollection = collection(db, 'posts');
+        const postsSnapshot = await getDocs(postsCollection);
+        const postsData = postsSnapshot.docs.map((doc) => {
+          return {
+            slug: doc.id, // Using Firestore document ID as the slug
+            ...doc.data(),
+          } as Post;
+        });
+        setPosts(postsData);
       } catch (error) {
         console.error('Error fetching posts:', error);
       } finally {
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false);
       }
     };
 
@@ -41,15 +49,13 @@ export default function BlogIndex() {
             </h1>
             <p className="mt-2 text-brand-cream lg:w-3/4">
               Explore insightful strategies, tips, and stories that empower
-              business owners to grow and thrive. From Sloane's unique features
-              to general business advice, tips & tricks, we've got you covered.
+              business owners to grow and thrive.
             </p>
           </div>
         </div>
       </div>
 
       {loading ? (
-        // Animated loading dots
         <div className="flex items-center justify-center py-16">
           <h2 className="mr-4 text-4xl">Loading</h2>
           <motion.div
@@ -122,9 +128,13 @@ export default function BlogIndex() {
               </div>
             ))}
           </div>
-          <div className='mt-16 lg:p-12 hover:cursor-pointer'>
+          <div className="mt-16 lg:p-12 hover:cursor-pointer">
             <Link href="/pricing">
-              <img src="/images/number1.png" alt="Sloane Ai The Number 1 Ai tool for business owners" className='w-full h-full object-cover'/>
+              <img
+                src="/images/number1.png"
+                alt="Sloane Ai The Number 1 Ai tool for business owners"
+                className="w-full h-full object-cover"
+              />
             </Link>
           </div>
         </div>

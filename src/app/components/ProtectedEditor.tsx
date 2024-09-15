@@ -1,22 +1,41 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation'; // Import the useRouter hook
+import { useRouter } from 'next/navigation';
 
 const PASSWORD = 'Tugun'; // Set your password here
+const EXPIRATION_TIME = 5 * 60 * 1000; // 5 minutes in milliseconds
 
 export default function ProtectedEditor({ children }: { children: React.ReactNode }) {
   const [input, setInput] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
   const [error, setError] = useState('');
-  const router = useRouter(); // Initialize the useRouter hook
+  const router = useRouter();
+
+  // Check local storage for previous authentication
+  useEffect(() => {
+    const lastLoginTime = localStorage.getItem('lastLoginTime');
+    if (lastLoginTime) {
+      const elapsedTime = Date.now() - parseInt(lastLoginTime, 10);
+      if (elapsedTime < EXPIRATION_TIME) {
+        setAuthenticated(true); // If login was within the last 5 minutes, authenticate automatically
+      }
+    }
+  }, []);
 
   const handlePasswordSubmit = () => {
     if (input === PASSWORD) {
+      localStorage.setItem('lastLoginTime', Date.now().toString()); // Store current login time in local storage
       setAuthenticated(true);
       console.log('Password correct, setting authenticated to true...');
       alert('Password correct, redirecting to editor...');
     } else {
       setError('Incorrect password, please try again.');
+    }
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handlePasswordSubmit();
     }
   };
 
@@ -36,6 +55,7 @@ export default function ProtectedEditor({ children }: { children: React.ReactNod
         type="password"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        onKeyDown={handleKeyDown} // Add keydown event for Enter key
         className="mb-2 p-2 border border-gray-300 rounded-full"
         placeholder="Enter password"
       />
