@@ -28,7 +28,13 @@ export default function BlogIndex() {
             ...doc.data(),
           } as Post;
         });
-        setPosts(postsData);
+
+        // Sort posts by date in descending order
+        const sortedPosts = postsData.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+
+        setPosts(sortedPosts);
       } catch (error) {
         console.error('Error fetching posts:', error);
       } finally {
@@ -100,32 +106,32 @@ export default function BlogIndex() {
         <div className="mx-auto max-w-6xl bg-brand-cream px-6 py-16 lg:py-24">
           <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
             {posts.map((post) => (
-              <div
+              <Link
                 key={post.slug}
+                href={`/blog/${post.slug}`}
                 className="overflow-hidden rounded-md bg-[#fff5e6] shadow-md"
               >
-                {post.image && (
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="h-48 w-full object-cover"
-                  />
-                )}
-                <div className="p-4">
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="text-2xl font-semibold text-brand-green hover:underline"
-                  >
-                    {post.title}
-                  </Link>
-                  <p className="mt-2 text-[18px] text-brand-green-dark">
-                    {post.description}
-                  </p>
-                  <p className="mt-2 border-brand-green-dark text-sm opacity-40">
-                    {new Date(post.date).toLocaleDateString()}
-                  </p>
+                <div>
+                  {post.image && (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="h-48 w-full object-cover"
+                    />
+                  )}
+                  <div className="p-4">
+                    <h2 className="text-2xl font-semibold text-brand-green">
+                      {post.title}
+                    </h2>
+                    <p className="mt-2 text-[18px] text-brand-green-dark">
+                      {post.description}
+                    </p>
+                    <p className="mt-2 border-brand-green-dark text-sm opacity-40">
+                      {new Date(post.date).toLocaleDateString()}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="mt-16 lg:p-12 hover:cursor-pointer">
