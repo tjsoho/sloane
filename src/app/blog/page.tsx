@@ -1,5 +1,5 @@
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../utils/firebase';  // Ensure correct Firebase setup
+import { db } from '../../utils/firebase';
 import Link from 'next/link';
 
 interface Post {
@@ -10,6 +10,7 @@ interface Post {
   description: string;
 }
 
+// Fetch posts from Firebase
 async function getPosts(): Promise<Post[]> {
   const postsCollection = collection(db, 'posts');
   const postsSnapshot = await getDocs(postsCollection);
@@ -18,9 +19,11 @@ async function getPosts(): Promise<Post[]> {
     ...doc.data(),
   })) as Post[];
 
+  // Sort posts by date (newest first)
   return postsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
+// Static page with revalidation
 export default async function BlogIndex() {
   const posts = await getPosts();
 
@@ -68,3 +71,6 @@ export default async function BlogIndex() {
     </div>
   );
 }
+
+// Revalidate the page every 10 seconds to ensure new changes are fetched
+export const revalidate = 10;

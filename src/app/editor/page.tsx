@@ -108,7 +108,9 @@ const EditorContent: React.FC = () => {
       }
 
       alert('Blog post published successfully!');
-      router.push('/blog');
+
+      // Force page refresh to see new post immediately
+      window.location.reload(); // This forces a refresh, showing updated blog cards immediately
     } catch (error) {
       console.error('Error posting the blog:', error);
       alert('An error occurred while publishing the post.');
