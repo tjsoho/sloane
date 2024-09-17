@@ -6,27 +6,24 @@ interface BlogPostProps {
   params: { slug: string };
 }
 
-const fetchPostBySlug = async (slug: string) => {
+async function fetchPostBySlug(slug: string) {
   try {
     const postsRef = collection(db, 'posts');
     const q = query(postsRef, where('slug', '==', slug));
     const querySnapshot = await getDocs(q);
 
     if (!querySnapshot.empty) {
-      const postData = querySnapshot.docs[0]?.data();
-      return postData ?? null;
+      return querySnapshot.docs[0] ?.data();
     }
   } catch (error) {
     console.error('Error fetching post:', error);
-    return null;
   }
 
   return null;
-};
+}
 
 export default async function BlogPost({ params }: BlogPostProps) {
   const { slug } = params;
-
   const post = await fetchPostBySlug(slug);
 
   if (!post) return <div>Post not found</div>;
@@ -85,3 +82,6 @@ export default async function BlogPost({ params }: BlogPostProps) {
     </div>
   );
 }
+
+// Adding revalidation time of 10 seconds
+export const revalidate = 10;

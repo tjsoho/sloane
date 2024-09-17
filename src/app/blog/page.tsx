@@ -1,5 +1,3 @@
-// src/app/blog/page.tsx (Server Component)
-
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../utils/firebase';  // Ensure correct Firebase setup
 import Link from 'next/link';
