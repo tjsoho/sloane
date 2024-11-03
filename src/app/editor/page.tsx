@@ -8,17 +8,23 @@ import PostManagerModal from '../components/PostManagerModal';
 import { Radio, RadioGroup, FormControlLabel, FormLabel } from '@mui/material';
 import ProtectedEditor from '../components/ProtectedEditor';
 import { db, storage } from '../../utils/firebase';
-import { collection, addDoc, updateDoc, doc, getDoc, deleteDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import storage utilities
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  doc,
+  getDoc,
+  deleteDoc,
+} from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
-// Utility function to generate a slug from the title
 const generateSlug = (title: string) => {
   return title
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with hyphens
-    .replace(/(^-|-$)/g, ''); // Remove leading/trailing hyphens
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 };
 
 const EditorContent: React.FC = () => {
@@ -26,7 +32,7 @@ const EditorContent: React.FC = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState<File | null>(null);
-  const [imageURL, setImageURL] = useState<string | null>(null); // For storing the uploaded image URL
+  const [imageURL, setImageURL] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [existingImage, setExistingImage] = useState<string | null>(null);
   const [signature, setSignature] = useState<'toby' | 'rachel' | null>(null);
@@ -35,15 +41,16 @@ const EditorContent: React.FC = () => {
   const searchParams = useSearchParams();
   const slug = searchParams.get('slug');
 
-  // Fetch post if in edit mode
   useEffect(() => {
     if (slug) {
       const fetchPost = async () => {
         try {
+          console.log('Fetching post with slug:', slug);
           const postDoc = doc(db, 'posts', slug);
           const postSnapshot = await getDoc(postDoc);
           if (postSnapshot.exists()) {
             const post = postSnapshot.data();
+            console.log('Fetched post data:', post);
             setTitle(post.title);
             setDescription(post.description);
             setContent(post.content);
@@ -61,23 +68,38 @@ const EditorContent: React.FC = () => {
     }
   }, [slug]);
 
-  // Handle image upload and return the uploaded URL
   const uploadImage = async (file: File) => {
-    const imageRef = ref(storage, `images/${file.name}`);
-    const snapshot = await uploadBytes(imageRef, file);
-    return await getDownloadURL(snapshot.ref); // Return the image URL after upload
+    try {
+      console.log('Uploading image:', file.name);
+      const imageRef = ref(storage, `images/${file.name}`);
+      const snapshot = await uploadBytes(imageRef, file);
+      const url = await getDownloadURL(snapshot.ref);
+      console.log('Image uploaded successfully:', url);
+      return url;
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      throw error;
+    }
   };
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] ?? null;
     setImage(file);
     if (file) {
-      const url = await uploadImage(file); // Upload and get URL
+      const url = await uploadImage(file);
       setImageURL(url);
     }
   };
 
   const handlePost = async () => {
+    console.log('Publishing post with data:', {
+      title,
+      description,
+      content,
+      imageURL,
+      existingImage,
+    });
+
     if (!title || !content || !description || (!imageURL && !existingImage)) {
       alert('Title, description, content, and image are required.');
       return;
@@ -86,31 +108,31 @@ const EditorContent: React.FC = () => {
     setLoading(true);
 
     try {
-      const postSlug = generateSlug(title); // Generate a slug from the title
+      const postSlug = generateSlug(title);
       const postData = {
         title,
         description,
         content,
         signature: signature || '',
-        date: new Date().toISOString(), // Ensure date is stored as ISO string
-        image: imageURL || existingImage, // Store the uploaded image URL or existing image
-        slug: postSlug, // Store the generated slug
+        date: new Date().toISOString(),
+        image: imageURL || existingImage,
+        slug: postSlug,
       };
 
+      console.log('Post data to be saved:', postData);
+
       if (slug) {
-        // Update existing post
         const postDoc = doc(db, 'posts', slug);
+        console.log('Updating existing post:', slug);
         await updateDoc(postDoc, postData);
       } else {
-        // Create new post
         const postsRef = collection(db, 'posts');
+        console.log('Creating new post');
         await addDoc(postsRef, postData);
       }
 
       alert('Blog post published successfully!');
-
-      // Force page refresh to see new post immediately
-      window.location.reload(); // This forces a refresh, showing updated blog cards immediately
+      window.location.reload();
     } catch (error) {
       console.error('Error posting the blog:', error);
       alert('An error occurred while publishing the post.');
@@ -119,13 +141,8 @@ const EditorContent: React.FC = () => {
     }
   };
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
 
   const handleEdit = (slug: string) => {
     router.push(`/editor?slug=${slug}`);
@@ -178,7 +195,6 @@ const EditorContent: React.FC = () => {
         />
       )}
       <ReactQuill value={content} onChange={setContent} />
-
       <div className="mt-6">
         <FormLabel component="legend" className="mb-2 font-semibold">
           Choose Signature:
@@ -190,51 +206,33 @@ const EditorContent: React.FC = () => {
         >
           <FormControlLabel
             value="toby"
-            control={<Radio sx={{ color: 'brand-green' }} />}
+            control={<Radio />}
             label="Toby Signature"
           />
           <FormControlLabel
             value="rachel"
-            control={<Radio sx={{ color: 'brand-green' }} />}
+            control={<Radio />}
             label="Rachel Signature"
           />
         </RadioGroup>
       </div>
-
       <button
-        className={`mt-4 rounded-full bg-brand-green px-4 py-2 text-white ${
-          loading ? 'cursor-not-allowed opacity-50' : ''
-        }`}
+        className="mt-4 rounded-full bg-brand-green px-4 py-2 text-white"
         onClick={handlePost}
         disabled={loading}
       >
         {loading ? 'Publishing...' : 'Post'}
       </button>
-      <button
-        className="ml-4 mt-4 rounded-full border-2 border-brand-green px-4 py-2 text-brand-green"
-        onClick={openModal}
-      >
-        Edit/Delete a Post
-      </button>
-
-      <PostManagerModal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
     </div>
   );
 };
 
-const EditorPage: React.FC = () => {
-  return (
-    <Suspense fallback={<div>Loading editor...</div>}>
-      <ProtectedEditor>
-        <EditorContent />
-      </ProtectedEditor>
-    </Suspense>
-  );
-};
+const EditorPage: React.FC = () => (
+  <Suspense fallback={<div>Loading editor...</div>}>
+    <ProtectedEditor>
+      <EditorContent />
+    </ProtectedEditor>
+  </Suspense>
+);
 
 export default EditorPage;
