@@ -2,11 +2,12 @@
 import '~/styles/globals.css';
 import Header from './components/core/header';
 import Footer from './components/core/footer';
+import Script from 'next/script';
 
 export const metadata = {
-  title: "Sloane",
-  description: "Making business easy",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: 'Sloane',
+  description: 'Making business easy',
+  icons: [{ rel: 'icon', url: '/favicon.ico' }],
 };
 
 export default function RootLayout({
@@ -33,7 +34,10 @@ export default function RootLayout({
         />
 
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-84X9LBECDG"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-84X9LBECDG"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -80,7 +84,11 @@ export default function RootLayout({
         />
         {/* End Facebook Pixel Code */}
 
-          {/* <script async defer src="https://app.primechat.ai/js/widget/laxvljenwhsjcjyn/float.js"></script> */}
+        {/* <script async defer src="https://app.primechat.ai/js/widget/laxvljenwhsjcjyn/float.js"></script> */}
+        <script
+          src="https://chatbot-843foefd2-tjsohos-projects.vercel.app/widget.js"
+          async
+        ></script>
       </head>
       <body className="flex min-h-screen flex-col font-sans">
         <Header />

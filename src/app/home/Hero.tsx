@@ -64,8 +64,10 @@ const Hero: React.FC = () => {
 
       <div className="mx-auto flex h-full w-full max-w-[1440px] flex-col items-center justify-center ">
         {/* main content */}
-        <div className="flex h-full w-full flex-col items-start justify-center ">
-          <div className="z-10 mb-4 flex flex-col px-8 pt-12 lg:pt-40">
+        <div className="flex h-full w-full flex-col items-start justify-center">
+          {/* main content */}
+          <div className="z-10 mb-4 flex flex-col px-8 pt-12 lg:pt-40 ">
+        
             <h1 className="text-left text-[37px] leading-[36px] text-brand-cream md:text-5xl lg:text-7xl">
               {headingText}
             </h1>
@@ -75,7 +77,7 @@ const Hero: React.FC = () => {
             </p>
           </div>
           <div className='w-full flex justify-center md:justify-start'>
-            <div className="z-50 flex w-[80%] items-start justify-center md:w-[500px] md:justify-start lg:w-[600px] 3xl:w-[700px]">
+            <div className="z-50 flex w-[80%] items-start justify-center md:w-[500px] md:justify-start lg:w-[550px] 3xl:w-[700px]">
               <img
                 src="/images/macBook1a.png"
                 alt="Make business easy with Sloane.Ai. The no.1 Ai platform for business owners "
