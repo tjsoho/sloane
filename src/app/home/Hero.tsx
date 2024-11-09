@@ -66,22 +66,23 @@ const Hero: React.FC = () => {
         {/* main content */}
         <div className="flex h-full w-full flex-col items-start justify-center">
           {/* main content */}
-          <div className="z-10 mb-4 flex flex-col px-8 pt-12 lg:pt-40 ">
-        
-            <h1 className="text-left text-[37px] leading-[36px] text-brand-cream md:text-5xl lg:text-7xl">
-              {headingText}
-            </h1>
-            <p className="mt-4 text-left text-[21px] text-brand-cream lg:text-2xl">
-              The #1 Ai Tool for Business Owners - Tailored to Your Unique
-              Needs.
-            </p>
-          </div>
-          <div className='w-full flex justify-center md:justify-start'>
-            <div className="z-50 flex w-[80%] items-start justify-center md:w-[500px] md:justify-start lg:w-[550px] 3xl:w-[700px]">
-              <img
-                src="/images/macBook1a.png"
-                alt="Make business easy with Sloane.Ai. The no.1 Ai platform for business owners "
-              />
+          <div className="flex h-full w-full flex-col items-start justify-center ">
+            <div className="z-10 mb-4 flex flex-col px-8 pt-12 lg:pt-40">
+              <h1 className="text-left text-[37px] leading-[36px] text-brand-cream md:text-5xl lg:text-7xl">
+                {headingText}
+              </h1>
+              <p className="mt-4 text-left text-[21px] text-brand-cream lg:text-2xl">
+                The #1 Ai Tool for Business Owners - Tailored to Your Unique
+                Needs.
+              </p>
+            </div>
+            <div className="flex w-full justify-center md:justify-start">
+              <div className="3xl:w-[700px] z-50 flex w-[80%] items-start justify-center md:w-[500px] md:justify-start lg:w-[600px]">
+                <img
+                  src="/images/macBook1a.png"
+                  alt="Make business easy with Sloane.Ai. The no.1 Ai platform for business owners "
+                />
+              </div>
             </div>
           </div>
         </div>

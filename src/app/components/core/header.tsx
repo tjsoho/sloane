@@ -27,7 +27,7 @@ const Header = () => {
         transition={{ duration: 0.3 }}
         style={{ zIndex: 1000 }}
       >
-        <div className="z-50 mt-2 w-[90%] rounded-full border-[0.5px] border-brand-logo bg-brand-green shadow-md">
+        <div className="z-50 mt-[2px] w-[90%] rounded-full border-[0.5px] border-brand-logo bg-brand-green shadow-md">
           <div className="container mx-auto flex items-center justify-between px-8 py-2 ">
             <div className="flex items-center">
               <Link href="/home">
