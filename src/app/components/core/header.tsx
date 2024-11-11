@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Close } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import { sendFacebookEvent } from '~/utils/facebook';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +11,8 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleGetStartedClick = async () => {
-    await sendFacebookEvent('InitiateCheckout'); // or 'Lead' depending on how you want to track it
+  const handleGetStartedClick = () => {
+    toggleMenu();
   };
 
   const linkClasses =
@@ -149,10 +148,7 @@ const Header = () => {
                 </Link>
                 <Link href="https://app.sloane.biz/userform" legacyBehavior>
                   <a
-                    onClick={() => {
-                      toggleMenu();
-                      handleGetStartedClick();
-                    }}
+                    onClick={handleGetStartedClick}
                     className="text-center font-Archivo text-2xl uppercase text-brand-green bg-brand-cream px-4 py-2 rounded-full hover:bg-brand-green-dark"
                   >
                     Get Started
