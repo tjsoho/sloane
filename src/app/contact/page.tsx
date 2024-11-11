@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'; // Corrected import
 import { Reveal } from '../components/Animations/Reveal';
 import { SlideReveal } from '../components/Animations/SlideReveal';
 import Button from '../components/Button';
+import { sendFacebookEvent } from '~/utils/facebook';
 
 const ContactForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -32,8 +33,17 @@ const ContactForm: React.FC = () => {
       // Handle successful form submission here
       console.log('Form submitted successfully!');
       setIsSubmitted(true);
-      form.reset();
+      
+      // Send Facebook event
+      await sendFacebookEvent(
+        'Contact',
+        {
+          email: formData.get('email') as string,
+          phone: formData.get('phone') as string,
+        }
+      );
 
+      form.reset();
       // Open the modal
       setModalOpen(true);
     } else {
