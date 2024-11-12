@@ -3,6 +3,7 @@ import '~/styles/globals.css';
 import Header from './components/core/header';
 import Footer from './components/core/footer';
 import Script from 'next/script';
+import * as fbq from "../utils/fpixel"
 
 export const metadata = {
   title: 'Sloane',
@@ -72,23 +73,41 @@ export default function RootLayout({
           src="https://chatbot-843foefd2-tjsohos-projects.vercel.app/widget.js"
           async
         ></script>
+
+        {/* Facebook Pixel NoScript */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src={`https://www.facebook.com/tr?id=${fbq.FB_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
       </head>
       <body className="flex min-h-screen flex-col font-sans">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
 
-        {/* Facebook Pixel Noscript */}
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1736192697203766&ev=PageView&noscript=1"
-            alt="fb-pixel"
-          />
-        </noscript>
-        {/* End Facebook Pixel Noscript */}
+        {/* Facebook Pixel Base Code */}
+        <Script
+          id="fb-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', ${fbq.FB_PIXEL_ID});
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
       </body>
     </html>
   );

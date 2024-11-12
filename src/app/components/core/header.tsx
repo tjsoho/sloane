@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Close } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import * as fbq from '../../../utils/fpixel';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,12 @@ const Header = () => {
   };
 
   const handleGetStartedClick = () => {
+    fbq.event('InitiateRegistration', {
+      content_name: 'Get Started Click',
+      content_category: 'Registration',
+      location: isOpen ? 'mobile_menu' : 'desktop_header'
+    });
+    
     toggleMenu();
   };
 

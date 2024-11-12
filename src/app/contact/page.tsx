@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'; // Corrected import
 import { Reveal } from '../components/Animations/Reveal';
 import { SlideReveal } from '../components/Animations/SlideReveal';
 import Button from '../components/Button';
+import * as fbq from '../../utils/fpixel';  // Add this import
 
 const ContactForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -29,15 +30,25 @@ const ContactForm: React.FC = () => {
     });
 
     if (response.ok) {
-      // Handle successful form submission here
+      // Track successful form submission
+      fbq.event('Lead', {
+        content_name: 'Contact Form Submission',
+        content_category: 'Contact',
+        value: 1,
+        currency: 'USD',
+      });
+
       console.log('Form submitted successfully!');
       setIsSubmitted(true);
-
       form.reset();
-      // Open the modal
       setModalOpen(true);
     } else {
-      // Handle form submission errors here
+      // Optionally track failed submissions
+      fbq.event('Contact Form Error', {
+        content_name: 'Contact Form Error',
+        content_category: 'Contact',
+      });
+
       console.error('Form submission failed.');
     }
   };
