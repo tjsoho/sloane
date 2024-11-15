@@ -3,7 +3,7 @@ import '~/styles/globals.css';
 import Header from './components/core/header';
 import Footer from './components/core/footer';
 import Script from 'next/script';
-import * as fbq from "../utils/fpixel"
+import * as fbq from '../utils/fpixel';
 
 export const metadata = {
   title: 'Sloane',
@@ -70,7 +70,7 @@ export default function RootLayout({
 
         {/* <script async defer src="https://app.primechat.ai/js/widget/laxvljenwhsjcjyn/float.js"></script> */}
         <script
-          src="https://chatbot-843foefd2-tjsohos-projects.vercel.app/widget.js"
+          src="https://chatbot-sigma-flax.vercel.app/widget.js"
           async
         ></script>
 
