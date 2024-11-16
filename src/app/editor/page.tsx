@@ -216,13 +216,29 @@ const EditorContent: React.FC = () => {
           />
         </RadioGroup>
       </div>
-      <button
-        className="mt-4 rounded-full bg-brand-green px-4 py-2 text-white"
-        onClick={handlePost}
-        disabled={loading}
-      >
-        {loading ? 'Publishing...' : 'Post'}
-      </button>
+      <div className="mt-4 flex gap-4">
+        <button
+          className="rounded-full bg-brand-green px-4 py-2 text-white"
+          onClick={handlePost}
+          disabled={loading}
+        >
+          {loading ? 'Publishing...' : 'Post'}
+        </button>
+        
+        <button
+          className="rounded-full bg-brand-cream px-4 py-2 text-brand-green"
+          onClick={openModal}
+        >
+          Edit Blog Posts
+        </button>
+      </div>
+
+      <PostManagerModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+      />
     </div>
   );
 };
