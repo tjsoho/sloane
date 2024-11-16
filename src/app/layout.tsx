@@ -69,10 +69,10 @@ export default function RootLayout({
         {/* End Facebook Pixel Code */}
 
         {/* <script async defer src="https://app.primechat.ai/js/widget/laxvljenwhsjcjyn/float.js"></script> */}
-        <script
+        {/* <script
           src="https://chatbot-sigma-flax.vercel.app/widget.js"
           async
-        ></script>
+        ></script> */}
 
         {/* Facebook Pixel NoScript */}
         <noscript>
