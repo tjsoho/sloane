@@ -5,6 +5,8 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import AnimatedCircle from '../components/home/AnimatedCircle';
 import Button from '../components/Button';
+import * as fbq from '../../utils/fpixel';
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -49,6 +51,14 @@ function GetStarted() {
 
   function handleClick(): void {
     console.log('Button clicked!');
+     const handleClick = () => {
+       console.log('Button clicked!');
+       fbq.event('initiate_checkout', {
+         content_name: 'Get Started Click',
+         content_category: 'purchase',
+         location: 'home_get_started_section',
+       });
+     };
   }
 
   return (

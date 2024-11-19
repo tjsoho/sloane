@@ -1,9 +1,16 @@
 'use client';
 import Button from '../components/Button';
+import * as fbq from "../../utils/fpixel"
+
 
 const Pricing = () => {
   function handleClick(): void {
     console.log('Button clicked!');
+     fbq.event('initiate_checkout', {
+       content_name: 'Get Started Click',
+       content_category: 'purchase',
+       location: 'pricing',
+     });
   }
 
   return (

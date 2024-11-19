@@ -13,10 +13,10 @@ const Header = () => {
   };
 
   const handleGetStartedClick = () => {
-    fbq.event('InitiateRegistration', {
+    fbq.event('initiate_checkout', {
       content_name: 'Get Started Click',
-      content_category: 'Registration',
-      location: isOpen ? 'mobile_menu' : 'desktop_header'
+      content_category: 'purchase',
+      location: isOpen ? 'mobile_menu' : 'desktop_header',
     });
     
     toggleMenu();
