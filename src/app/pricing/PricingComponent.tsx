@@ -6,8 +6,8 @@ import * as fbq from "../../utils/fpixel"
 const Pricing = () => {
   function handleClick(): void {
     console.log('Button clicked!');
-     fbq.event('initiate_checkout', {
-       content_name: 'Get Started Click',
+     fbq.event('purchase', {
+       content_name: 'pricing',
        content_category: 'purchase',
        location: 'pricing',
      });

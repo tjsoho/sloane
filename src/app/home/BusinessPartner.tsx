@@ -4,7 +4,6 @@ import Button from '../components/Button';
 import Statistic from '../components/home/Statistic';
 import { SlideReveal } from '../components/Animations/SlideReveal';
 import { SlideReveal2 } from '../components/Animations/SlideReveal2';
-import * as fbq from '../../utils/fpixel';
 
 const BusinessPartner = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -21,13 +20,7 @@ const BusinessPartner = () => {
 
   const handleClick = () => {
     console.log('Button clicked!');
-     fbq.event('initiate_checkout', {
-       content_name: 'Get Started Click',
-       content_category: 'purchase',
-       location: 'home_business_partner',
-     });
-  };
-
+  }
   return (
     <div className="bg-brand-cream ">
       <div className="mx-auto flex h-full w-full max-w-[1240px] flex-col px-4 py-16 lg:py-32 2xl:max-w-[1540px]">

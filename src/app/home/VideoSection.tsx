@@ -3,17 +3,11 @@ import { SlideReveal2 } from '../components/Animations/SlideReveal2';
 import { SlideReveal } from '../components/Animations/SlideReveal';
 import Button from '../components/Button';
 import { Reveal } from '../components/Animations/Reveal';
-import * as fbq from '../../utils/fpixel';
 
 
 const VideoSection = () => {
   const handleClick = () => {
     console.log('Button clicked!');
-    fbq.event('initiate_checkout', {
-      content_name: 'Get Started Click',
-      content_category: 'purchase',
-      location: 'home_video_section',
-    });
   };
 
   return (

@@ -51,14 +51,11 @@ function GetStarted() {
 
   function handleClick(): void {
     console.log('Button clicked!');
-     const handleClick = () => {
-       console.log('Button clicked!');
        fbq.event('initiate_checkout', {
-         content_name: 'Get Started Click',
-         content_category: 'purchase',
+         content_name: 'Get Started Section',
+         content_category: 'home get started section',
          location: 'home_get_started_section',
        });
-     };
   }
 
   return (

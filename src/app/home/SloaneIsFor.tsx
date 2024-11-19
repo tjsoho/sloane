@@ -6,7 +6,6 @@ import ClientCardCarousel from "../components/home/ClientCardCarousel";
 import MobileClientCardCarousel from "../components/home/MobileClientCardCarousel";
 import Statistic from "../components/home/Statistic";
 import { SlideReveal } from "../components/Animations/SlideReveal";
-import * as fbq from '../../utils/fpixel';
 
 
 const Section2 = () => {
@@ -24,11 +23,6 @@ const Section2 = () => {
 
   const handleClick = () => {
     console.log("Button clicked!");
-     fbq.event('initiate_checkout', {
-       content_name: 'Get Started Click',
-       content_category: 'purchase',
-       location: 'home_sloane_ai',
-     });
   };
 
   return (
