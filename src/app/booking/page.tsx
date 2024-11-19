@@ -5,17 +5,10 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Person2Icon from '@mui/icons-material/Person2';
 import PaidIcon from '@mui/icons-material/Paid';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
-import * as fbq from '../../utils/fpixel';
 
 
 const SignupComponent: React.FC = () => {
-  useEffect(() => {
-    fbq.event('Purchase', {
-      content_name: 'Sloane Business Package',
-      content_category: 'Booking',
-      location: 'Booking Page',
-    });
-  }, []); 
+ 
   return (
     <div className="flex h-full w-full flex-col bg-brand-green lg:h-screen lg:flex-row ">
       {/* left col half width with image  */}
