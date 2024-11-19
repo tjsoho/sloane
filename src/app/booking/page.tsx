@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { InlineWidget } from 'react-calendly';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Person2Icon from '@mui/icons-material/Person2';
@@ -9,11 +9,13 @@ import * as fbq from '../../utils/fpixel';
 
 
 const SignupComponent: React.FC = () => {
-  fbq.event('Purchase', {
-    content_name: 'Sloane Business Package',
-    content_category: 'Booking',
-    location: 'Booking Page',
-  });
+  useEffect(() => {
+    fbq.event('Purchase', {
+      content_name: 'Sloane Business Package',
+      content_category: 'Booking',
+      location: 'Booking Page',
+    });
+  }, []); 
   return (
     <div className="flex h-full w-full flex-col bg-brand-green lg:h-screen lg:flex-row ">
       {/* left col half width with image  */}
