@@ -8,6 +8,17 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 
 const SignupComponent: React.FC = () => {
+
+   useEffect(() => {
+     // Track as a "Purchase" event in Facebook Pixel
+     if (typeof window !== 'undefined' && window.fbq) {
+       window.fbq('track', 'Purchase', {
+         value: 79, 
+         currency: 'USD',
+       });
+     }
+     
+   }, []);
  
   return (
     <div className="flex h-full w-full flex-col bg-brand-green lg:h-screen lg:flex-row ">
