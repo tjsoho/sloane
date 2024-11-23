@@ -1,10 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { InlineWidget } from 'react-calendly';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import Person2Icon from '@mui/icons-material/Person2';
-import PaidIcon from '@mui/icons-material/Paid';
-import TaskAltIcon from '@mui/icons-material/TaskAlt';
+
 
 
 const SignupComponent: React.FC = () => {
