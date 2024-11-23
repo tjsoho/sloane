@@ -19,6 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <head>
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {/* eslint-disable-next-line */}
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PNZNDMHP');`}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -75,14 +83,14 @@ export default function RootLayout({
         ></script> */}
 
         {/* Facebook Pixel NoScript */}
-        <noscript>
+        {/* <noscript>
           <img
             height="1"
             width="1"
             style={{ display: 'none' }}
             src={`https://www.facebook.com/tr?id=${fbq.FB_PIXEL_ID}&ev=PageView&noscript=1`}
           />
-        </noscript>
+        </noscript> */}
       </head>
       <body className="flex min-h-screen flex-col font-sans">
         <Header />
@@ -90,24 +98,20 @@ export default function RootLayout({
         <Footer />
 
         {/* Facebook Pixel Base Code */}
-        <Script
-          id="fb-pixel"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', ${fbq.FB_PIXEL_ID});
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
+        <Script id="facebook-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '830105865970257');
+            fbq('track', 'PageView');
+          `}
+        </Script>
       </body>
     </html>
   );
