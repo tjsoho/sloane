@@ -74,44 +74,21 @@ export default function RootLayout({
           }}
         />
 
-        {/* End Facebook Pixel Code */}
-
-        {/* <script async defer src="https://app.primechat.ai/js/widget/laxvljenwhsjcjyn/float.js"></script> */}
-        {/* <script
-          src="https://chatbot-sigma-flax.vercel.app/widget.js"
-          async
-        ></script> */}
-
-        {/* Facebook Pixel NoScript */}
-        {/* <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src={`https://www.facebook.com/tr?id=${fbq.FB_PIXEL_ID}&ev=PageView&noscript=1`}
-          />
-        </noscript> */}
+        
       </head>
       <body className="flex min-h-screen flex-col font-sans">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
 
-        {/* Facebook Pixel Base Code */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '830105865970257');
-            fbq('track', 'PageView');
-          `}
-        </Script>
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PNZNDMHP"
+            height="0" 
+            width="0" 
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
       </body>
     </html>
   );
