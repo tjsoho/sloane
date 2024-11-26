@@ -61,26 +61,28 @@ const FooterComponent = () => {
           orientation="horizontal"
           className="my-2 w-full bg-brand-logo lg:mt-2"
         />
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
+        <div className="relative w-full">
           <Footer.Copyright
             href="#"
             by=" sloane."
             year={2024}
             className="text-brand-logo"
           />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <Footer.Icon
-              href="#"
-              icon={BsFacebook}
-              className="text-brand-logo"
-              aria-label="Sloane on Facebook"
-            />
-            <Footer.Icon
-              href="https://www.instagram.com/sloane.biz/"
-              icon={BsInstagram}
-              className="text-brand-logo"
-              aria-label="Sloane on Instagram"
-            />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="flex space-x-6">
+              <Footer.Icon
+                href="#"
+                icon={BsFacebook}
+                className="text-brand-logo"
+                aria-label="Sloane on Facebook"
+              />
+              <Footer.Icon
+                href="https://www.instagram.com/sloane.biz/"
+                icon={BsInstagram}
+                className="text-brand-logo"
+                aria-label="Sloane on Instagram"
+              />
+            </div>
           </div>
         </div>
       </div>

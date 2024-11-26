@@ -3,7 +3,7 @@ import '~/styles/globals.css';
 import Header from './components/core/header';
 import Footer from './components/core/footer';
 import Script from 'next/script';
-import * as fbq from '../utils/fpixel';
+
 
 export const metadata = {
   title: 'Sloane',
