@@ -26,11 +26,11 @@ interface AccordionItem {
     },
     {
       title: "How do I cancel?",
-      content: "Cancelling your Sloane subscription is easy and hassle-free. You can cancel at any time with no cancellation fee. Simply send an email to support@sloane.com to initiate the cancellation process. Your access to the platform will continue until the end your current billing cycle."
+      content: "Cancelling your Sloane subscription is easy and hassle-free. You can cancel at any time with no cancellation fee. Simply send an email to support@sloane.biz to initiate the cancellation process. Your access to the platform will continue until the end your current billing cycle."
     },
     {
       title: "How do I update my business voice, language, and goals?",
-      content: "Updating your business voice, language, and goals is simple and free of charge. If you need to make any changes:<br><br>1. Email Us: Send an email outlining your updates to support@sloane.com.<br>2. Details: Include details about the changes you want to make, such as new brand voice guidelines, updated business objectives, or any other relevant information.<br>3. Implementation: Our team will swiftly adapt your Sloane tool to incorporate these changes, ensuring it continues to reflect your evolving business needs."
+      content: "Updating your business voice, language, and goals is simple and free of charge. If you need to make any changes:<br><br>1. Email Us: Send an email outlining your updates to support@sloane.biz.<br>2. Details: Include details about the changes you want to make, such as new brand voice guidelines, updated business objectives, or any other relevant information.<br>3. Implementation: Our team will swiftly adapt your Sloane tool to incorporate these changes, ensuring it continues to reflect your evolving business needs."
     },
     {
       title: "Who is the tailor Zoom call with and what happens?",
