@@ -27,6 +27,59 @@ const generateSlug = (title: string) => {
     .replace(/(^-|-$)/g, '');
 };
 
+const modules = {
+  toolbar: [
+    [{ 'header': [1, 2, 3, false] }],
+    ['bold', 'italic', 'underline', 'strike'],
+    [{ 
+      'color': [
+        '#000000', // Black
+        '#FFE7C3', // brand-cream
+        '#C1FF72', // brand-logo
+        '#00BF63', // brand-green
+        '#7ED957', // brand-green-light
+        '#004B27', // brand-green-dark
+        '#FF914D', // brand-orange
+        '#FFBD59', // brand-orange-light
+        '#572700', // brand-orange-dark
+        '#FFD874', // brand-yellow
+      ] 
+    }],
+    [{ 
+      'background': [
+        '#FFE7C3', // brand-cream
+        '#C1FF72', // brand-logo
+        '#00BF63', // brand-green
+        '#7ED957', // brand-green-light
+        '#004B27', // brand-green-dark
+        '#FF914D', // brand-orange
+        '#FFBD59', // brand-orange-light
+        '#572700', // brand-orange-dark
+        '#FFD874', // brand-yellow
+      ]
+    }],
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    [{ 'align': [] }],
+    ['link', 'image'],
+    ['clean']
+  ]
+};
+
+const formats = [
+  'header',
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'color',
+  'background',
+  'list',
+  'bullet',
+  'align',
+  'link',
+  'image',
+];
+
 const EditorContent: React.FC = () => {
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
@@ -194,7 +247,14 @@ const EditorContent: React.FC = () => {
           className="mb-4"
         />
       )}
-      <ReactQuill value={content} onChange={setContent} />
+      <ReactQuill
+        value={content}
+        onChange={setContent}
+        modules={modules}
+        formats={formats}
+        theme="snow"
+        className="mb-12"
+      />
       <div className="mt-6">
         <FormLabel component="legend" className="mb-2 font-semibold">
           Choose Signature:
@@ -224,7 +284,7 @@ const EditorContent: React.FC = () => {
         >
           {loading ? 'Publishing...' : 'Post'}
         </button>
-        
+
         <button
           className="rounded-full bg-brand-cream px-4 py-2 text-brand-green"
           onClick={openModal}

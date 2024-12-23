@@ -26,7 +26,7 @@ interface AccordionItem {
     },
     {
       title: "How do I cancel?",
-      content: "Cancelling your Sloane subscription is easy and hassle-free. You can cancel at any time with no cancellation fee. Simply send an email to support@sloane.biz to initiate the cancellation process. Your access to the platform will continue until the end your current billing cycle."
+      content: "Cancelling your Sloane subscription is easy and hassle-free. You can cancel at any time with no cancellation fee. Simply send an email to support@sloane.biz to initiate the cancellation process. Your access to the platform will continue until the end your current billing cycle. Please note that cancellation needs to be received 7 days before the next billing cycle. If you cancel after this date, your subscription will be renewed for the next billing cycle and you'll have full access to the platform until the end of that current billing cycle."
     },
     {
       title: "How do I update my business voice, language, and goals?",
