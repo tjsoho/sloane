@@ -66,30 +66,35 @@ const PostManagerModal: React.FC<PostManagerModalProps> = ({
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-12 p-4">
+      <div className="grid grid-cols-2 gap-12 p-4 sm:grid-cols-3 xl:grid-cols-6 ">
         {posts.length === 0 ? (
           <p>No posts available.</p>
         ) : (
           posts.map((post) => (
-            <div key={post.slug} className="relative bg-white shadow-md rounded-md overflow-hidden">
+            <div
+              key={post.slug}
+              className="relative overflow-hidden rounded-md bg-white shadow-md"
+            >
               {post.image && (
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-24 object-cover"
+                  className="h-24 w-full object-cover"
                 />
               )}
               <div className="p-2">
-                <h2 className="text-sm font-semibold text-brand-green">{post.title}</h2>
+                <h2 className="text-sm font-semibold text-brand-green">
+                  {post.title}
+                </h2>
               </div>
               <button
-                className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded"
+                className="absolute right-2 top-2 rounded bg-red-500 px-2 py-1 text-xs text-white"
                 onClick={() => handleDelete(post.slug)} // Use handleDelete
               >
                 Delete
               </button>
               <button
-                className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 text-xs rounded"
+                className="absolute left-2 top-2 rounded bg-blue-500 px-2 py-1 text-xs text-white"
                 onClick={() => handleEdit(post.slug)} // Use handleEdit
               >
                 Edit

@@ -78,6 +78,8 @@ const formats = [
   'align',
   'link',
   'image',
+  'blockquote',
+  'indent'
 ];
 
 const EditorContent: React.FC = () => {

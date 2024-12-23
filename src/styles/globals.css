@@ -309,7 +309,7 @@ button.next:hover {
   border-color: #e5e7eb;
   background: white;
   position: relative;
-  z-index: 2;
+  z-index: 10;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -321,4 +321,84 @@ button.next:hover {
   font-size: 1rem;
   line-height: 1.5;
   background: white;
+}
+
+/* Blog content styles */
+.blog-content {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.blog-content h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2.5em;
+  color: #004B27; /* brand-green-dark */
+  margin-bottom: 1em;
+}
+
+.blog-content h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2em;
+  color: #004B27;
+  margin-bottom: 0.75em;
+}
+
+.blog-content h3 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.5em;
+  color: #004B27;
+  margin-bottom: 0.75em;
+}
+
+.blog-content p {
+  font-size: 1.25em;
+  color: #004B27;
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.blog-content strong {
+  font-weight: 700;
+}
+
+.blog-content em {
+  font-style: italic;
+}
+
+.blog-content ul, 
+.blog-content ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+  color: #004B27;
+  font-size: 1.25em;
+}
+
+.blog-content li {
+  margin-bottom: 0.5em;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+  border-radius: 0.375rem;
+}
+
+/* Handle text colors */
+.blog-content [style*="color"] {
+  color: inherit;
+}
+
+/* Handle background colors */
+.blog-content [style*="background"] {
+  padding: 0.125em 0.25em;
+  border-radius: 0.125em;
+}
+
+/* Add styles for the modal */
+.ReactModal__Overlay {
+  z-index: 50 !important;
+}
+
+.ReactModal__Content {
+  z-index: 51 !important;
 }
