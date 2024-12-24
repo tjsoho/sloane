@@ -356,6 +356,18 @@ button.next:hover {
   line-height: 1.6;
 }
 
+/* Control line break spacing */
+.blog-content br {
+  content: "";
+  display: block;
+  margin: 0.5em 0; /* Adjust this value to control line break spacing */
+}
+
+/* If you want different spacing for consecutive line breaks */
+.blog-content br + br {
+  margin-top: 0; /* Prevents double spacing when multiple line breaks are used */
+}
+
 .blog-content strong {
   font-weight: 700;
 }
