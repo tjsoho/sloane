@@ -1,59 +1,39 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { SlideReveal } from '../components/Animations/SlideReveal';
-import { SlideReveal2 } from '../components/Animations/SlideReveal2';
+import SpeechBubble from '../components/SpeechBubble';
 
 const Personalisation = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
-    };
-
-    handleResize(); // Check on initial load
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const handleClick = () => {
-    console.log('Button clicked!');
-  };
+  const testimonialText =
+    "Before I met Sloane, I was on the verge of hiring a VA, which would have cost a fortune in time and money, Now, with Sloane's capabilities stretching across all my business needs, I'm saving more than just dollars— I'm reclaiming my time. It's like having a VA 24/7, but at a fraction of the cost. Bye-bye, payroll worries; hello, efficiency!";
 
   return (
-    <div className="bg-brand-cream ">
-      <div className="mx-auto flex h-full w-full max-w-[1240px] flex-col px-4 py-16 lg:py-32 2xl:max-w-[1540px]">
-        <div className="h-contain flex w-full flex-col md:flex-row">
-          {/* left col */}
-          <div className="flex w-full flex-col items-start justify-center text-brand-orange lg:w-1/2">
-            <SlideReveal>
-              <h2 className=" text-left text-[32px] leading-none lg:text-5xl 2xl:text-7xl  ">
-                Personalisation<br></br> Like No Other
-              </h2>
-              {/* &apos; */}
-            </SlideReveal>
-            <SlideReveal>
-              <p className="my-8 text-[21px] font-light lg:w-full">
-                Sloane Ai isn't just any tool. Through our deep-dive interviews
-                with you & one of our experts, Sloane Ai learns to speak in your
-                unique voice, reflecting your brand's essence. It's like having
-                another you in your business, easing your workload and providing
-                expert guidance round the clock.
-              </p>
-            </SlideReveal>
-          </div>
-          {/* Right Col */}
-          <div className=" flex items-center justify-center">
-            <div className="mt-8 w-full lg:mt-0 lg:w-1/2 ">
-              <SlideReveal2>
-                <img
-                  src="/images/photographerStock.jpeg"
-                  alt="Scale and grow your business with Sloane Ai"
-                  className="h-full w-full rounded-2xl"
-                />
-              </SlideReveal2>
-            </div>
-          </div>
+    <div className="relative overflow-hidden bg-brand-cream">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/shadow.png"
+          alt="Background pattern"
+          className="h-full w-full object-cover"
+        />
+       
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 py-16 lg:py-32 2xl:max-w-[1540px]">
+        <div className="lg:w-3/4">
+          <SlideReveal>
+            <h2 className="text-left text-[32px] leading-tight text-brand-cream lg:text-5xl 2xl:text-7xl">
+              Get results you won't find anywhere else.
+            </h2>
+          </SlideReveal>
+
+          <SlideReveal>
+            <p className="mt-8 text-[22px] font-medium font-poppins text-brand-cream lg:w-2/3">
+              Sloane's unique blend of deep personalisation and expert-driven
+              Hubs delivers highly effective content and streamlined workflows,
+              saving you time, money, and stress – all while staying true to
+              your brand.
+            </p>
+          </SlideReveal>
         </div>
       </div>
     </div>

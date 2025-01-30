@@ -18,6 +18,44 @@ import React, { useState, useEffect } from 'react';
 // import Popup from '../components/Popup';
 import Personalisation from './Personalisation';
 import Hubs from './Hubs';
+import OptIn from './OptIn';
+import NewsReel from '../components/NewsReel';
+import HeroSlider from './HeroSlider';
+
+const newsWords = [
+  'MARKETING',
+  'SUPPORT',
+  'GUIDANCE',
+  "HOW TO'S",
+  'SOCIAL MEDIA',
+  'NEW IDEAS',
+  'COURSE CREATION',
+];
+
+const newWords2 = [
+  'Photographers',
+  'Business Coaches',
+  'Chiropractors',
+  'E-commerce',
+  'Pilates Instructors',
+  'Personal Trainers',
+  'Financial Planners',
+  'Life Coaches',
+  'Accountants',
+  'Videographers',
+  'Artists',
+  'Writers',
+  'Musicians',
+ 
+  'Designers',
+
+  'Marketers',
+  'Business Owners',
+  'Freelancers',
+  'Entrepreneurs',
+  'Creatives',
+ 
+];
 
 const Home: React.FC = () => {
   // const [showPopup, setShowPopup] = useState(false);
@@ -39,72 +77,34 @@ const Home: React.FC = () => {
       <div className="w-screen-1 h-full">
         <Hero />
       </div>
+       <NewsReel words={newsWords} />
+       
       <div className="h-contain w-screen-1">
         <BusinessPartner />
       </div>
+      
       <div className="h-contain w-screen-1">
         <Personalisation />
       </div>
       <div className="h-contain w-screen-1">
-        <Quote2
-          text="I’ve been in Sloane everyday and safe to say WOW, I am blown away!"
-          author="Chani - Personal Coach"
-          bgColorClass="bg-brand-orange"
-          textColorClass='text-brand-cream'
-          quoteIconColorClass='text-brand-cream'
-        />
+        <Quote2 />
       </div>
+      <div className="h-contain w-screen-1">
+        <HeroSlider />
+      </div>
+      <NewsReel words={newWords2} />
+      <div className="h-contain w-screen-1">
+        <OptIn />
+      </div>
+      <NewsReel words={newWords2} />
       <div className="h-contain w-screen-1">
         <Hubs />
       </div>
       <div className="h-contain w-screen-1">
         <SloaneIsFor />
-      </div>
-      <div className="h-contain w-screen-1">
-        <Focus />
-      </div>
-      <div className="h-contain w-screen-1">
-        <VideoSection />
-      </div>
-      <div className="h-contain w-screen-1">
-        <Quote2
-          text="Sloane Ai has been a game-changer in my business. From creating social media content to drafting client emails, it’s like having a personal assistant who understands my brand inside out.”
-          "
-          author="Sarah - Life Coach"
-          bgColorClass="bg-brand-cream"
-          textColorClass='text-brand-green'
-          quoteIconColorClass='text-brand-green'
-        />
-      </div>
-      <div className="h-contain w-screen-1">
-        <Gelato />
-      </div>
-      <div className="h-contain w-screen-1 lg:h-screen">
-        <ResponsiveFloating />
-      </div>
-     
-      <div className="h-contain w-screen-1">
-        <GetStarted />
-      </div>
-      <div className="h-contain w-screen-1">
-        <ImagePrice />
-      </div>
-      <div className="h-contain w-screen-1">
-        <Founder />
-      </div>
-      <div className="h-contain w-screen-1">
-        <TestimonialSection />
-      </div>
-      {/* {showPopup && (
-        <Popup
-          title="Ai Masterclass"
-          image="/images/masterclassA.png"
-          subheading="Get to Know Ai!"
-          paragraph="A friendly introduction for non-techy business owners. 11am Friday 13th September."
-          buttonText="DISCOVER MORE"
-          onClose={handleClosePopup}
-        />
-      )} */}
+      </div> 
+         
+      
     </div>
   );
 };

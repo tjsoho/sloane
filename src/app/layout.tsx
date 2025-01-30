@@ -3,7 +3,17 @@ import '~/styles/globals.css';
 import Header from './components/core/header';
 import Footer from './components/core/footer';
 import Script from 'next/script';
+import { Poppins } from 'next/font/google';
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal'],
+  display: 'swap',
+  variable: '--font-poppins',
+  // Add font features if needed
+  // features: { 'salt': 1, 'ss01': 1 }  // For stylistic alternates
+});
 
 export const metadata = {
   title: 'Sloane',
@@ -27,7 +37,7 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-PNZNDMHP');`}
         </Script>
-          <script
+        <script
           src="https://chatbot-sigma-flax.vercel.app/widget.js"
           async
         ></script>
@@ -78,8 +88,6 @@ export default function RootLayout({
             `,
           }}
         />
-
-        
       </head>
       <body className="flex min-h-screen flex-col font-sans">
         <Header />
@@ -87,10 +95,10 @@ export default function RootLayout({
         <Footer />
 
         <noscript>
-          <iframe 
+          <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PNZNDMHP"
-            height="0" 
-            width="0" 
+            height="0"
+            width="0"
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>

@@ -1,11 +1,14 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Button from '../components/Button';
-import Statistic from '../components/home/Statistic';
+
 import { SlideReveal } from '../components/Animations/SlideReveal';
 import { SlideReveal2 } from '../components/Animations/SlideReveal2';
+import SpeechBubble from '../components/SpeechBubble';
 
 const BusinessPartner = () => {
+  const testimonialText =
+    "Before I met Sloane, I was on the verge of hiring a VA, which would have cost a fortune in time and money, Now, with Sloane's capabilities stretching across all my business needs, I'm saving more than just dollars— I'm reclaiming my time. It's like having a VA 24/7, but at a fraction of the cost. Bye-bye, payroll worries; hello, efficiency!";
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -20,29 +23,29 @@ const BusinessPartner = () => {
 
   const handleClick = () => {
     console.log('Button clicked!');
-  }
+  };
   return (
-    <div className="bg-brand-cream ">
-      <div className="mx-auto flex h-full w-full max-w-[1240px] flex-col px-4 py-16 lg:py-32 2xl:max-w-[1540px]">
-        <div className="h-contain flex w-full flex-col md:flex-row">
-          {/* left col */}
-          <div className="flex w-full flex-col items-start justify-center text-brand-green lg:w-1/2">
+    <div className="relative bg-brand-cream">
+      <div className="flex h-full w-full flex-col md:flex-row">
+        {/* Left container - full width with padding */}
+        <div className="order-2 flex w-full items-center justify-center  bg-brand-cream lg:order-1 lg:w-1/2">
+          <div className="px-8 py-16 lg:px-0">
+            {' '}
+            {/* Container for content */}
             <SlideReveal>
-              <h2 className="text-left text-[32px] leading-none lg:text-5xl 2xl:text-7xl ">
-                Sloane Ai<br></br>is Your New <br></br>Business Partner
+              <h2 className="text-left text-[32px] leading-none text-brand-green lg:text-5xl 2xl:text-7xl">
+                Say Hello<br></br>to your New <br></br>Business Bestie
               </h2>
-              {/* &apos; */}
             </SlideReveal>
             <SlideReveal>
-              <p className="my-8 text-[21px] font-light lg:w-3/4">
-                Discover how it effortlessly handles your day-to-day tasks with
-                ease and precision.
+              <p className="my-8 font-poppins text-[21px] font-medium text-brand-green lg:w-3/4">
+                She's more than just a tool, Sloane Ai offers constant support.
               </p>
             </SlideReveal>
             <SlideReveal>
               <div className="mt-2">
                 <Button
-                  title="Get Sloane"
+                  title="Start Now"
                   textColor="brand-cream"
                   textHoverColor="brand-logo"
                   backgroundColor="brand-green"
@@ -54,43 +57,27 @@ const BusinessPartner = () => {
               </div>
             </SlideReveal>
           </div>
-          {/* Right Col */}
-          <div className="mt-8 w-full lg:mt-0 lg:w-1/2">
-            <SlideReveal2>
-              <img
-                src="/images/bizPartner.png"
-                alt="Scale and grow your business with Sloane Ai"
-                className="h-full w-full rounded-xl"
-              />
-            </SlideReveal2>
-          </div>
         </div>
-        {/* Stats */}
-      </div>
-      <div className="mt-8 flex h-full w-[90%] flex-col justify-between rounded-br-[100px] rounded-tr-[100px] bg-brand-yellow py-8 lg:mt-28 lg:flex-row">
-        <div className="mx-auto flex w-full max-w-[1240px] flex-col justify-between md:flex-row 2xl:max-w-[1540px]">
-          <div className="my-12 w-full lg:my-4 lg:w-[90%]">
-            <Statistic
-              heading="#1"
-              subheading="Ai Tool for Business"
-              imageUrl="/images/lappy.svg"
-              className=" w-[140px] " // Add responsive width classes here
-            />
-          </div>
-          <div className="my-4 w-full lg:w-[90%]">
-            <Statistic
-              percentage={100}
-              subheading="User Happiness"
-              imageUrl="/images/thumbs.png"
-            />
-          </div>
-          <div className="my-4 w-full lg:w-[90%]">
-            <Statistic
-              percentage={100}
-              subheading="No Brainer"
-              imageUrl="/images/light.png"
-              className="mt-2 h-auto w-[60px] lg:w-[100%] "
-            />
+
+        {/* Right container - full height, 50% width, no padding */}
+        <div className="order-1 w-full lg:order-2 lg:w-1/2">
+          <SlideReveal2>
+            <div className="h-full">
+              <img
+                src="/images/besties1.jpg"
+                alt="Scale and grow your business with Sloane Ai"
+                className="h-screen w-full object-cover"
+              />
+            </div>
+          </SlideReveal2>
+          <div className="absolute bottom-[33%] left-1/2 w-[90%] max-w-[600px] -translate-x-1/2 px-4 lg:bottom-[18%] lg:left-[60%]">
+            <SlideReveal>
+              <SpeechBubble
+                text={testimonialText}
+                type="received"
+                className="text-lg"
+              />
+            </SlideReveal>
           </div>
         </div>
       </div>

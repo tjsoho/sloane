@@ -3,6 +3,8 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -23,6 +25,7 @@ module.exports = {
         'Quicksand': ['Quicksand', 'sans-serif'],
         'Script': ['Script'],
         'Black': ['Black Han Sans', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
       },
       transitionProperty: {
         'width': 'width',
@@ -32,6 +35,15 @@ module.exports = {
       },
       transitionTimingFunction: {
         'ease-in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      keyframes: {
+        'gentle-pulse': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+      },
+      animation: {
+        'gentle-pulse': 'gentle-pulse 2s ease-in-out infinite',
       },
     },
   },

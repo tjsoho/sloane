@@ -18,16 +18,16 @@ const Header = () => {
       content_category: 'purchase',
       location: isOpen ? 'mobile_menu' : 'desktop_header',
     });
-    
+
     toggleMenu();
   };
 
   const linkClasses =
     'hover:text-brand-logo uppercase font-Archivo text-brand-cream flex justify-center items-center hover:underline ';
   const linkClasses2 =
-    'hover:text-brand-logo uppercase font-Archivo text-brand-cream border border-brand-cream px-4 py-2 rounded-full flex justify-center items-center bg-brand-green hover:bg-brand-green leading-none hover:border-brand-logo hover:shadow-lg';
+    'hover:text-brand-logo uppercase font-Archivo text-brand-cream px-4 py-2 rounded-lg flex justify-center items-center bg-brand-green hover:bg-brand-green-dark leading-none hover:border-brand-logo hover:shadow-lg';
   const linkClasses3 =
-    'hover:text-brand-logo uppercase font-Archivo text-brand-green  px-4 py-2 rounded-full flex justify-center items-center bg-brand-cream hover:bg-brand-green-dark leading-none hover:border-brand-logo hover:shadow-lg';
+    'hover:text-brand-logo uppercase font-Archivo text-brand-green  px-4 py-2 rounded-lg flex justify-center items-center bg-brand-cream hover:bg-brand-green-dark leading-none hover:border-brand-logo hover:shadow-lg';
 
   return (
     <>
@@ -38,40 +38,41 @@ const Header = () => {
         transition={{ duration: 0.3 }}
         style={{ zIndex: 1000 }}
       >
-        <div className="z-50 mt-2 w-[90%] rounded-full border-[0.5px] border-brand-logo bg-brand-green shadow-md">
+        <div className="z-50 mt-2 w-[95%] rounded-xl  bg-brand-green/60 shadow-md">
           <div className="container mx-auto flex items-center justify-between px-8 py-2 ">
             <div className="flex items-center">
               <Link href="/home">
                 <img src="/images/logo.png" alt="Logo" className="h-8" />
               </Link>
             </div>
-            <nav className="hidden space-x-8 lg:flex">
-              <Link href="/about" legacyBehavior>
-                <a className={linkClasses}>About</a>
-              </Link>
-              <Link href="/pricing" legacyBehavior>
-                <a className={linkClasses}>Pricing</a>
-              </Link>
-              <Link href="/FAQS" legacyBehavior>
-                <a className={linkClasses}>FAQS</a>
-              </Link>
-              <Link href="/blog" legacyBehavior>
-                <a className={linkClasses}>blog</a>
-              </Link>
-              <Link href="/contact" legacyBehavior>
-                <a className={linkClasses}>Contact</a>
-              </Link>
-              <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
-                <a className={linkClasses2}>Login</a>
-              </Link>
-              <Link href="https://app.sloane.biz/userform" legacyBehavior>
-                <a 
-                  className={linkClasses3}
-                  onClick={handleGetStartedClick}
-                >
-                  Get Started
-                </a>
-              </Link>
+            <nav className="hidden lg:flex lg:flex-1 lg:items-center">
+              <div className="absolute left-1/2 flex -translate-x-1/2 space-x-8">
+                <Link href="/about" legacyBehavior>
+                  <a className={linkClasses}>About</a>
+                </Link>
+                <Link href="/pricing" legacyBehavior>
+                  <a className={linkClasses}>Pricing</a>
+                </Link>
+                <Link href="/FAQS" legacyBehavior>
+                  <a className={linkClasses}>FAQS</a>
+                </Link>
+                <Link href="/blog" legacyBehavior>
+                  <a className={linkClasses}>blog</a>
+                </Link>
+                <Link href="/contact" legacyBehavior>
+                  <a className={linkClasses}>Contact</a>
+                </Link>
+              </div>
+              <div className="ml-auto flex items-center space-x-8">
+                <Link href="https://app.sloane.biz/dashboard" legacyBehavior>
+                  <a className={linkClasses2}>Login</a>
+                </Link>
+                <Link href="https://app.sloane.biz/userform" legacyBehavior>
+                  <a className={linkClasses3} onClick={handleGetStartedClick}>
+                    Get Started
+                  </a>
+                </Link>
+              </div>
             </nav>
             <div className="lg:hidden">
               <button
@@ -120,7 +121,7 @@ const Header = () => {
                     Pricing
                   </a>
                 </Link>
-               
+
                 <Link href="/FAQS" legacyBehavior>
                   <a
                     onClick={toggleMenu}
@@ -156,7 +157,7 @@ const Header = () => {
                 <Link href="https://app.sloane.biz/userform" legacyBehavior>
                   <a
                     onClick={handleGetStartedClick}
-                    className="text-center font-Archivo text-2xl uppercase text-brand-green bg-brand-cream px-4 py-2 rounded-full hover:bg-brand-green-dark"
+                    className="rounded-full bg-brand-cream px-4 py-2 text-center font-Archivo text-2xl uppercase text-brand-green hover:bg-brand-green-dark"
                   >
                     Get Started
                   </a>
