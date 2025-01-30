@@ -87,7 +87,11 @@ const Hero: React.FC = () => {
             </p>
           </div>
           <div className="mt-4 flex justify-center">
-            <Link href="/signup">
+            <a
+              href="https://app.sloane.biz/userform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 className="rounded-lg bg-brand-logo px-16 py-4 font-Archivo text-2xl 
@@ -95,7 +99,7 @@ const Hero: React.FC = () => {
               >
                 Start Now
               </motion.button>
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>
@@ -183,16 +187,20 @@ const Hero: React.FC = () => {
             </p>
           </div>
           <div className=" w-3/5 ">
-            <Link href="/signup">
+            <a
+              href="https://app.sloane.biz/userform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="mx-auto -ml-6 rounded-lg bg-brand-logo px-16 py-4 font-Archivo 
-                text-2xl text-brand-green shadow-lg transition-all duration-300 hover:bg-brand-green-dark hover:shadow-xl"
+                text-2xl text-brand-green shadow-lg transition-all duration-300 hover:bg-brand-green hover:shadow-xl hover:text-brand-logo"
               >
                 Start Now
               </motion.button>
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>

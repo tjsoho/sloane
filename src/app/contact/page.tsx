@@ -6,6 +6,7 @@ import { Reveal } from '../components/Animations/Reveal';
 import { SlideReveal } from '../components/Animations/SlideReveal';
 import Button from '../components/Button';
 import * as fbq from '../../utils/fpixel';  // Add this import
+import { motion } from 'framer-motion';
 
 const ContactForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -54,10 +55,10 @@ const ContactForm: React.FC = () => {
   };
 
   const inputClass =
-    'my-4 block w-full py-2 px-4 border border-brand-logo rounded-full bg-transparent text-brand-green-dark placeholder-green-700 focus:border-brand-green-dark outline-none';
+    'my-4 block w-full py-2 px-4 border border-brand-logo rounded-lg bg-transparent text-brand-green-dark placeholder-green-700 focus:border-brand-green-dark outline-none';
 
   const inputClass2 =
-    'my-4 block w-full px-4 py-3 border border-brand-logo rounded-[40px] bg-transparent text-brand-green-dark placeholder-green-700 overflow-hidden focus:border-brand-green-dark outline-none';
+    'my-4 block w-full px-4 py-3 border border-brand-logo rounded-lg bg-transparent text-brand-green-dark placeholder-green-700 overflow-hidden focus:border-brand-green-dark outline-none';
 
   return (
     <Grid container spacing={0}>
@@ -163,9 +164,9 @@ const ContactForm: React.FC = () => {
           </div>
           <Button
             title="Send Message"
-            textColor="brand-green-dark"
+            textColor="brand-green"
             textHoverColor="brand-logo"
-            backgroundColor="brand-green-light"
+            backgroundColor="brand-logo"
             hoverBG="brand-green-dark"
             ariaLabel="Send Message"
           />
@@ -177,38 +178,77 @@ const ContactForm: React.FC = () => {
           aria-labelledby="modal-title"
           aria-describedby="modal-description"
         >
-          <Box className="fixed inset-0 flex items-center justify-center bg-brand-cream bg-opacity-50">
-            <div className="mx-auto max-w-sm rounded-lg bg-brand-cream p-12">
-              <h2 className="mb-4 text-center font-Archivo text-2xl text-brand-green">
-                SUCCESS
-              </h2>
-              <Typography
-                id="modal-title"
-                variant="h6"
-                component="h2"
-                className="text-left text-brand-green-dark"
-              >
-                Thanks for your message!
-              </Typography>
-              <Typography
-                id="modal-title"
-                variant="h6"
-                sx={{ mt: 1 }}
-                className="text-left text-brand-green-dark"
-              >
-                We&apos;ll be in touch shortly.
-              </Typography>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center px-4"
+          >
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setModalOpen(false)}
+            />
+
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-white/30 bg-brand-green-dark/70 shadow-2xl backdrop-blur-lg"
+            >
+              {/* Close Button */}
               <button
-                onClick={() => {
-                  setModalOpen(false);
-                  router.push('/home');
-                }}
-                className="mt-4 rounded-full bg-brand-green px-8 py-2 text-brand-cream hover:bg-brand-green-dark hover:text-brand-logo"
+                onClick={() => setModalOpen(false)}
+                className="absolute right-4 top-4 z-10 rounded-full p-2 text-brand-logo transition-colors hover:bg-gray-100 hover:text-gray-600"
               >
-                Close
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
               </button>
-            </div>
-          </Box>
+
+              {/* Modal Header */}
+              <div className="bg-brand-green px-6 py-8 text-center">
+                <h3 className="font-Archivo text-3xl text-brand-cream">
+                  SUCCESS
+                </h3>
+                <p className="mt-1 text-brand-cream">
+                  Thanks for your message!
+                </p>
+              </div>
+
+              {/* Modal Body */}
+              <div className="px-6 py-8 text-brand-cream">
+                <p className="text-center">
+                  We'll be in touch shortly.
+                </p>
+                <div className="mt-8 flex justify-center">
+                  <button
+                    onClick={() => {
+                      setModalOpen(false);
+                      router.push('/home');
+                    }}
+                    className="uppercase rounded-lg bg-brand-logo px-8 py-3 font-Archivo text-brand-green transition-all hover:bg-brand-green hover:text-brand-logo"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
         </Modal>
       </Grid>
     </Grid>

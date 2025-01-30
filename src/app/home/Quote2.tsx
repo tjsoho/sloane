@@ -44,7 +44,7 @@ const Quote2 = () => {
               </p>
             </SlideReveal>
             <SlideReveal>
-              <div className="mt-2 w-full flex justify-end">
+              <div className="mt-2 w-full flex lg:justify-end">
                 <Button
                   title="Start Now"
                   textColor="brand-cream"
