@@ -28,20 +28,18 @@ export async function POST(request: Request) {
           
           <p>Thanks so much for your interest in Sloane! </p>
           
-          <p>We're excited you're curious to learn more about how we can make your business life easier.</p>
-          
           <p>In this short video, we'll give you a quick tour of Sloane, highlighting her standout feature: the Hubs.</p>
           
           <p>Think of the Hubs as Sloane's team of expert assistants, each highly trained and ready to support every aspect of your business, 24/7.</p>
           
           <p>Click the link below to watch it in action and see how Sloane can revolutionise your business:</p>
           
-          <p><a href="https://sloane.biz/videos" 
+          <p><a href="https://sloane.biz/videos/tour" 
                 style="background-color: #00BF63; 
                        color: white; 
                        padding: 10px 20px; 
                        text-decoration: none; 
-                       border-radius: 20px; 
+                       border-radius: 10px; 
                        display: inline-block;">
              Watch Videos
           </a></p>

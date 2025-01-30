@@ -3,8 +3,6 @@
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
 interface VideoPageProps {
   params: { slug: string };
@@ -15,35 +13,35 @@ const videos = {
     title: 'First Time Seeing Sloane',
     description:
       'Take a peak behind the curtain and see what Sloane is like for the first time.',
-    vimeoUrl: 'https://player.vimeo.com/video/1050251753',
     thumbnail: '/images/s-tour.png',
+    vimeoUrl: 'https://player.vimeo.com/video/1050251753',
   },
   marketing: {
     title: 'Marketing',
     description: 'Learn how Sloane can help market your property effectively.',
-    vimeoUrl: 'https://player.vimeo.com/video/1050251823',
     thumbnail: '/images/s-marketing.png',
+    vimeoUrl: 'https://player.vimeo.com/video/1050251823',
   },
   support: {
     title: 'Support',
     description:
       'Discover the comprehensive support system Sloane provides for your property management needs.',
-    vimeoUrl: 'https://player.vimeo.com/video/1050251891',
     thumbnail: '/images/s-support.png',
+    vimeoUrl: 'https://player.vimeo.com/video/1050251891',
   },
-  best: {
+  'getting-the-best-from-sloane': {
     title: 'Getting the Best From Sloane',
     description:
       'Learn how to maximize your experience and efficiency using the Sloane platform.',
-    vimeoUrl: 'https://player.vimeo.com/video/1050251769',
     thumbnail: '/images/s-response.png',
+    vimeoUrl: 'https://player.vimeo.com/video/1050251769',
   },
-  update: {
+  'update-your-business': {
     title: 'How to Update Your Business',
     description:
       'A step-by-step guide on keeping your business information current on Sloane.',
-    vimeoUrl: 'https://player.vimeo.com/video/1050251798',
     thumbnail: '/images/s-update.png',
+    vimeoUrl: 'https://player.vimeo.com/video/1050251798',
   },
 };
 
@@ -94,10 +92,29 @@ export default function VideoPage({ params }: VideoPageProps) {
                     {/* Play button overlay */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors duration-300 hover:bg-black/30">
                       <div className="transform transition-transform duration-300 hover:scale-110">
-                        <FontAwesomeIcon
-                          icon={faCirclePlay}
-                          className="h-24 w-24 text-white drop-shadow-lg"
-                        />
+                        <svg
+                          width="96"
+                          height="96"
+                          viewBox="0 0 96 96"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="drop-shadow-lg"
+                        >
+                          {/* Circle */}
+                          <circle
+                            cx="48"
+                            cy="48"
+                            r="46"
+                            stroke="white"
+                            strokeWidth="2"
+                            fill="none"
+                          />
+                          {/* Play Triangle */}
+                          <path
+                            d="M65 48L38 64L38 32L65 48Z"
+                            fill="white"
+                          />
+                        </svg>
                       </div>
                     </div>
                   </motion.div>
@@ -117,9 +134,8 @@ export default function VideoPage({ params }: VideoPageProps) {
           </motion.div>
 
           <button
-           
             onClick={() => router.push('/videos')}
-            className="rounded-md bg-brand-green px-8 py-3 text-lg font-Archivo uppercase text-brand-cream 
+            className="rounded-md bg-brand-green px-8 py-3 font-Archivo text-lg uppercase text-brand-cream 
               shadow-lg transition-all duration-300 hover:bg-brand-green-dark hover:text-brand-logo hover:shadow-xl"
           >
             Watch More Videos

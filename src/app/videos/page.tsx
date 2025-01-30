@@ -13,6 +13,7 @@ interface Video {
   thumbnail: string;
   vimeoUrl: string;
   isFirst?: boolean;
+  slug: string;
 }
 
 const videos: Video[] = [
@@ -24,6 +25,7 @@ const videos: Video[] = [
     thumbnail: '/images/s-tour.png', // You'll need to add these images
     vimeoUrl: 'https://player.vimeo.com/video/1050251753', // Just the base URL
     isFirst: true,
+    slug: 'tour',
   },
   {
     id: '2',
@@ -31,6 +33,7 @@ const videos: Video[] = [
     description: 'Learn how Sloane can help market your property effectively.',
     thumbnail: '/images/s-marketing.png', // Add this image to your public folder
     vimeoUrl: 'https://player.vimeo.com/video/1050251823',
+    slug: 'marketing',
   },
   {
     id: '3',
@@ -39,6 +42,7 @@ const videos: Video[] = [
       'Discover the comprehensive support system Sloane provides for your property management needs.',
     thumbnail: '/images/s-support.png', // Add this image to your public folder
     vimeoUrl: 'https://player.vimeo.com/video/1050251891',
+    slug: 'support',
   },
   {
     id: '4',
@@ -47,7 +51,8 @@ const videos: Video[] = [
       'Learn how to maximize your experience and efficiency using the Sloane platform.',
     thumbnail: '/images/s-response.png',
     vimeoUrl: 'https://player.vimeo.com/video/1050251769',
-  },
+    slug: 'getting-the-best-from-sloane',
+    },
   {
     id: '5',
     title: 'How to Update Your Business',
@@ -55,6 +60,7 @@ const videos: Video[] = [
       'A step-by-step guide on keeping your business information current on Sloane.',
     thumbnail: '/images/s-update.png',
     vimeoUrl: 'https://player.vimeo.com/video/1050251798',
+    slug: 'update-your-business',
   },
   // Add more videos here
 ];
@@ -73,7 +79,12 @@ export default function VideosPage() {
   }, []);
 
   const getVideoSlug = (title: string) => {
-    // Implement your logic to generate a slug based on the video title
+    // Special case for the first video
+    if (title === 'First Time Seeing Sloane') {
+      return 'tour';
+    }
+
+    // For other videos, keep the existing slug generation
     return title.toLowerCase().replace(/\s+/g, '-');
   };
 
@@ -109,9 +120,7 @@ export default function VideosPage() {
               key={video.id}
               className="relative flex cursor-pointer flex-col rounded-md border border-white bg-white shadow-md 
                 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              onClick={() =>
-                router.push(`/videos/${getVideoSlug(video.title)}`)
-              }
+              onClick={() => router.push(`/videos/${video.slug}`)}
             >
               {video.isFirst && (
                 <div

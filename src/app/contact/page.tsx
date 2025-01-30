@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'; // Corrected import
 import { Reveal } from '../components/Animations/Reveal';
 import { SlideReveal } from '../components/Animations/SlideReveal';
 import Button from '../components/Button';
-import * as fbq from '../../utils/fpixel';  // Add this import
+import * as fbq from '../../utils/fpixel'; // Add this import
 import { motion } from 'framer-motion';
 
 const ContactForm: React.FC = () => {
@@ -232,16 +232,14 @@ const ContactForm: React.FC = () => {
 
               {/* Modal Body */}
               <div className="px-6 py-8 text-brand-cream">
-                <p className="text-center">
-                  We'll be in touch shortly.
-                </p>
+                <p className="text-center">We'll be in touch shortly.</p>
                 <div className="mt-8 flex justify-center">
                   <button
                     onClick={() => {
                       setModalOpen(false);
                       router.push('/home');
                     }}
-                    className="uppercase rounded-lg bg-brand-logo px-8 py-3 font-Archivo text-brand-green transition-all hover:bg-brand-green hover:text-brand-logo"
+                    className="rounded-lg bg-brand-logo px-8 py-3 font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-logo"
                   >
                     Close
                   </button>
