@@ -17,29 +17,30 @@ const videos = {
     vimeoUrl: 'https://player.vimeo.com/video/1050251753',
   },
   marketing: {
-    title: 'Marketing',
-    description: 'Learn how Sloane can help market your property effectively.',
+    title: 'Easy Marketing',
+    description:
+      'Learn the easy way to market your business with Sloane, using the Content Waterfall method.',
     thumbnail: '/images/s-marketing.png',
     vimeoUrl: 'https://player.vimeo.com/video/1050251823',
   },
   support: {
     title: 'Support',
     description:
-      'Discover the comprehensive support system Sloane provides for your property management needs.',
+      "See how Sloane can provide you with expert support in your business. It's like having a business coach on call 24/7",
     thumbnail: '/images/s-support.png',
     vimeoUrl: 'https://player.vimeo.com/video/1050251891',
   },
   'getting-the-best-from-sloane': {
     title: 'Getting the Best From Sloane',
     description:
-      'Learn how to maximize your experience and efficiency using the Sloane platform.',
+      'Learn how a super simple process that can help you get the most out of Sloane.',
     thumbnail: '/images/s-response.png',
     vimeoUrl: 'https://player.vimeo.com/video/1050251769',
   },
   'update-your-business': {
     title: 'How to Update Your Business',
     description:
-      'A step-by-step guide on keeping your business information current on Sloane.',
+      'A short step-by-step guide on keeping your business information current on Sloane.',
     thumbnail: '/images/s-update.png',
     vimeoUrl: 'https://player.vimeo.com/video/1050251798',
   },
@@ -110,10 +111,7 @@ export default function VideoPage({ params }: VideoPageProps) {
                             fill="none"
                           />
                           {/* Play Triangle */}
-                          <path
-                            d="M65 48L38 64L38 32L65 48Z"
-                            fill="white"
-                          />
+                          <path d="M65 48L38 64L38 32L65 48Z" fill="white" />
                         </svg>
                       </div>
                     </div>

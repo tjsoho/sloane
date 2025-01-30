@@ -29,8 +29,9 @@ const videos: Video[] = [
   },
   {
     id: '2',
-    title: 'Marketing',
-    description: 'Learn how Sloane can help market your property effectively.',
+    title: 'Easy Marketing',
+    description:
+      'Learn the easy way to market your business with Sloane, using the Content Waterfall method.',
     thumbnail: '/images/s-marketing.png', // Add this image to your public folder
     vimeoUrl: 'https://player.vimeo.com/video/1050251823',
     slug: 'marketing',
@@ -39,7 +40,7 @@ const videos: Video[] = [
     id: '3',
     title: 'Support',
     description:
-      'Discover the comprehensive support system Sloane provides for your property management needs.',
+      "See how Sloane can provide you with expert support in your business. It's like having a business coach on call 24/7",
     thumbnail: '/images/s-support.png', // Add this image to your public folder
     vimeoUrl: 'https://player.vimeo.com/video/1050251891',
     slug: 'support',
@@ -48,7 +49,7 @@ const videos: Video[] = [
     id: '4',
     title: 'Getting the Best From Sloane',
     description:
-      'Learn how to maximize your experience and efficiency using the Sloane platform.',
+      'Learn how a super simple process that can help you get the most out of Sloane.',
     thumbnail: '/images/s-response.png',
     vimeoUrl: 'https://player.vimeo.com/video/1050251769',
     slug: 'getting-the-best-from-sloane',
@@ -57,7 +58,7 @@ const videos: Video[] = [
     id: '5',
     title: 'How to Update Your Business',
     description:
-      'A step-by-step guide on keeping your business information current on Sloane.',
+      'A short step-by-step guide on keeping your business information current on Sloane.',
     thumbnail: '/images/s-update.png',
     vimeoUrl: 'https://player.vimeo.com/video/1050251798',
     slug: 'update-your-business',
