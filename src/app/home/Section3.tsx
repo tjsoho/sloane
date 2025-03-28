@@ -173,9 +173,9 @@ const Section3: React.FC = () => {
 
         {/* Rest of desktop layout */}
         <div className="hidden lg:block">
-          {/* Layout - Added md: classes to preserve desktop layout */}
-          <div className="mx-auto flex w-full max-w-6xl flex-col items-center md:grid md:grid-cols-3">
-            {/* Left Column - Modified for mobile */}
+          {/* Layout - Using CSS Grid with responsive columns */}
+          <div className="mx-auto grid w-full max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Left Column */}
             <div className="hidden w-full md:flex md:h-full md:flex-col md:items-start md:justify-center">
               <div className="ml-20">
                 <TickBox text="Feeling stressed and overwhelmed?" delay={0.1} />
@@ -299,7 +299,7 @@ const Section3: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column - Modified for mobile */}
+            {/* Right Column */}
             <div className="hidden w-full md:flex md:h-full md:flex-col md:items-end md:justify-center">
               <div>
                 <TickBox
