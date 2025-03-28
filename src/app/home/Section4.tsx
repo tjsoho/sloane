@@ -1,9 +1,26 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const Section4: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial state
+    setIsMobile(window.innerWidth < 768);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const features = [
     {
       icon: '/images/sketch-icons/1.png',
@@ -70,7 +87,7 @@ const Section4: React.FC = () => {
 
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
           {features.map((feature, index) => {
-            if (feature.hideOnMobile && window.innerWidth < 768) return null;
+            if (feature.hideOnMobile && isMobile) return null;
 
             return (
               <motion.div
