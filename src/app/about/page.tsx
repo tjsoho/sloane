@@ -3,127 +3,334 @@ import AboutCardLeft from "../components/AboutCardLeft";
 import { Reveal } from "../components/Animations/Reveal";
 import { SlideReveal } from "../components/Animations/SlideReveal";
 import { SlideReveal2 } from "../components/Animations/SlideReveal2";
+import { motion } from "framer-motion";
+import LocalCafeIcon from '@mui/icons-material/LocalCafe';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const About = () => {
   return (
-    <div className="h-full w-full bg-brand-cream">
-      <div className="mx-auto flex  flex-col items-center justify-center lg:flex-row 2xl:max-w-[1540px]">
-        {/*------------------------ Heading row---------------------------------- */}
-        <div className="my-12 mt-24 flex h-full w-full  flex-col  ">
-          <Reveal>
-            <div className="mx-auto max-w-[1240px] ">
-              <h3 className="mb-8 text-left text-8xl text-[44px] leading-none text-brand-green lg:text-[78px] px-4 lg:px-0">
-                Welcome to Sloane, <br></br> where business is as easy <br></br>{" "}
-                as taking a holiday!
-              </h3>
-            </div>
-          </Reveal>
+    <div className="min-h-screen w-full bg-brand-cream">
+      {/* Hero Section */}
+      <div className="relative h-[90vh] w-full overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/founders-hero.jpg"
+            alt="Founders Hero"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        </div>
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h1 className="font-Archivo text-5xl font-bold text-white md:text-7xl lg:text-8xl">
+              meet the FOUNDERS
+            </h1>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="mt-6 max-w-2xl font-Raleway text-xl text-white/90 md:text-2xl"
+          >
+            Where Mindful Business Meets AI-Powered Ease
+          </motion.p>
+        </div>
+      </div>
 
-          {/*------------------------ Row 1 Right---------------------------------- */}
-          <div className="mb-8 flex w-full justify-end">
-            <div className="w-[90%] lg:w-[70%]">
-              <SlideReveal2>
-                <AboutCardLeft
-                  imageSrc="/images/5.jpg"
-                  title="Our Mission"
-                  content="At Sloane, we believe that running a business shouldn't feel like climbing a mountain. <br></br> It should be as enjoyable and straightforward as a seaside stroll. Our mission is to make business tasks simple, efficient, and even fun, so you can spend more time doing what you love.
-          "
-                  bgColor="brand-orange"
-                />
-              </SlideReveal2>
+      {/* Introduction Section */}
+      <div className="bg-brand-cream py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 md:px-8 lg:grid-cols-2 lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="relative h-[600px] overflow-hidden rounded-3xl"
+          >
+            <img
+              src="/images/founders-intro.jpg"
+              alt="Founders Introduction"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          </motion.div>
+          <div className="flex flex-col justify-center space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+              className="relative"
+            >
+              <div className="absolute -left-4 top-0 h-12 w-1 bg-brand-green-dark" />
+              <h2 className="font-Archivo text-3xl font-bold text-brand-green-dark md:text-4xl">
+                Our Story
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+            >
+              <p className="font-Raleway text-lg leading-relaxed text-brand-green-dark/80 md:text-xl">
+                Toby & Rachel didn't just create an Ai assistant; they created a solution born from their own experiences juggling multiple businesses and a burning desire to make life easier, embrace freedom, and provide more time to focus on what they truly love.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+            >
+              <p className="font-Raleway text-lg leading-relaxed text-brand-green-dark/80 md:text-xl">
+                Their stories are as inspiring as they are relatable, showcasing how a simple desire to simplify business life led to the creation of Sloane.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+            >
+              <p className="font-Raleway text-lg leading-relaxed text-brand-green-dark/80 md:text-xl">
+                Let's delve into their individual journeys and discover how their personal experiences shaped Sloane's.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Toby's Section */}
+      <div className="bg-brand-green px-4 py-24 md:px-8 lg:px-16">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="relative h-[500px] overflow-hidden rounded-3xl"
+          >
+            <img
+              src="/images/toby.jpg"
+              alt="Toby"
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
+          <div className="flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+            >
+              <h2 className="font-Archivo text-4xl font-bold text-brand-cream md:text-5xl">
+                Meet <span className="text-brand-logo">Toby</span>
+              </h2>
+              <h3 className="mt-2 font-Archivo text-lg text-brand-cream/90 md:text-xl">
+                The Mastermind Behind Sloane
+              </h3>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+              className="mt-6"
+            >
+              <p className="font-Poppins text-sm text-brand-cream/90">
+                Toby's journey to founding Sloane has its roots in his extensive background as a musician. Playing every instrument since the age of four, he later owned a successful music company specialising in events and weddings. He also created a music school, managing a staff of ten teachers and 300 students. This diverse array of experiences has given Toby a unique perspective and an innate understanding of both creativity and business management.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+              className="mt-6"
+            >
+              <p className="font-Poppins text-sm text-brand-cream/90">
+                What specifically motivates Toby in his work with Sloane is his lifelong passion for learning and his desire to empower others. Toby loves discovering new capabilities and is excited to share these insights with business owners. When he crafted Sloane, his vision was to make complex business tasks simple and fun, granting owners the ability to achieve more than they ever thought possible.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+              className="mt-6"
+            >
+              <p className="font-Poppins text-sm text-brand-cream/90">
+                Known for his playful personality and love for tech, Toby's working style is characterised by constant innovation and a deep commitment to education. He believes that business can be made not only easier but also enjoyable, ultimately giving owners more time for the things they love.
+              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: false, margin: "-100px" }}
+                className="mt-6"
+              >
+                <p className="font-Poppins text-sm text-brand-cream/90">
+                  Clients and colleagues often marvel at Toby's insight and guidance, with one testimonial standing out: "OMG, I need you as my business coach. You've given me what I've always wanted in my business—another me."
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Fun Facts Section */}
+      <div className="bg-brand-cream px-4 py-16 md:px-8 lg:px-16">
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
+          <div className="group relative overflow-hidden rounded-xl">
+            {/* Animated Border */}
+            <span>
+              <span
+                className="spark mask-gradient animate-flip before:animate-kitrotate absolute inset-0 h-[100%] w-[100%] overflow-hidden rounded-xl [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]"
+              />
+            </span>
+            {/* Content Background */}
+            <span className="absolute inset-px rounded-xl bg-[linear-gradient(110deg,#1a472a,45%,#2d5a3f,55%,#1a472a)] bg-[length:200%_100%]" />
+            {/* Content */}
+            <div className="relative z-10 p-6">
+              <div className="relative flex flex-col items-center gap-3">
+                <div className="rounded-full bg-white/10 p-3 backdrop-blur-sm">
+                  <LocalCafeIcon className="text-3xl text-white" />
+                </div>
+                <h3 className="text-center font-Archivo text-lg font-bold text-white">Coffee Choice</h3>
+                <p className="text-center font-Raleway text-xs leading-relaxed text-white/80">
+                  Toby's a double-shot cappuccino kind of guy (almond milk, please!), while Rachel swears by her coconut cold brew.
+                </p>
+              </div>
             </div>
           </div>
-          {/*------------------------ Row 2 Left---------------------------------- */}
-          <div className="justify- mb-8 flex w-full">
-            <div className="w-[90%] lg:w-[70%]">
-              <SlideReveal>
-                <AboutCardLeft
-                  imageSrc="/images/group.png"
-                  title="Who We Are"
-                  content="We’re a dedicated team of specialists who understand the daily grind and the unique challenges that come with running a business. <br></br> Why? Because we’ve been there ourselves! <br></br> Each member of the Sloane team runs their own business. We know what it takes, and we get it. <br></br>Our platform is designed to be your ultimate business companion, handling everything from marketing and emails to client communications and product ideation—all tailored to fit your unique voice and goals.
-          "
-                  bgColor="brand-green-light"
-                />
-              </SlideReveal>
+          <div className="group relative overflow-hidden rounded-xl">
+            {/* Animated Border */}
+            <span>
+              <span
+                className="spark mask-gradient animate-flip before:animate-kitrotate absolute inset-0 h-[100%] w-[100%] overflow-hidden rounded-xl [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]"
+              />
+            </span>
+            {/* Content Background */}
+            <span className="absolute inset-px rounded-xl bg-[linear-gradient(110deg,#1a472a,45%,#2d5a3f,55%,#1a472a)] bg-[length:200%_100%]" />
+            {/* Content */}
+            <div className="relative z-10 p-6">
+              <div className="relative flex flex-col items-center gap-3">
+                <div className="rounded-full bg-white/10 p-3 backdrop-blur-sm">
+                  <FavoriteIcon className="text-3xl text-white" />
+                </div>
+                <h3 className="text-center font-Archivo text-lg font-bold text-white">Business Partners + Lovers</h3>
+                <p className="text-center font-Raleway text-xs leading-relaxed text-white/80">
+                  Seven years married, and after two previous business ventures (let's just say we learned a lot), Sloane is where we finally found our individual zones of genius AND our flow state. It's the best of both worlds!
+                </p>
+              </div>
             </div>
           </div>
-          {/*------------------------ Row 3 Right---------------------------------- */}
-          <div className="mb-8 flex w-full justify-end">
-            <div className="w-[90%] lg:w-[70%]">
-              <SlideReveal2>
-                <AboutCardLeft
-                  imageSrc="/images/keyboard2.png"
-                  title="How We Started"
-                  content="One day our founder Toby J thought, 'Imagine having something that could make growing and running a business easy.' <br></br> With a love for business and a knack for simplifying complex processes, Toby set out to create a tool that feels like having a better version of yourself, inside your business. And thus, Sloane was born. <br></br>
-                  With a sleek, aesthetically pleasing interface, Sloane isn't your typical platform. She’s your go-to gal - your business BFF. Making everything 70% quicker, freeing up your time to focus on what truly matters—like spending time with family or finally taking that long-deserved holiday.
-                  
-                  
-          "
-                  bgColor="brand-orange"
-                />
-              </SlideReveal2>
+          <div className="group relative overflow-hidden rounded-xl">
+            {/* Animated Border */}
+            <span>
+              <span
+                className="spark mask-gradient animate-flip before:animate-kitrotate absolute inset-0 h-[100%] w-[100%] overflow-hidden rounded-xl [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]"
+              />
+            </span>
+            {/* Content Background */}
+            <span className="absolute inset-px rounded-xl bg-[linear-gradient(110deg,#1a472a,45%,#2d5a3f,55%,#1a472a)] bg-[length:200%_100%]" />
+            {/* Content */}
+            <div className="relative z-10 p-6">
+              <div className="relative flex flex-col items-center gap-3">
+                <div className="rounded-full bg-white/10 p-3 backdrop-blur-sm">
+                  <WbSunnyIcon className="text-3xl text-white" />
+                </div>
+                <h3 className="text-center font-Archivo text-lg font-bold text-white">Sunshine State of Mind</h3>
+                <p className="text-center font-Raleway text-xs leading-relaxed text-white/80">
+                  Living a holiday-at-home style life on the sunny Gold Coast.
+                </p>
+              </div>
             </div>
           </div>
-          {/*------------------------ Row 4 left---------------------------------- */}
-          <div className="mb-8 flex w-full justify-start">
-            <div className="w-[90%] lg:w-[80%]">
-              <SlideReveal>
-                <AboutCardLeft
-                  imageSrc="/images/macBook2.png"
-                  title="Why We're Different"
-                  content="Personal Touch: Our meticulously tailored platform gets to know your business inside and out after a deep-dive interview. We understand your voice your goals, and what makes you tick.
-                  <br></br>
-                  Smart Prompts: Never feel stuck again with built-in prompts that guide you through every task. Whether it’s social media posts, email campaigns, or blog content, our prompts have you covered.
-                  <br></br>
-                  One-Click Magic: Each business hub is designed for ease. From your social media strategy to email marketing, all tasks are streamlined, efficient, and just a click away.
-          "
-                  bgColor="brand-green-light"
-                />
-              </SlideReveal>
-            </div>
+        </div>
+      </div>
+
+      {/* Rachel's Section */}
+      <div className="bg-brand-green px-4 py-24 md:px-8 lg:px-16">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
+          <div className="flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+            >
+              <h2 className="font-Archivo text-4xl font-bold text-brand-cream md:text-5xl">
+                Meet <span className="text-brand-logo">Rachel</span>
+              </h2>
+              <h3 className="mt-2 font-Archivo text-lg text-brand-cream/90 md:text-xl">
+                The Vibrant Force Behind Sloane's Brand
+              </h3>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+              className="mt-6"
+            >
+              <p className="font-Poppins text-sm text-brand-cream/90">
+                With an extensive background in brand marketing, Rachel honed her skills working at Red Bull International for over 12 years. After travelling the world in business class style, she returned to her true passion—photography & film. Today, Rachel runs her own successful photography business, capturing up to 100 weddings a year with a team of six. She also specialises in editorial style photography for personal brands.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+              className="mt-6"
+            >
+              <p className="font-Poppins text-sm text-brand-cream/90">
+                Rachel's journey with Sloane began when she was managing everything for her businesses on her own. Her experience at Red Bull made her realise the power of a cohesive team, and when Toby introduced her to Sloane, she was blown away by how it simplified and scaled her business. It gave her not only the efficiency she craved but also the free time she needed.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+              className="mt-6"
+            >
+              <p className="font-Poppins text-sm text-brand-cream/90">
+                For someone as visual as Rachel, Sloane's ability to handle words in seconds was a game-changer. Now, she is passionate about bringing this ease to other business owners with limited budgets.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, margin: "-100px" }}
+              className="mt-6"
+            >
+              <p className="font-Poppins text-sm text-brand-cream/90">
+                Always a bright and vibrant presence, Rachel is known for her sunny disposition and love for living well in a holiday at home surrounding. Creating, wellness and freedom are everything to her, and she embodies these values in her work at Sloane. Her infectious smile and positive attitude make her a true ray of sunshine in the business world.
+              </p>
+            </motion.div>
           </div>
-          {/*------------------------ Row 5 Right---------------------------------- */}
-          <div className="mb-8 flex w-full justify-end">
-            <div className="w-[90%] lg:w-[70%]">
-              <SlideReveal2>
-                <AboutCardLeft
-                  imageSrc="/images/3.jpg"
-                  title="Sloane’s heart & soul"
-                  content="Our brand is built on empowering, relatable, and inspiring entrepreneurs, topped with a touch of playfulness.<br></br> We want you to feel supported and motivated every step of the way. <br></br>With Sloane, you’re not just managing your business—you’re thriving. And because we all run our own businesses, we know the challenges you face and how to overcome them.
-          "
-                  bgColor="brand-orange"
-                />
-              </SlideReveal2>
-            </div>
-          </div>
-          {/*------------------------ Row 6 left---------------------------------- */}
-          <div className="mb-8 flex w-full justify-start">
-            <div className="w-[90%] lg:w-[70%]">
-              <SlideReveal>
-                <AboutCardLeft
-                  imageSrc="/images/founder3.jpg"
-                  title="Meet TobyJ"
-                  content="Toby J is the mastermind behind Sloane. With a thirst for always creating and an obsession for business, Toby's' blend of innovation and sleek design, laid the foundation for Sloane. <br></br>Driven by a desire to make business easy and fun, Toby’s vision was to create a tool that educates and empowers. <br></br>With Sloane, Toby aims to make running a business as clear as day, giving you more time to enjoy life's precious moments—because isn't that why we all start a business in the first place?<br></br>With Sloane, business is simply, and beautifully, easy.
-          "
-                  bgColor="brand-green-light"
-                />
-              </SlideReveal>
-            </div>
-          </div>
-          {/*------------------------ Row 7 Right---------------------------------- */}
-          {/* <div className="mb-8 flex w-full justify-end">
-            <div className="w-[70%]">
-              <SlideReveal2>
-                <AboutCardLeft
-                  imageSrc="/images/founder.png"
-                  title="Meet TobyJ"
-                  content="Toby J is the mastermind behind Sloane. As a skilled web developer and coder, Toby’s technical expertise laid the foundation for Sloane. Driven by a desire to make business easy and fun, Toby’s vision was to create a tool that educates and empowers. With Sloane, Toby aims to make running a business as clear as day, giving you more time to enjoy life's precious moments—because isn't that why we all start a business in the first place?
-          "
-                  bgColor="brand-green"
-                />
-              </SlideReveal2>
-            </div>
-          </div> */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="relative h-[500px] overflow-hidden rounded-3xl"
+          >
+            <img
+              src="/images/rachel.jpg"
+              alt="Rachel"
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
         </div>
       </div>
     </div>

@@ -41,9 +41,37 @@ module.exports = {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.05)' },
         },
+        flip: {
+          to: {
+            transform: "rotate(360deg)",
+          },
+        },
+        kitrotate: {
+          to: {
+            transform: "rotate(90deg)",
+          },
+        },
+        fadeInRight: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        shine: {
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "-200% 0" },
+        },
       },
       animation: {
         'gentle-pulse': 'gentle-pulse 2s ease-in-out infinite',
+        flip: "flip 6s infinite steps(2, end)",
+        kitrotate: "kitrotate 3s linear infinite both",
+        'fade-in-right': 'fadeInRight 0.5s ease-out forwards',
+        'shine': 'shine 2s linear infinite',
       },
     },
   },
