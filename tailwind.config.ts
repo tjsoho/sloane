@@ -9,10 +9,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'brand-cream': '#FFE7C3',
+        'brand-cream': '#fdf3e3',
         'brand-logo': '#C1FF72',
-        'brand-green': '#00BF63',
-        'brand-green-light': '#7ED957',
+        'brand-green': '#003b1f',
+        'brand-green-light': '#4b8052',
         'brand-green-dark': '#004B27',
         'brand-orange': '#FF914D',
         'brand-orange-light': '#FFBD59',

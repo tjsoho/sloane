@@ -1,210 +1,213 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { TextGenerateEffect } from '../components/TextGenerateEffect';
+import { cn } from '../utils/cn';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="/images/centerHome.png"
-          alt="Hero Background"
-          fill
-          className="scale-110 object-cover object-[0%_center]"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30" />{' '}
-        {/* Overlay for better text visibility */}
-      </div>
+    <>
+      {/* Mobile & Tablet Layout */}
+      <div className="flex flex-col lg:hidden">
+        {/* First Section - Sunflower with Text */}
+        <div className="relative h-[75vh]">
+          {/* Sunflower Background */}
+          <motion.div
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Image
+              src="/images/sloane_sunflower.png"
+              alt="Sunflower Background"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/40" />
+          </motion.div>
 
-      {/* Mobile Layout (sm and md screens) */}
-      <div className="relative z-10 flex h-screen flex-col pt-12 lg:hidden">
-        {/* First Third - Headings */}
-        <div className="flex h-1/3 items-end px-6">
-          <div>
-            <motion.h1
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="font-Archivo text-4xl font-bold leading-none text-white md:text-5xl"
+          {/* Text Overlay */}
+          <div className="relative z-10 flex h-full flex-col items-center justify-center px-4">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Just
-              <br />
-              Ask
-              <br />
-              <span className="leading-[1px] text-brand-logo">sloane</span>
-            </motion.h1>
-            <motion.h3
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="mt-2 text-xl leading-tight text-white/90"
-            >
-              She knows you.
-              <br />
-              She supports you.
-              <br />
-              She creates for you.
-            </motion.h3>
+              <h1 className="font-Archivo text-3xl font-bold text-brand-cream md:text-4xl">
+                WORK SMART<span className="ml-1 text-brand-cream">.</span>
+                <br />
+                LIVE WELL<span className="ml-1 text-brand-cream">.</span>
+              </h1>
+
+              <motion.p
+                className="font-Poppins mt-8 text-lg text-brand-cream/90 md:text-xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                <span className="mb-4 block italic">
+                  Ready to work smart & live well?
+                </span>
+                <span className="block font-semibold">
+                  Sloane's AI experts + mindful tools
+                  <br />
+                  help you achieve it all.
+                </span>
+              </motion.p>
+            </motion.div>
           </div>
         </div>
 
-        {/* Second Third - MacBook Image */}
-        <motion.div
-          className="flex h-1/3 items-center justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <Image
-            src="/images/macBook1a.png"
-            alt="Sloane MacBook"
-            width={300}
-            height={200}
-            className="h-auto w-[64%] max-w-[320px]"
-            priority
-          />
-        </motion.div>
-
-        {/* Third Third - Price and Button */}
-        <motion.div
-          className="-mt-8 flex h-1/3 flex-col items-center justify-start px-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          <div className="text-left">
-            <p className="font-poppins text-2xl font-semibold text-white">
-              $79 AUD
-            </p>
-            <p className="font-poppins text-2xl font-semibold text-white">
-              Monthly Subscription
-            </p>
-            <p className="mt-1 font-poppins text-sm font-light text-white">
-              No Lock ins. No Contract. Full Freedom.
-            </p>
-          </div>
-          <div className="mt-4 flex justify-center">
-            <a
-              href="https://app.sloane.biz/userform"
-              target="_blank"
-              rel="noopener noreferrer"
+        {/* Second Section - Green Background with Product */}
+        <div className="h-fit bg-brand-green pb-12">
+          <div className="flex h-full flex-col items-center justify-center px-8 lg:py-16">
+            <motion.div
+              className="w-full max-w-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                className="rounded-lg bg-brand-logo px-16 py-4 font-Archivo text-2xl 
-                text-brand-green shadow-lg transition-all duration-300"
+              <Image
+                src="/images/heroMOck.png"
+                alt="Sloane App Interface"
+                width={800}
+                height={600}
+                className="w-full"
+                priority
+              />
+            </motion.div>
+
+            <motion.div
+              className=""
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <Link
+                href="https://app.sloane.biz/userform"
+                className={cn(
+                  "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-cream px-8 py-4",
+                  "before:absolute before:inset-0 before:translate-x-[-100%] before:animate-[shine_2s_infinite]",
+                  "before:bg-gradient-to-r before:from-transparent before:via-brand-green/20 before:to-transparent",
+                  "font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-cream"
+                )}
               >
-                Start Now
-              </motion.button>
-            </a>
+                <TextGenerateEffect
+                  text="Try Sloane For Free"
+                  className="text-lg"
+                  duration={0.5}
+                />
+              </Link>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Desktop Layout (lg screens and up) - Existing Code */}
-      <div className="relative z-10 mx-auto hidden h-screen max-w-[1540px] flex-col items-center px-4 lg:flex lg:flex-row lg:justify-between lg:px-8">
-        {/* Left Column */}
+      {/* Desktop Layout */}
+      <div className="relative hidden min-h-screen overflow-hidden lg:flex">
+        {/* Left Half - Green Background */}
         <motion.div
+          className="relative flex w-1/2 flex-col items-center bg-brand-green"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="mt-32 text-center lg:mt-0 lg:w-1/3 lg:text-left"
         >
-          <h1 className="font-Archivo text-4xl font-bold leading-none text-white md:text-5xl lg:text-7xl lg:leading-[65px]">
-            Just
-            <br />
-            Ask
-            <br />
-            <span className="leading-[1px] text-brand-logo">sloane</span>
-          </h1>
-          <motion.h3
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="mt-6 text-xl text-white/90 lg:text-3xl"
-          >
-            She knows you.
-            <br />
-            She supports you.
-            <br />
-            She creates for you.
-          </motion.h3>
-          {/* Scroll Indicator - Now separate from social icons */}
-          <div className="absolute bottom-20 z-50 hidden md:block">
-            <div className="relative mx-auto h-32 w-px">
-              {/* Static line */}
-              <div className="absolute inset-0 bg-white/20" />
-
-              {/* Animated arrow */}
-              <div className="absolute inset-0">
-                <div className="animate-scrollIndicator absolute top-0 h-full w-full bg-white" />
-              </div>
-
-              {/* Arrow head */}
-              <div className="absolute -bottom-2 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 border-b border-r border-white" />
+          <div className="mt-auto flex w-full max-w-2xl flex-col items-center justify-center px-8 pb-16 pt-48">
+            <div className="relative w-full">
+              <Image
+                src="/images/heroMOck.png"
+                alt="Sloane App Interface"
+                width={800}
+                height={600}
+                className="w-full"
+                priority
+              />
             </div>
           </div>
         </motion.div>
 
-        {/* Center Column - MacBook Image */}
+        {/* Right Half - Sunflower Image */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="3xl:mt-0 relative flex w-full max-w-[400px] lg:mt-28  lg:min-h-screen lg:w-1/3"
+          className="relative w-1/2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
         >
-          <div className="relative w-full lg:absolute lg:bottom-16">
+          <div className="relative h-full w-full">
             <Image
-              src="/images/macBook1a.png"
-              alt="Sloane MacBook"
-              width={300}
-              height={200}
-              className="h-auto w-full"
+              src="/images/sloane_sunflower.png"
+              alt="Sunflower Background"
+              fill
+              className="object-cover"
               priority
             />
+            <div className="relative z-10 flex h-full items-center justify-center px-8">
+              <motion.p
+                className="font-Poppins -mt-24 text-lg text-brand-cream/90 md:text-xl"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <span className="block italic">
+                  Ready to work smart & live well?
+                </span>
+
+                <span className="block font-semibold">
+                  Sloane's AI experts + mindful tools
+                  <br />
+                  help you achieve it all.
+                </span>
+              </motion.p>
+            </div>
           </div>
         </motion.div>
 
-        {/* Right Column - Pricing & CTA */}
+        {/* Centered Title - Positioned above both halves */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mb-16 flex h-full flex-col items-end justify-end pb-[10%] pr-4 text-left lg:mb-0 lg:w-1/3"
+          className="absolute top-28 z-10 w-full -translate-x-1/2 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="mb-6">
-            <p className="font-poppins text-2xl font-semibold text-white md:text-3xl">
-              $79 AUD
-            </p>
-            <p className="font-poppins text-2xl font-semibold text-white md:text-3xl">
-              Monthly Subscription
-            </p>
-            <p className="mt-1 font-poppins text-sm font-light text-white">
-              No Lock ins. No Contract. Full Freedom.
-            </p>
-          </div>
-          <div className=" w-3/5 ">
-            <a
-              href="https://app.sloane.biz/userform"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mx-auto -ml-6 rounded-lg bg-brand-logo px-16 py-4 font-Archivo 
-                text-2xl text-brand-green shadow-lg transition-all duration-300 hover:bg-brand-green hover:shadow-xl hover:text-brand-logo"
-              >
-                Start Now
-              </motion.button>
-            </a>
-          </div>
+          <h1 className="-ml-16 font-Archivo text-3xl font-bold text-brand-cream md:text-5xl lg:text-5xl">
+            WORK SMART<span className="ml-1 text-brand-cream">. </span>
+            LIVE WELL<span className="ml-2 text-brand-cream">. </span>
+          </h1>
         </motion.div>
+        {/* Centered Button */}
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <div className="mx-auto flex justify-center pb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <Link
+                href="https://app.sloane.biz/userform"
+                className={cn(
+                  "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-cream px-8 py-4",
+                  "before:absolute before:inset-0 before:translate-x-[-100%] before:animate-[shine_2s_infinite]",
+                  "before:bg-gradient-to-r before:from-transparent before:via-brand-green/20 before:to-transparent",
+                  "font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-cream"
+                )}
+              >
+                <TextGenerateEffect
+                  text="Try Sloane For Free"
+                  className="text-lg"
+                  duration={0.5}
+                />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

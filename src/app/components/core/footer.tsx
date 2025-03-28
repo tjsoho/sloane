@@ -1,109 +1,143 @@
 'use client';
 
-import { Divider } from '@mui/material';
-import { Footer } from 'flowbite-react';
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram } from 'react-icons/bs';
+import { motion } from 'framer-motion';
+import { BsFacebook, BsInstagram } from 'react-icons/bs';
+import Link from 'next/link';
 
 const FooterComponent = () => {
   return (
-    <Footer className="rounded-none border-t-[1px] border-brand-green bg-brand-cream">
-      <div className="w-full">
-        <div className="grid w-full justify-between py-12 sm:flex sm:justify-between md:flex md:grid-cols-1">
-          <div className="flex items-center">
-            <div className="flex flex-col items-start">
-              <div className="rounded-r-lg bg-brand-green px-4 py-2">
+    <footer className="relative bg-brand-green-light">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -right-32 -top-32 h-64 w-64 rounded-full bg-brand-green/50 blur-3xl" />
+        <div className="absolute -left-32 -bottom-32 h-64 w-64 rounded-full bg-brand-green/50 blur-3xl" />
+      </div>
+
+      {/* Main Content */}
+      <div className="relative">
+        {/* Top Section */}
+        <div className="container mx-auto px-4 py-8 lg:py-12 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
+            {/* Brand Section */}
+            <div className="lg:col-span-5">
+              <div className="mb-8 ">
                 <img
                   src="/images/logo.png"
                   alt="Sloane Logo"
                   className="h-12"
                 />
               </div>
-              <h3 className="my-4 pl-4 font-Archivo text-4xl text-brand-green md:my-0 lg:mt-4 lg:text-5xl">
-                feel the freedom.
+              <h3 className="font-Archivo mb-6 text-4xl font-bold text-brand-cream leading-tight">
+                Work Smart.<br />
+                Live Well.
               </h3>
+              <p className="font-Poppins text-base text-brand-cream/80 leading-relaxed max-w-md">
+                Empowering businesses with AI-driven solutions for a more mindful and efficient future.
+              </p>
+            </div>
+
+            {/* Navigation Grid */}
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-2 gap-12 md:grid-cols-4">
+                {/* Quick Links */}
+                <div>
+                  <h4 className="font-Archivo mb-6 text-sm font-semibold uppercase tracking-wider text-brand-cream">
+                    Quick Links
+                  </h4>
+                  <ul className="space-y-4">
+                    {['About', 'Pricing', 'FAQS', 'Blog'].map((item) => (
+                      <li key={item}>
+                        <Link
+                          href={`/${item.toLowerCase()}`}
+                          className="font-Poppins text-sm text-brand-cream/50 hover:text-brand-green transition-colors duration-300"
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Legal */}
+                <div>
+                  <h4 className="font-Archivo mb-6 text-sm font-semibold uppercase tracking-wider text-brand-cream">
+                    Legal
+                  </h4>
+                  <ul className="space-y-4">
+                    {[
+                      { text: 'Privacy Policy', href: '/privacy' },
+                      { text: 'Terms & Conditions', href: '/terms&conditions' },
+                      { text: 'Admin', href: '/editor' }
+                    ].map((item) => (
+                      <li key={item.text}>
+                        <Link
+                          href={item.href}
+                          className="font-Poppins text-sm text-brand-cream/50 hover:text-brand-green transition-colors duration-300"
+                        >
+                          {item.text}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Social Links */}
+                <div className="md:col-span-2">
+                  <h4 className="font-Archivo mb-6 text-sm font-semibold uppercase tracking-wider text-brand-cream">
+                    Connect
+                  </h4>
+                  <div className="flex space-x-6">
+                    <motion.a
+                      href="#"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group relative"
+                    >
+                      <div className="absolute -inset-1 rounded-lg bg-brand-green/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <BsFacebook className="relative h-5 w-5 text-brand-cream/80 transition-colors duration-300 group-hover:text-brand-green" />
+                    </motion.a>
+                    <motion.a
+                      href="https://www.instagram.com/sloane.biz/"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group relative"
+                    >
+                      <div className="absolute -inset-1 rounded-lg bg-brand-green/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <BsInstagram className="relative h-5 w-5 text-brand-cream/80 transition-colors duration-300 group-hover:text-brand-green" />
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-12 px-4 sm:mt-4 lg:px-16">
-            {/* First Column */}
-            <Footer.LinkGroup col className="space-y-2">
-              <Footer.Link
-                href="/about"
-                className="font-poppins font-semibold text-brand-green"
-              >
-                About
-              </Footer.Link>
-              <Footer.Link
-                href="/pricing"
-                className="font-poppins font-semibold text-brand-green"
-              >
-                Pricing
-              </Footer.Link>
-              <Footer.Link
-                href="/FAQS"
-                className="font-poppins font-semibold text-brand-green"
-              >
-                FAQs
-              </Footer.Link>
-              <Footer.Link
-                href="/blog"
-                className="font-poppins font-semibold text-brand-green"
-              >
-                Blog
-              </Footer.Link>
-            </Footer.LinkGroup>
-            {/* Second Column */}
-            <Footer.LinkGroup col className="space-y-2">
-              <Footer.Link
-                href="/privacy"
-                className="font-poppins font-semibold text-brand-green"
-              >
-                Privacy Policy
-              </Footer.Link>
-              <Footer.Link
-                href="/terms&conditions"
-                className="font-poppins font-semibold text-brand-green"
-              >
-                Terms &amp; Conditions
-              </Footer.Link>
-              <Footer.Link
-                href="/editor"
-                className="font-poppins font-semibold text-brand-green"
-              >
-                Admin
-              </Footer.Link>
-            </Footer.LinkGroup>
-          </div>
         </div>
-        <Divider
-          orientation="horizontal"
-          className="my-2 w-full bg-brand-green lg:mt-2"
-        />
-        <div className="relative flex items-center px-4 py-4">
-          <div className="flex space-x-8 pl-4">
-            <Footer.Icon
-              href="#"
-              icon={BsFacebook}
-              className="text-5xl text-brand-green hover:text-brand-green-dark"
-              aria-label="Sloane on Facebook"
-            />
-            <Footer.Icon
-              href="https://www.instagram.com/sloane.biz/"
-              icon={BsInstagram}
-              className="text-5xl text-brand-green hover:text-brand-green-dark"
-              aria-label="Sloane on Instagram"
-            />
-          </div>
-          <div className="absolute left-1/2 -translate-x-1/2">
-            <Footer.Copyright
-              href="#"
-              by=" sloane."
-              year={2024}
-              className="font-poppins font-semibold text-brand-green"
-            />
+
+        {/* Bottom Section */}
+        <div className="border-t border-brand-logo/70 w-[90vw] mx-auto">
+          <div className="container mx-auto px-4 py-8 md:px-8 lg:px-12">
+            <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
+              <div className="font-Poppins text-sm text-brand-cream/80">
+                © 2024 sloane. All rights reserved.
+              </div>
+              <div className="flex items-center space-x-8">
+                <Link
+                  href="/privacy"
+                  className="font-Poppins text-sm text-brand-cream/80 hover:text-brand-green transition-colors duration-300"
+                >
+                  Privacy
+                </Link>
+                <Link
+                  href="/terms&conditions"
+                  className="font-Poppins text-sm text-brand-cream/80 hover:text-brand-green transition-colors duration-300"
+                >
+                  Terms
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </Footer>
+    </footer>
   );
 };
 

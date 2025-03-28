@@ -37,10 +37,10 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-PNZNDMHP');`}
         </Script>
-        <script
+        {/* <script
           src="https://chatbot-sigma-flax.vercel.app/widget.js"
           async
-        ></script>
+        ></script> */}
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
