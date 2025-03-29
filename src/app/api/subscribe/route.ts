@@ -123,12 +123,12 @@ const generateEmailTemplate = (firstName: string) => {
       <body>
         <div class="container">
           <div class="header">
-            <img src="https://app.sloane.biz/logo.png" alt="Sloane Logo" />
+            <img src="https://sloane.biz/images/logo.png" alt="Sloane Logo" />
           </div>
           <div class="content">
             <h1>Welcome to Sloane, ${firstName}! 🟢 </h1>
             <p>Thank you for entering our draw to win a free month of Sloane AI. We're excited to have you join our community of mindful business owners!</p>
-            <img src="https://app.sloane.biz/images/heroMOck.png" alt="Sloane AI Platform" class="product-image" />
+            <img src="https://sloane.biz/_next/image/?url=%2Fimages%2FheroMOck.png&w=828&q=75" alt="Sloane AI Platform" class="product-image" />
             <p>Your entry has been successfully registered, and we'll be in touch if you're our lucky winner. The free month can be applied to any new or existing subscription.</p>
             <p>Why wait? You can start experiencing the power of Sloane AI today:</p>
             <a href="https://app.sloane.biz/signup" class="button">Try Sloane Now</a>
