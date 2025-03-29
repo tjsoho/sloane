@@ -28,13 +28,19 @@ async function getPosts(): Promise<Post[]> {
     const postsSnapshot = await getDocs(postsCollection);
     const postsData = postsSnapshot.docs.map((doc) => {
         const data = doc.data();
+        // Format the image URL if it exists
+        let imageUrl = data.image;
+        if (imageUrl && imageUrl.startsWith('images/')) {
+            // If the image path is relative, construct the full Firebase Storage URL
+            imageUrl = `https://firebasestorage.googleapis.com/v0/b/sloane-website-afb7a.appspot.com/o/${encodeURIComponent(imageUrl)}?alt=media`;
+        }
         return {
             id: doc.id,
             slug: data.slug || doc.id,
             title: data.title || '',
             date: data.date || '',
             description: data.description || '',
-            image: data.image,
+            image: imageUrl,
             tags: data.tags || [],
             content: data.content,
             status: data.status || 'published',

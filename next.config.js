@@ -10,7 +10,13 @@ const config = {
   trailingSlash: true, // Adds a trailing slash to all routes for better compatibility with static files
   output: 'standalone', // Ensures standalone mode for Next.js, useful for Vercel deployments
   images: {
-    domains: ['firebasestorage.googleapis.com'], // Allow images from Firebase Storage
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+        pathname: '/v0/b/sloane-website-afb7a.appspot.com/o/**',
+      },
+    ],
   },
 };
 
