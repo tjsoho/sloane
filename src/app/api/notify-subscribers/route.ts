@@ -141,7 +141,7 @@ const generateBlogPostEmailTemplate = (firstName: string, post: any) => {
       <body>
         <div class="container">
           <div class="header">
-            <img src="https://app.sloane.biz/logo.svg" alt="Sloane Logo" />
+            <img src="https://sloane.biz/images/logo.png" alt="Sloane Logo" />
           </div>
           <div class="content">
             <h1>Hi ${firstName}! 👋</h1>
