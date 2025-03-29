@@ -6,7 +6,7 @@ import Header from './components/core/header';
 import Footer from './components/core/footer';
 import Script from 'next/script';
 import { Poppins } from 'next/font/google';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import LoadingScreen from './components/LoadingScreen';
 import { metadata } from './metadata';
@@ -28,7 +28,6 @@ export default function RootLayout({
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     setIsLoading(true);
@@ -37,7 +36,7 @@ export default function RootLayout({
     }, 1000); // Show loading screen for at least 1 second
 
     return () => clearTimeout(timer);
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <html lang="en" className="h-full">
