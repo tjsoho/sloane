@@ -10,6 +10,10 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import LoadingScreen from './components/LoadingScreen';
 import { metadata } from './metadata';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
+import SuspenseWrapper from './components/SuspenseWrapper';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -20,6 +24,16 @@ const poppins = Poppins({
   // Add font features if needed
   // features: { 'salt': 1, 'ss01': 1 }  // For stylistic alternates
 });
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Sloane',
+  description: 'Making business easy',
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
 
 export default function RootLayout({
   children,
@@ -102,11 +116,14 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="flex min-h-screen flex-col font-sans bg-brand-green-light">
+      <body className={`${inter.className} flex min-h-screen flex-col font-sans bg-brand-green-light`}>
         {isLoading && <LoadingScreen />}
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <SuspenseWrapper>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </SuspenseWrapper>
+        <Toaster />
 
         <noscript>
           <iframe
