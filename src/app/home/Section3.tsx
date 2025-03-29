@@ -19,7 +19,7 @@ const Section3: React.FC = () => {
         {/* Tick */}
         <FontAwesomeIcon
           icon={faCheck}
-          className="absolute -top-1 left-0 h-6 w-5 text-brand-logo"
+          className="absolute -top-2 left-0 h-6 w-5 text-brand-logo"
         />
       </div>
       <span className="text-lg">{text}</span>

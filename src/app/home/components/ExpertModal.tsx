@@ -107,7 +107,7 @@ const ExpertModal: React.FC<ExpertModalProps> = ({
                 >
                     <FontAwesomeIcon
                         icon={icon}
-                        className="h-[32rem] w-[32rem] text-brand-green"
+                        className="h-[32rem] w-[32rem] text-brand-green/30"
                     />
                 </motion.div>
 

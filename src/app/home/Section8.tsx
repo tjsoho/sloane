@@ -53,7 +53,7 @@ const Section8: React.FC = () => {
                   <div className="absolute inset-0 rounded-full border border-brand-green"></div>
                   <FontAwesomeIcon
                     icon={faPlus}
-                    className="h-6 w-6 text-brand-green relative z-10 transition-transform duration-300 group-hover:rotate-180"
+                    className="h-4 w-6 text-brand-green relative z-10 transition-transform duration-300 group-hover:rotate-180"
                     style={{ strokeWidth: 1 }}
                   />
                 </div>

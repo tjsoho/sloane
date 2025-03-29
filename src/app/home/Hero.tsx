@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
                 )}
               >
                 <TextGenerateEffect
-                  text="Try Sloane For Free"
+                  text="TRY FOR FREE"
                   className="text-lg"
                   duration={0.5}
                 />
@@ -194,11 +194,11 @@ const Hero: React.FC = () => {
                   "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-cream px-8 py-4",
                   "before:absolute before:inset-0 before:translate-x-[-100%] before:animate-[shine_2s_infinite]",
                   "before:bg-gradient-to-r before:from-transparent before:via-brand-green/20 before:to-transparent",
-                  "font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-cream"
+                  "font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-logo border-[1px]  hover:border-brand-logo"
                 )}
               >
                 <TextGenerateEffect
-                  text="Try Sloane For Free"
+                  text="Try For Free"
                   className="text-lg"
                   duration={0.5}
                 />

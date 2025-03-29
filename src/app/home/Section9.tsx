@@ -1,8 +1,8 @@
 'use client';
 
-import { Link } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Section9: React.FC = () => {
   return (
@@ -27,9 +27,12 @@ const Section9: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <button className="inline-block rounded-full bg-brand-green px-16 py-4 font-Archivo text-lg uppercase text-brand-cream transition-all hover:bg-brand-green-dark hover:text-brand-cream hover:shadow-lg">
-              OUR WHY
-            </button>
+              <Link
+                href="/about"
+                className="inline-block rounded-full bg-brand-green px-16 py-4 font-Archivo text-lg uppercase text-brand-cream transition-all hover:bg-brand-green-dark hover:text-brand-cream hover:shadow-lg"
+              >
+                OUR WHY
+              </Link>
             </motion.div>
           </div>
         </div>

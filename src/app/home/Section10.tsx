@@ -2,9 +2,9 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeaf } from '@fortawesome/free-solid-svg-icons';
-import { Link } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Section10: React.FC = () => {
     return (
@@ -51,9 +51,16 @@ const Section10: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
                         >
-                            <button className="inline-block rounded-full bg-brand-cream px-16 py-4 font-Archivo text-lg uppercase text-brand-green transition-all hover:bg-brand-green-dark hover:text-brand-cream hover:shadow-lg">
-                                TRY FOR FREE
-                            </button>
+                            <Link
+                                href="https://app.sloane.biz/userform"
+                                className="group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-5 py-2 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
+
+                            >
+                                <div className="absolute inset-0 w-full h-full">
+                                    <div className="absolute inset-0 -skew-x-12 animate-[shine_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-brand-logo/40 to-transparent"></div>
+                                </div>
+                                <span className="relative z-10 font-medium text-lg">Try For Free</span>
+                            </Link>
                         </motion.div>
                     </div>
                 </div>

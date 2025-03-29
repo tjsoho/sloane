@@ -65,6 +65,10 @@ module.exports = {
           from: { backgroundPosition: "0 0" },
           to: { backgroundPosition: "-200% 0" },
         },
+        zoom: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.3)' }
+        }
       },
       animation: {
         'gentle-pulse': 'gentle-pulse 2s ease-in-out infinite',
@@ -72,6 +76,7 @@ module.exports = {
         kitrotate: "kitrotate 3s linear infinite both",
         'fade-in-right': 'fadeInRight 0.5s ease-out forwards',
         'shine': 'shine 2s linear infinite',
+        'zoom': 'zoom 20s ease-in-out infinite'
       },
     },
   },

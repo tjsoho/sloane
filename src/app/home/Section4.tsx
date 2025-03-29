@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Section4: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -122,9 +123,14 @@ const Section4: React.FC = () => {
             viewport={{ once: true }}
             className="hidden items-center justify-center lg:flex"
           >
-            <button className="rounded-full bg-brand-green px-8 py-4 text-lg font-bold text-brand-cream transition-transform hover:scale-105">
+            <Link
+              href="https://app.sloane.biz/userform"
+              className="rounded-full bg-brand-green px-8 py-4 text-lg font-Archivo text-brand-cream transition-transform hover:scale-105 border-[2px] hover:border-brand-logo hover:text-brand-logo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GET STARTED
-            </button>
+            </Link>
           </motion.div>
         </div>
 

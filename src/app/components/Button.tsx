@@ -38,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const buttonContent = (
     <button
-      className={`flex items-center px-12 py-4 rounded-lg uppercase font-Archivo text-lg hover:font-bold border-[1px] ${className}`}
+      className={`flex items-center px-12 py-4 rounded-full uppercase font-Archivo text-lg hover:font-bold border-[1px] ${className}`}
       style={{ 
         color: defaultTextColor, 
         backgroundColor: bgColor,

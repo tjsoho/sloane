@@ -86,7 +86,7 @@ const Header = () => {
         `}</style>
 
         <div className="mx-auto max-w-7xl px-4">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-14 items-center justify-between">
             {/* Menu Button */}
             <div className="w-32">
               <motion.button
@@ -115,7 +115,7 @@ const Header = () => {
             {/* Centered Logo */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <Link href="/home">
-                <img src="/images/logo.png" alt="Logo" className="h-8" />
+                <img src="/images/logo.png" alt="Logo" className="h-10" />
               </Link>
             </div>
 

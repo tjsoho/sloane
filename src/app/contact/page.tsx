@@ -55,10 +55,10 @@ const ContactForm: React.FC = () => {
   };
 
   const inputClass =
-    'my-4 block w-full py-2 px-4 border border-brand-logo rounded-lg bg-transparent text-brand-green-dark placeholder-green-700 focus:border-brand-green-dark outline-none';
+    'my-4 block w-full py-2 px-4 border border-brand-cream rounded-full bg-transparent text-brand-cream placeholder-green-700 focus:border-brand-green-logo outline-none';
 
   const inputClass2 =
-    'my-4 block w-full px-4 py-3 border border-brand-logo rounded-lg bg-transparent text-brand-green-dark placeholder-green-700 overflow-hidden focus:border-brand-green-dark outline-none';
+    'my-4 block w-full px-4 py-3 border border-brand-cream rounded-xl bg-transparent text-brand-cream placeholder-green-700 overflow-hidden focus:border-brand-green-logo outline-none';
 
   return (
     <Grid container spacing={0}>
@@ -78,7 +78,7 @@ const ContactForm: React.FC = () => {
         className="bg-brand-green"
       >
         <SlideReveal>
-          <h2 className="my-4 text-center text-5xl text-brand-logo lg:text-7xl">
+          <h2 className="my-4 text-center text-5xl text-brand-cream lg:text-7xl">
             Let&apos;s Chat
           </h2>
         </SlideReveal>
@@ -114,7 +114,7 @@ const ContactForm: React.FC = () => {
             name="access_key"
             value="a8bc9187-f073-45fe-b457-d7848a0e31f0" // Replace with your actual Access Key
           />
-          <h3 className="text-center font-Archivo text-3xl text-brand-logo lg:text-5xl">
+          <h3 className="text-center font-Archivo text-3xl text-brand-cream lg:text-5xl">
             Contact Form
           </h3>
           <input
@@ -164,10 +164,10 @@ const ContactForm: React.FC = () => {
           </div>
           <Button
             title="Send Message"
-            textColor="brand-green"
+            textColor="#003b1f"
             textHoverColor="brand-logo"
-            backgroundColor="brand-logo"
-            hoverBG="brand-green-dark"
+            backgroundColor="#fdf3e3"
+            hoverBG="#003b1f"
             ariaLabel="Send Message"
           />
         </form>
@@ -239,7 +239,7 @@ const ContactForm: React.FC = () => {
                       setModalOpen(false);
                       router.push('/home');
                     }}
-                    className="rounded-lg bg-brand-logo px-8 py-3 font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-logo"
+                    className="rounded-full bg-brand-logo px-8 py-3 font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-logo"
                   >
                     Close
                   </button>

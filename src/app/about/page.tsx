@@ -15,7 +15,7 @@ const About = () => {
       <div className="relative h-[90vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/founders-hero.jpg"
+            src="/images/aboutUsHero.jpg"
             alt="Founders Hero"
             className="h-full w-full object-cover"
           />
@@ -28,7 +28,7 @@ const About = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="font-Archivo text-5xl font-bold text-white md:text-7xl lg:text-8xl">
-              meet the FOUNDERS
+              Meet the Founders
             </h1>
           </motion.div>
           <motion.p
@@ -53,7 +53,7 @@ const About = () => {
             className="relative h-[600px] overflow-hidden rounded-3xl"
           >
             <img
-              src="/images/founders-intro.jpg"
+              src="/images/story.jpg"
               alt="Founders Introduction"
               className="h-full w-full object-cover"
             />
@@ -109,19 +109,7 @@ const About = () => {
       {/* Toby's Section */}
       <div className="bg-brand-green px-4 py-24 md:px-8 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="relative h-[500px] overflow-hidden rounded-3xl"
-          >
-            <img
-              src="/images/toby.jpg"
-              alt="Toby"
-              className="h-full w-full object-cover"
-            />
-          </motion.div>
+       
           <div className="flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -181,6 +169,19 @@ const About = () => {
               </motion.div>
             </motion.div>
           </div>
+              <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="relative h-[500px] overflow-hidden rounded-3xl"
+          >
+            <img
+              src="/images/tj.jpg"
+              alt="Toby"
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
         </div>
       </div>
 
@@ -326,7 +327,7 @@ const About = () => {
             className="relative h-[500px] overflow-hidden rounded-3xl"
           >
             <img
-              src="/images/rachel.jpg"
+              src="/images/rc.jpg"
               alt="Rachel"
               className="h-full w-full object-cover"
             />

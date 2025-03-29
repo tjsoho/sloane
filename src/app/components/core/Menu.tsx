@@ -36,6 +36,7 @@ export function Menu({ isOpen, onClose }: MenuProps) {
   };
 
   const menuItems = [
+    { title: 'Home', href: '/' },
     { title: 'About', href: '/about' },
     { title: 'Pricing', href: '/pricing' },
     { title: 'FAQS', href: '/FAQS' },
@@ -43,6 +44,8 @@ export function Menu({ isOpen, onClose }: MenuProps) {
     { title: 'Contact', href: '/contact' },
     { title: 'Login', href: 'https://app.sloane.biz/dashboard' },
   ];
+
+  const adminItem = { title: 'Admin', href: '/admin' };
 
   const itemVariants = {
     closed: { x: -50, opacity: 0 },
@@ -139,15 +142,15 @@ export function Menu({ isOpen, onClose }: MenuProps) {
 
           {/* Menu Panel */}
           <motion.div
-            className="fixed left-0 top-0 z-50 h-full w-full overflow-y-auto bg-brand-green lg:w-1/3"
+            className="fixed left-0 top-0 z-50 h-screen w-full bg-brand-green lg:w-1/3"
             variants={menuVariants}
             initial="closed"
             animate="open"
             exit="closed"
           >
-            <div className="flex min-h-screen flex-col px-6 w-full">
+            <div className="flex h-full flex-col px-6">
               {/* Navigation Links */}
-              <nav className="mt-32 space-y-8">
+              <nav className="mt-24 space-y-6">
                 {menuItems.map((item, i) => (
                   <motion.div
                     key={item.href}
@@ -157,7 +160,10 @@ export function Menu({ isOpen, onClose }: MenuProps) {
                     animate="open"
                   >
                     <motion.div
-                      className="group relative inline-flex items-center"
+                      className={`group relative inline-flex items-center ${pathname === item.href
+                          ? 'text-brand-logo'
+                          : 'text-brand-cream hover:text-brand-logo'
+                        }`}
                       variants={linkVariants}
                       initial="initial"
                       whileHover="hover"
@@ -165,19 +171,13 @@ export function Menu({ isOpen, onClose }: MenuProps) {
                     >
                       <Link
                         href={item.href}
-                        className={`font-Poppins text-3xl font-thin transition-colors md:text-4xl ${pathname === item.href
-                          ? 'text-brand-logo'
-                          : 'text-brand-cream hover:text-brand-logo'
+                        className={`font-Poppins text-2xl font-thin transition-colors md:text-3xl relative ${pathname === item.href
+                            ? 'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-brand-logo after:content-[""]'
+                            : ''
                           }`}
                         onClick={onClose}
                       >
                         {item.title}
-                        {pathname === item.href && (
-                          <motion.div
-                            layoutId="underline"
-                            className="absolute -bottom-2 left-0 right-0 h-[2px] bg-brand-logo"
-                          />
-                        )}
                       </Link>
                       <div className="relative ml-4 flex items-center">
                         <motion.div
@@ -195,6 +195,49 @@ export function Menu({ isOpen, onClose }: MenuProps) {
                   </motion.div>
                 ))}
               </nav>
+
+              {/* Admin Link */}
+              <motion.div
+                custom={menuItems.length + 1}
+                variants={itemVariants}
+                initial="closed"
+                animate="open"
+                className="mt-6"
+              >
+                <motion.div
+                  className={`group relative inline-flex items-center ${pathname === adminItem.href
+                      ? 'text-brand-logo'
+                      : 'text-brand-cream hover:text-brand-logo'
+                    }`}
+                  variants={linkVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  whileTap="tap"
+                >
+                  <Link
+                    href={adminItem.href}
+                    className={`font-Poppins text-2xl font-thin transition-colors md:text-3xl relative ${pathname === adminItem.href
+                        ? 'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-brand-logo after:content-[""]'
+                        : ''
+                      }`}
+                    onClick={onClose}
+                  >
+                    {adminItem.title}
+                  </Link>
+                  <div className="relative ml-4 flex items-center">
+                    <motion.div
+                      variants={arrowVariants}
+                      className="h-[1px] self-center bg-brand-logo"
+                    />
+                    <motion.div
+                      variants={arrowHeadVariants}
+                      className="absolute right-0 translate-x-1/2 transform"
+                    >
+                      <div className="h-2 w-2 rotate-45 border-r border-t border-brand-logo" />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </motion.div>
 
               {/* Social Connection Buttons */}
               <div className="mt-auto mb-8 flex flex-row items-center justify-center gap-6">
