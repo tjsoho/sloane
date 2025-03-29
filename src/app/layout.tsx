@@ -2,18 +2,12 @@
 'use client';
 
 import '~/styles/globals.css';
-import Header from './components/core/header';
-import Footer from './components/core/footer';
 import Script from 'next/script';
 import { Poppins } from 'next/font/google';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import LoadingScreen from './components/LoadingScreen';
 import { metadata } from './metadata';
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
-import SuspenseWrapper from './components/SuspenseWrapper';
+import NavigationWrapper from './components/NavigationWrapper';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -32,19 +26,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isLoading, setIsLoading] = useState(true);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000); // Show loading screen for at least 1 second
-
-    return () => clearTimeout(timer);
-  }, [pathname, searchParams]);
-
   return (
     <html lang="en" className="h-full">
       <head>
@@ -109,12 +90,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} flex min-h-screen flex-col font-sans bg-brand-green-light`}>
-        {isLoading && <LoadingScreen />}
-        <SuspenseWrapper>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </SuspenseWrapper>
+        <NavigationWrapper>
+          {children}
+        </NavigationWrapper>
         <Toaster />
 
         <noscript>
