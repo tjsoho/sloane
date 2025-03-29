@@ -154,7 +154,7 @@ const generateBlogPostEmailTemplate = (firstName: string, post: any) => {
                 ${post.tags.map((tag: string) => `<span class="tag">${tag}</span>`).join('')}
               </div>
             ` : ''}
-            <a href="https://app.sloane.biz/blog/${post.slug}" class="button">Read the Full Post</a>
+            <a href="https://sloane.biz/blog/${post.slug}" class="button">Read the Full Post</a>
             <p>We hope you enjoy reading it!</p>
             <p>Best regards,<br>The Sloane Team</p>
           </div>
