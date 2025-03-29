@@ -449,7 +449,7 @@ export default function BlogClient() {
 
 
                             {/* Filter by Tags */}
-                            <div className="mb-4">
+                            <div className="mb-4 hidden lg:block">
                                 <h3 className="text-lg font-Archivo text-brand-green mb-3">Filter by Tags</h3>
                                 <div className="flex flex-wrap gap-1.5">
                                     {uniqueTags.slice(0, 6).map((tag) => (
@@ -551,16 +551,16 @@ export default function BlogClient() {
                                         setIsModalOpen(true);
                                     }
                                 }} className="space-y-3">
-                                    <div className="relative">
+                                    <div className="relative px-4 lg:px-0">
                                         <button
                                             type="button"
                                             onClick={() => setIsModalOpen(true)}
-                                            className="group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-5 py-2 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden w-full"
+                                            className="group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-5 py-3 lg:py-2 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden w-full"
                                         >
                                             <div className="absolute inset-0 w-full h-full">
                                                 <div className="absolute inset-0 -skew-x-12 animate-[shine_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-brand-logo/40 to-transparent"></div>
                                             </div>
-                                            <span className="relative z-10 font-medium">WIN A FREE MONTH</span>
+                                            <span className="relative z-10 font-medium text-md">WIN A FREE MONTH</span>
                                         </button>
                                         <p className="text-sm text-brand-green py-4">Enter your email for your chance to win a free month of Sloane AI.</p>
                                         <input
@@ -578,7 +578,7 @@ export default function BlogClient() {
                                                     setIsModalOpen(true);
                                                 }
                                             }}
-                                            className="w-full mt-2 group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-5 py-2 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
+                                            className="w-full mt-2 group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-5 py-3 lg:py-2 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
                                         >
                                             <div className="absolute inset-0 w-full h-full">
                                                 <div className="absolute inset-0 -skew-x-12 animate-[shine_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-brand-logo/40 to-transparent"></div>
@@ -600,7 +600,7 @@ export default function BlogClient() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 px-4 sm:px-8 py-8 lg:py-16">
+                    <div className="flex-1 px-8 sm:px-16 py-8 lg:py-16">
                         {/* Featured Post Card */}
                         {latestPost && (
                             <div className="max-w-3xl mb-8 lg:mb-16">
