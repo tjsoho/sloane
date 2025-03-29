@@ -1,7 +1,6 @@
-
 export const metadata = {
-    title: 'Sloane Tailored AI Platform',
-    description: 'Makes Business Easy',
+    title: 'Sloane',
+    description: 'Making business easy',
     icons: [{ rel: 'icon', url: '/favicon.ico' }],
     openGraph: {
       images: [],

@@ -91,18 +91,13 @@ const Hero: React.FC = () => {
             >
               <Link
                 href="https://app.sloane.biz/userform"
-                className={cn(
-                  "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-cream px-8 py-4",
-                  "before:absolute before:inset-0 before:translate-x-[-100%] before:animate-[shine_2s_infinite]",
-                  "before:bg-gradient-to-r before:from-transparent before:via-brand-green/20 before:to-transparent",
-                  "font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-cream"
-                )}
+                className="group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-5 py-2 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
+
               >
-                <TextGenerateEffect
-                  text="TRY FOR FREE"
-                  className="text-lg"
-                  duration={0.5}
-                />
+                <div className="absolute inset-0 w-full h-full">
+                  <div className="absolute inset-0 -skew-x-12 animate-[shine_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-brand-logo/40 to-transparent"></div>
+                </div>
+                <span className="relative z-10 font-medium text-lg">Try For Free</span>
               </Link>
             </motion.div>
           </div>
@@ -190,18 +185,13 @@ const Hero: React.FC = () => {
             >
               <Link
                 href="https://app.sloane.biz/userform"
-                className={cn(
-                  "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-cream px-8 py-4",
-                  "before:absolute before:inset-0 before:translate-x-[-100%] before:animate-[shine_2s_infinite]",
-                  "before:bg-gradient-to-r before:from-transparent before:via-brand-green/20 before:to-transparent",
-                  "font-Archivo uppercase text-brand-green transition-all hover:bg-brand-green hover:text-brand-logo border-[1px]  hover:border-brand-logo"
-                )}
+                className="group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-6 py-4 w-full  font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
+
               >
-                <TextGenerateEffect
-                  text="Try For Free"
-                  className="text-lg"
-                  duration={0.5}
-                />
+                <div className="absolute inset-0 w-full h-full">
+                  <div className="absolute inset-0 -skew-x-12 animate-[shine_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-brand-logo/40 to-transparent"></div>
+                </div>
+                <span className="relative z-10 font-medium text-lg">Try For Free</span>
               </Link>
             </motion.div>
           </div>

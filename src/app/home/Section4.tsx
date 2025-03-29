@@ -125,11 +125,13 @@ const Section4: React.FC = () => {
           >
             <Link
               href="https://app.sloane.biz/userform"
-              className="rounded-full bg-brand-green px-8 py-4 text-lg font-Archivo text-brand-cream transition-transform hover:scale-105 border-[2px] hover:border-brand-logo hover:text-brand-logo"
-              target="_blank"
-              rel="noopener noreferrer"
+              className="group relative inline-flex items-center justify-center rounded-full border border-brand-green-light bg-brand-green px-5 py-4 w-3/4 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
+
             >
-              GET STARTED
+              <div className="absolute inset-0 w-full h-full">
+                <div className="absolute inset-0 -skew-x-12 animate-[shine_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-brand-logo/40 to-transparent"></div>
+              </div>
+              <span className="relative z-10 font-medium text-lg">Try For Free</span>
             </Link>
           </motion.div>
         </div>
@@ -142,9 +144,16 @@ const Section4: React.FC = () => {
           viewport={{ once: true }}
           className="mt-12 lg:hidden"
         >
-          <button className="w-full rounded-full bg-brand-green px-8 py-4 text-lg font-bold text-brand-cream transition-transform hover:scale-105 md:w-auto">
-            GET STARTED
-          </button>
+          <Link
+              href="https://app.sloane.biz/userform"
+              className="group relative inline-flex items-center justify-center w-full rounded-full border border-brand-green-light bg-brand-green px-5 py-4 font-Archivo text-lg uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
+              
+            >
+              <div className="absolute inset-0 w-full h-full">
+                <div className="absolute inset-0 -skew-x-12 animate-[shine_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-brand-logo/40 to-transparent"></div>
+              </div>
+              <span className="relative z-10 font-medium text-lg">Try For Free</span>
+            </Link>
         </motion.div>
       </div>
     </div>

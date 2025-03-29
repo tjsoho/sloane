@@ -17,21 +17,21 @@ export function TextGenerateEffect({
     initialDelay = 0,
     className,
 }: TextGenerateEffectProps) {
+    const words = text.split(" ");
+    const firstLine = words.slice(0, 2).join(" "); // "TRY SLOANE"
+    const secondLine = words.slice(2).join(" "); // "FOR FREE"
+
     return (
         <motion.div
-            className="inline-block whitespace-pre"
+            className="inline-block"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={viewport}
             transition={{ duration: 0.1, delay: initialDelay }}
         >
-            {text.split("").map((char, index) => (
+            <div className="lg:inline">
                 <motion.span
-                    key={char + index}
-                    className={cn(
-                        "inline-block whitespace-pre",
-                        className,
-                    )}
+                    className={cn("inline-block", className)}
                     initial={{ opacity: 0, filter: "blur(4px)", rotateX: 90, y: 5 }}
                     whileInView={{
                         opacity: 1,
@@ -42,13 +42,33 @@ export function TextGenerateEffect({
                     transition={{
                         ease: "easeOut",
                         duration: duration,
-                        delay: initialDelay + (index * 0.015),
+                        delay: initialDelay,
                     }}
                     viewport={viewport}
                 >
-                    {char}
+                    {firstLine}
                 </motion.span>
-            ))}
+                <span className="lg:hidden block -h-[34px] leading-none" />
+                <span className="lg:inline-block lg:ml-4">&nbsp;</span>
+                <motion.span
+                    className={cn("inline-block", className)}
+                    initial={{ opacity: 0, filter: "blur(4px)", rotateX: 90, y: 5 }}
+                    whileInView={{
+                        opacity: 1,
+                        filter: "blur(0px)",
+                        rotateX: 0,
+                        y: 0,
+                    }}
+                    transition={{
+                        ease: "easeOut",
+                        duration: duration,
+                        delay: initialDelay + 0.1,
+                    }}
+                    viewport={viewport}
+                >
+                    {secondLine}
+                </motion.span>
+            </div>
         </motion.div>
     );
 } 
