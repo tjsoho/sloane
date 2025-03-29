@@ -96,7 +96,7 @@ const SubscribeModal = ({ isOpen, onClose, initialEmail = '', onSubmit }: Subscr
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="relative w-full max-w-lg bg-gradient-to-br from-brand-cream to-white rounded-2xl shadow-2xl overflow-hidden"
+                        className="relative w-full max-w-lg bg-gradient-to-br from-brand-cream to-white rounded-2xl shadow-2xl overflow-hidden mx-4"
                         onClick={(e: React.MouseEvent) => e.stopPropagation()}
                     >
                         {/* Decorative Elements */}
@@ -104,13 +104,13 @@ const SubscribeModal = ({ isOpen, onClose, initialEmail = '', onSubmit }: Subscr
                         <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-logo/10 rounded-full blur-3xl" />
                         <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-brand-green/10 rounded-full blur-3xl" />
 
-                        <div className="relative p-8">
-                            <div className="flex justify-between items-start mb-6">
+                        <div className="relative p-4 sm:p-8">
+                            <div className="flex justify-between items-start mb-4 sm:mb-6">
                                 <div>
-                                    <h3 className="text-2xl font-Archivo text-brand-green mb-2">
+                                    <h3 className="text-xl sm:text-2xl font-Archivo text-brand-green mb-2">
                                         Win a Free Month
                                     </h3>
-                                    <p className="text-brand-green/70 text-sm">
+                                    <p className="text-brand-green/70 text-xs sm:text-sm">
                                         Enter your details below for a chance to experience Sloane AI completely free for a month.
                                     </p>
                                 </div>
@@ -124,7 +124,7 @@ const SubscribeModal = ({ isOpen, onClose, initialEmail = '', onSubmit }: Subscr
                                 </button>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-5">
+                            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                                 <div>
                                     <input
                                         type="text"
@@ -150,7 +150,7 @@ const SubscribeModal = ({ isOpen, onClose, initialEmail = '', onSubmit }: Subscr
 
                                 <button
                                     type="submit"
-                                    className="w-full group relative inline-flex items-center justify-center rounded-lg bg-brand-green px-6 py-3 font-Archivo text-sm uppercase text-brand-cream transition-all duration-300 hover:bg-brand-green-dark overflow-hidden"
+                                    className="w-full group relative inline-flex items-center justify-center rounded-lg bg-brand-green px-4 sm:px-6 py-2.5 sm:py-3 font-Archivo text-xs sm:text-sm uppercase text-brand-cream transition-all duration-300 hover:bg-brand-green-dark overflow-hidden"
                                 >
                                     <div className="absolute inset-0 w-full h-full transition-all duration-300">
                                         <div className="absolute inset-0 -translate-x-full hover:translate-x-0 bg-gradient-to-r from-transparent via-brand-logo/40 to-transparent group-hover:translate-x-full transition-all duration-700 ease-out"></div>
@@ -164,7 +164,7 @@ const SubscribeModal = ({ isOpen, onClose, initialEmail = '', onSubmit }: Subscr
                                 </button>
                             </form>
 
-                            <p className="mt-4 text-xs text-center text-brand-green/60">
+                            <p className="mt-3 sm:mt-4 text-[10px] sm:text-xs text-center text-brand-green/60">
                                 By entering, you agree to receive marketing emails from Sloane AI. You can unsubscribe at any time.
                             </p>
                         </div>
@@ -241,26 +241,26 @@ export default function BlogClient() {
             toast.custom((t) => (
                 <div
                     className={`${t.visible ? 'animate-enter' : 'animate-leave'
-                        } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+                        } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex flex-col sm:flex-row ring-1 ring-black ring-opacity-5`}
                 >
-                    <div className="flex-1 w-0 p-4">
+                    <div className="flex-1 w-full p-4">
                         <div className="flex items-start">
-                            <div className="ml-3 flex-1">
-                                <p className="text-lg font-Archivo text-brand-green">
+                            <div className="flex-1">
+                                <p className="text-lg font-Archivo text-brand-green text-center sm:text-left">
                                     Thanks ${firstName}! 🎉
                                 </p>
-                                <p className="mt-1 text-sm text-brand-green/70">
-                                    You're now in the draw to win a free month of Sloane AI.
+                                <p className="mt-1 text-sm text-brand-green/70 text-center sm:text-left">
+                                    You're now in the draw to win a <br></br> free month of Sloane AI.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div className="flex border-l border-brand-cream">
+                    <div className="flex border-t sm:border-t-0 sm:border-l border-brand-cream">
                         <button
                             onClick={() => toast.dismiss(t.id)}
-                            className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-brand-green hover:text-brand-green/70 focus:outline-none"
+                            className="w-full border border-transparent rounded-none rounded-b-lg sm:rounded-b-none sm:rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-brand-green hover:text-brand-green/70 focus:outline-none bg-brand-green-light"
                         >
-                            Close
+                            Okay
                         </button>
                     </div>
                 </div>
