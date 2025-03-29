@@ -27,14 +27,6 @@ const poppins = Poppins({
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: 'Sloane',
-  description: 'Making business easy',
-  icons: {
-    icon: '/favicon.ico',
-  },
-};
-
 export default function RootLayout({
   children,
 }: {
