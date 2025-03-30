@@ -45,7 +45,7 @@ export function Menu({ isOpen, onClose }: MenuProps) {
     { title: 'Login', href: 'https://app.sloane.biz/dashboard' },
   ];
 
-  const adminItem = { title: 'Admin', href: '/admin' };
+  const adminItem = { title: 'Admin', href: '/editor' };
 
   const itemVariants = {
     closed: { x: -50, opacity: 0 },
@@ -280,7 +280,7 @@ export function Menu({ isOpen, onClose }: MenuProps) {
                   custom={menuItems.length + 4}
                 >
                   <Link
-                    href="https://app.sloane.biz/dashboard"
+                    href="https://app.sloane.biz/"
                     className="inline-block rounded-full border border-brand-cream bg-brand-green px-6 py-2 font-Archivo text-sm uppercase text-brand-cream transition-colors hover:bg-brand-green-dark hover:text-brand-cream hover:shadow-lg"
                     onClick={onClose}
                   >
@@ -292,7 +292,7 @@ export function Menu({ isOpen, onClose }: MenuProps) {
                   custom={menuItems.length + 5}
                 >
                   <Link
-                    href="https://app.sloane.biz/userform"
+                    href="https://app.sloane.biz/sign-up"
                     className="inline-block rounded-full bg-brand-cream px-6 py-2 font-Archivo text-sm uppercase text-brand-green transition-colors hover:bg-brand-green-dark hover:text-brand-cream hover:shadow-lg"
                     onClick={onClose}
                   >

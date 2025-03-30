@@ -39,7 +39,7 @@ const generateEmailTemplate = (firstName: string) => {
           .header {
             text-align: center;
             padding: 20px 0;
-            background: linear-gradient(135deg, #00BF63, #004B27);
+            background: #4b8052;
           }
           
           .header img {

@@ -41,7 +41,7 @@ const generateBlogPostEmailTemplate = (firstName: string, post: any) => {
           .header {
             text-align: center;
             padding: 20px 0;
-            background: linear-gradient(135deg, #00BF63, #004B27);
+            background: #4b8052;
           }
           
           .header img {
@@ -53,6 +53,15 @@ const generateBlogPostEmailTemplate = (firstName: string, post: any) => {
           .content {
             padding: 40px 20px;
             background-color: #FFFFFF;
+          }
+          
+          /* Blog Card */
+          .blog-card {
+            background-color: rgba(126, 217, 87, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           }
           
           .blog-image {
@@ -101,22 +110,6 @@ const generateBlogPostEmailTemplate = (firstName: string, post: any) => {
             font-size: 12px;
           }
           
-          /* Tags */
-          .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0;
-          }
-          
-          .tag {
-            background-color: #00BF63;
-            color: #FFFFFF;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 12px;
-          }
-          
           /* Responsive */
           @media screen and (max-width: 600px) {
             .container {
@@ -135,6 +128,10 @@ const generateBlogPostEmailTemplate = (firstName: string, post: any) => {
             .blog-image {
               max-width: 100%;
             }
+            
+            .blog-card {
+              padding: 20px;
+            }
           }
         </style>
       </head>
@@ -146,15 +143,12 @@ const generateBlogPostEmailTemplate = (firstName: string, post: any) => {
           <div class="content">
             <h1>Hi ${firstName}! 👋</h1>
             <p>We just published a new blog post that we think you'll find interesting:</p>
-            <h2 style="color: #004B27; font-size: 24px; margin: 20px 0;">${post.title}</h2>
-            ${post.image ? `<img src="${post.image}" alt="${post.title}" class="blog-image" />` : ''}
-            <p>${post.description}</p>
-            ${post.tags && post.tags.length > 0 ? `
-              <div class="tags">
-                ${post.tags.map((tag: string) => `<span class="tag">${tag}</span>`).join('')}
-              </div>
-            ` : ''}
-            <a href="https://sloane.biz/blog/${post.slug}" class="button">Read the Full Post</a>
+            <div class="blog-card">
+              <h2 style="color: #004B27; font-size: 24px; margin: 0 0 20px 0;">${post.title}</h2>
+              ${post.image ? `<img src="${post.image}" alt="${post.title}" class="blog-image" />` : ''}
+              <p>${post.description}</p>
+              <a href="https://sloane.biz/blog/${post.slug}" class="button">Read the Full Post</a>
+            </div>
             <p>We hope you enjoy reading it!</p>
             <p>Best regards,<br>The Sloane Team</p>
           </div>

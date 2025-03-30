@@ -31,7 +31,7 @@ const Section7: React.FC = () => {
               $79/month after. No Lock Ins. No Contract. Just Ease.
             </p>
             <Link
-              href="https://app.sloane.biz/userform"
+              href="https://app.sloane.biz/sign-up"
               className="group relative inline-flex items-center justify-center rounded-full border border-brand-green-light bg-brand-green px-5 py-2 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
               onClick={handleGetStartedClick}
             >

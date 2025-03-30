@@ -124,7 +124,7 @@ const Section4: React.FC = () => {
             className="hidden items-center justify-center lg:flex"
           >
             <Link
-              href="https://app.sloane.biz/userform"
+              href="https://app.sloane.biz/sign-up"
               className="group relative inline-flex items-center justify-center rounded-full border border-brand-green-light bg-brand-green px-5 py-4 w-3/4 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
 
             >
@@ -145,7 +145,7 @@ const Section4: React.FC = () => {
           className="mt-12 lg:hidden"
         >
           <Link
-              href="https://app.sloane.biz/userform"
+              href="https://app.sloane.biz/sign-up"
               className="group relative inline-flex items-center justify-center w-full rounded-full border border-brand-green-light bg-brand-green px-5 py-4 font-Archivo text-lg uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
               
             >

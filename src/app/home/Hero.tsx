@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.4 }}
             >
               <Link
-                href="https://app.sloane.biz/userform"
+                href="https://app.sloane.biz/sign-up"
                 className="group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-5 py-2 font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
 
               >
@@ -184,7 +184,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.4 }}
             >
               <Link
-                href="https://app.sloane.biz/userform"
+                href="https://app.sloane.biz/sign-up"
                 className="group relative inline-flex items-center justify-center rounded-full border border-brand-cream bg-brand-green px-6 py-4 w-full  font-Archivo text-xs uppercase text-brand-cream transition-all duration-300 hover:border-brand-logo hover:text-brand-logo overflow-hidden"
 
               >

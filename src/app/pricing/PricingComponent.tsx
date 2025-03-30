@@ -149,7 +149,7 @@ const Pricing = () => {
           {/* CTA Button */}
           <div className="w-full sm:w-auto">
             <Link
-              href="https://app.sloane.biz/userform"
+              href="https://app.sloane.biz/sign-up"
               className="group relative inline-flex items-center justify-center rounded-full border-2 border-transparent bg-gradient-to-r from-brand-cream via-[#f5e6d3] to-brand-cream px-6 py-3 font-Archivo text-brand-green transition-all duration-300 hover:bg-transparent hover:border-brand-logo hover:text-brand-logo hover:bg-brand-green"
               onClick={handleGetStartedClick}
             >
