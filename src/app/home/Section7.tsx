@@ -28,7 +28,7 @@ const Section7: React.FC = () => {
               initialDelay={0.1}
             />
             <p className="mb-8 text-lg text-brand-green md:text-xl">
-              $79/month after. No Lock Ins. No Contract. Just Ease.
+              $79<span className="text-sm">AUD</span>/month after. No Lock Ins. No Contract. Just Ease.
             </p>
             <Link
               href="https://app.sloane.biz/sign-up"

@@ -45,13 +45,18 @@ const FooterComponent = () => {
                     Quick Links
                   </h4>
                   <ul className="space-y-4">
-                    {['About', 'Pricing', 'FAQS', 'Blog'].map((item) => (
-                      <li key={item}>
+                    {[
+                      { text: 'About', href: '/about' },
+                      { text: 'Pricing', href: '/pricing' },
+                      { text: 'FAQs', href: '/FAQS' },
+                      { text: 'Blog', href: '/blog' }
+                    ].map((item) => (
+                      <li key={item.text}>
                         <Link
-                          href={`/${item.toLowerCase()}`}
+                          href={item.href}
                           className="font-Poppins text-sm text-brand-cream/50 hover:text-brand-green transition-colors duration-300"
                         >
-                          {item}
+                          {item.text}
                         </Link>
                       </li>
                     ))}

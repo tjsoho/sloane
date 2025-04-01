@@ -42,7 +42,7 @@ export function Menu({ isOpen, onClose }: MenuProps) {
     { title: 'FAQS', href: '/FAQS' },
     { title: 'Blog', href: '/blog' },
     { title: 'Contact', href: '/contact' },
-    { title: 'Login', href: 'https://app.sloane.biz/dashboard' },
+    
   ];
 
   const adminItem = { title: 'Admin', href: '/editor' };

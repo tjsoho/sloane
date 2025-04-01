@@ -16,7 +16,7 @@ const features: Feature[] = [
     id: 1,
     title: 'Personalised AI Like Nowhere Else',
     description:
-      'From the beginning you’ll be guided through a video interview on your business asking you questions devling deep into your business and your why.This sets the tone for everything with Sloane. After this video interview, Sloane will know everything about your business. Your why. Who you do it for. Making every response and action within Sloane completely personalised to your business.',
+      'From the beginning, you’ll be guided through a video interview about your business. We’ll ask questions delving deep into your business and your “why.” This sets the tone for everything with Sloane. After this interview, Sloane will understand your business completely—your “why,” and who you serve. This makes every response and action within Sloane completely personalized to your business.',
     icon: '/images/community.png',
   },
   {
