@@ -56,7 +56,7 @@ const privacyData = [
   {
     title: '5. Data Security',
     content:
-      'We implement appropriate technical and organizational measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction.',
+      'We implement appropriate technical and organisational measures to protect your personal data from unauthorised access, disclosure, alteration, or destruction.',
   },
   {
     title: '6. Your Rights',

@@ -6,11 +6,11 @@ interface AccordionItem {
   const accordionData: AccordionItem[] = [
     {
       title: "Is there a free trial period?",
-      content: "Yes! We offer a 5-day free trial of Sloane. This allows you to experience the full functionality of our platform and discover how our personalised AI support, mindfulness tools, and streamlined productivity features can transform your business and well-being. You'll provide your credit card information to start your free trial, but you won't be charged until the trial period ends"
+      content: "Yes! We offer a 14-day free trial of Sloane. This allows you to experience the full functionality of our platform and discover how our personalised AI support, mindfulness tools, and streamlined productivity features can transform your business and well-being. You'll provide your credit card information to start your free trial, but you won't be charged until the trial period ends"
     },
     {
       title: "How many users can access the platform?",
-      content: "Sloane is designed to support collaboration. The subscription allows multiple team members within the same business to utilise the platform, ensuring everyone can benefit from its features. One user is $79 and every additional user is $19 per month."
+      content: "Sloane is designed to support collaboration. The subscription allows multiple team members within the same business to utilise the platform, ensuring everyone can benefit from its features. One user is $79 and every additional user is $9 per month."
     },
     {
       title: "Can I use this for multiple businesses?",

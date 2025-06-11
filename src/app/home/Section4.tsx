@@ -66,7 +66,7 @@ const Section4: React.FC = () => {
     },
     {
       icon: '/images/sketch-icons/11.png',
-      title: 'SPEAKS YOUR LANIGUAGE',
+      title: 'SPEAKS YOUR LANGUAGE',
     },
   ];
 

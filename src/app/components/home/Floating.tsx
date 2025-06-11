@@ -85,7 +85,7 @@ const buttonsData = [
   {
     title: 'Sales Funnels',
     content:
-      'Optimize your sales process from start to finish.<br></br> Sloane designs tailored sales funnels that convert leads into loyal customers. <br></br>Streamline your sales strategy and boost revenue effortlessly.',
+      'Optimise your sales process from start to finish.<br></br> Sloane designs tailored sales funnels that convert leads into loyal customers. <br></br>Streamline your sales strategy and boost revenue effortlessly.',
   },
   {
     title: 'Efficient Workflows',

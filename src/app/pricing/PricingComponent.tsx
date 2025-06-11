@@ -42,7 +42,7 @@ const Pricing = () => {
               ONE EASY PLAN
             </h1>
             <p className="mt-1 text-base text-brand-cream/90 sm:text-lg">
-              FREE 5 DAY TRIAL. NO LOCK INS. NO CONTRACT.
+              FREE 14 DAY TRIAL. NO LOCK INS. NO CONTRACT.
             </p>
           </div>
 
